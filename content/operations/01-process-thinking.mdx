@@ -1,0 +1,146 @@
+---
+slug: process-thinking
+title: "Process Thinking: The Foundation of Operations"
+subject: operations
+order: 1
+summary: "Learn to see any organization as a network of processes — and understand how throughput, bottlenecks, and Little's Law determine performance."
+difficulty: foundational
+readTime: 11
+related:
+  - strategy/competitive-advantage
+  - economics/markets
+---
+
+## Why Managers Need to Think in Processes
+
+Walk into almost any struggling organization and you'll find the same pattern: smart people working hard, but the system they're embedded in is broken. Orders are lost between departments. Customers wait far longer than the actual work requires. Nobody is lazy — the process is the problem.
+
+Operations management starts with a deceptively simple insight: **every organization is a collection of processes**, and understanding those processes is the key to improving performance. A hospital admitting a patient, a software team shipping a feature, a restaurant serving a table — all of these are processes that can be mapped, measured, and improved.
+
+This chapter builds the core vocabulary you need to reason about any process, regardless of industry. Think of it as learning to read sheet music — once you have the notation, you can analyze any symphony.
+
+## What Is a Process?
+
+A **process** is any set of activities that transforms inputs into outputs. That's a deliberately broad definition. The inputs might be raw materials, customer requests, data, or human attention. The outputs might be physical products, decisions, services, or information.
+
+Every process has three core elements:
+
+- **Inputs**: what enters the process (materials, information, customers)
+- **Activities**: the steps that transform inputs
+- **Outputs**: what exits the process (finished goods, resolved tickets, treated patients)
+
+<Callout type="definition">
+A **process flow diagram** (or flowchart) is a visual map of the activities in a process, the sequence in which they occur, and the decision points that branch the flow. It's the single most useful tool for making a process legible to everyone involved.
+</Callout>
+
+In a flow diagram, rectangles represent activities, diamonds represent decisions, and arrows show the direction of flow. When you draw a process for the first time — even a simple one — you almost always discover steps that nobody realized existed, handoffs that cause delays, and rework loops that consume huge amounts of time.
+
+<Diagram>
+flowchart LR
+    A([Customer Order]) --> B[Check Inventory]
+    B --> C[In Stock?]
+    C -- Yes --> D[Pick & Pack]
+    C -- No --> E[Reorder from Supplier]
+    E --> F[Wait for Delivery]
+    F --> D
+    D --> G[Ship to Customer]
+    G --> H([Order Complete])
+</Diagram>
+
+## Key Process Metrics
+
+Once you can see a process, you need to measure it. Four metrics matter most.
+
+**Throughput** is the rate at which a process produces outputs — say, 120 orders per day, or 8 patients per hour. Throughput is the heartbeat of an operation; it determines revenue capacity.
+
+**Flow time** (also called cycle time or lead time) is the total time from when a unit enters the process to when it exits. If a customer order takes 4 days from placement to delivery, the flow time is 4 days. Flow time is what customers experience as speed.
+
+**Work-in-process (WIP)** is the number of units currently inside the process — orders being processed, patients in the hospital, tickets in the support queue.
+
+**Capacity** is the maximum throughput a process can sustain. Capacity is set by the **bottleneck** — the slowest step in the chain.
+
+## Little's Law: The Master Equation
+
+These four metrics are not independent. They are linked by one of the most powerful equations in operations management:
+
+> **WIP = Throughput × Flow Time**
+
+This relationship, known as **Little's Law**, was proven mathematically in 1961 by John Little. It holds for any stable process — manufacturing, software, healthcare, finance.
+
+<Callout type="insight">
+Little's Law lets you calculate the variable you can't measure from the two you can. If you know your support team resolves 50 tickets per day (throughput) and there are always about 200 tickets in the queue (WIP), the average ticket is waiting **4 days** before it's closed. No need to timestamp every ticket.
+</Callout>
+
+The practical power of Little's Law is enormous. Want to reduce lead time? You have two levers: increase throughput, or reduce WIP. Most managers instinctively reach for the first lever (hire more people, buy more machines). The second lever — deliberately limiting how much work you start — is counterintuitive but often more effective. This is the insight behind kanban systems and WIP limits in software development.
+
+## Bottlenecks: Where the System Constraints Live
+
+The **bottleneck** is the step in a process whose capacity is lowest. It dictates the throughput of the entire system. No matter how fast every other step runs, the process can only produce as fast as its slowest constraint.
+
+<Example title="Bottleneck at a Fast-Food Drive-Through">
+Imagine a drive-through with three steps: taking the order (30 seconds), preparing the food (90 seconds), and collecting payment (20 seconds). The food preparation step is the bottleneck — it can serve at most 40 customers per hour. Speeding up order-taking or payment collection won't increase throughput at all. Only improving food preparation — better equipment, parallel cooking stations, menu simplification — can move the needle.
+</Example>
+
+Eli Goldratt formalized this thinking in his **Theory of Constraints**, which prescribes a five-step improvement cycle: identify the bottleneck, exploit it (get the most out of it as-is), subordinate everything else to it, elevate its capacity, and repeat. The key discipline is *subordination* — don't optimize non-bottleneck steps at the expense of the bottleneck. Feeding the bottleneck fast is always the priority.
+
+<Callout type="warning">
+A common mistake is optimizing non-bottleneck steps. If the packaging station runs at 50% capacity but the inspection step before it is fully loaded, adding a second packaging machine accomplishes nothing except creating more WIP. Local efficiency improvements that don't touch the bottleneck are waste.
+</Callout>
+
+## Variability: The Hidden Enemy
+
+Real processes don't run like clockwork. Service times vary, machines break down, suppliers deliver late, demand fluctuates. **Variability** degrades process performance in ways that pure capacity analysis misses.
+
+When variability is high, queues build up even when average capacity exceeds average demand. Imagine a single-server process where customers arrive randomly and service times vary. Even with average utilization of 80%, the average queue length can be substantial. Push utilization to 95%, and queues explode.
+
+This means that simply measuring average capacity versus average demand is not enough. High-variability processes need **buffer capacity** — slack built into the system specifically to absorb variability. The buffer can take three forms:
+
+1. **Inventory buffer**: stockpile inputs or outputs (works for goods, not services)
+2. **Capacity buffer**: keep some capacity in reserve (idle machines, cross-trained staff)
+3. **Time buffer**: ask customers to wait (acceptable in some contexts, not others)
+
+The choice of buffer type is a fundamental operations design decision.
+
+## Mapping a Process: From Description to Insight
+
+Process mapping is a skill you develop through practice. A few principles accelerate the learning curve.
+
+**Map what is, not what should be.** Many process mapping exercises drift into designing the ideal process before the current reality is understood. Fight this impulse. Understanding the current state — every handoff, every rework loop, every waiting step — is the prerequisite for intelligent improvement.
+
+**Follow a unit through the process.** Rather than interviewing department heads about their activities, physically trace the journey of an actual order, patient, or claim. You will find steps that nobody in any meeting ever mentions because they've become invisible to the people doing them.
+
+**Measure at each step.** The flow diagram becomes powerful when you annotate each activity with its processing time and the typical wait time before it. You'll almost always find that the actual work (value-added time) is a small fraction of the total flow time — often less than 10%.
+
+<Example title="Insurance Claim Processing">
+A health insurance company tracked a sample of 50 claims from receipt to payment. The actual processing work — data entry, medical review, approval — totaled about 3 hours of active effort. But the average claim took 18 days to close. The rest of the time was spent waiting: in queues between departments, pending information requests, awaiting batch processing runs that ran only twice a week. Making the process visible revealed that flow time could be cut by 70% without hiring a single additional person — just by eliminating the batch processing delays and reorganizing handoffs.
+</Example>
+
+## Process Architecture: Serial vs. Parallel
+
+Processes can be structured in different ways that have profound effects on throughput and flow time.
+
+**Serial processes** complete activities sequentially. Each unit moves from Step 1 to Step 2 to Step 3. Serial processes are simple to manage but vulnerable to bottlenecks — every step must finish before the next begins.
+
+**Parallel processes** run activities simultaneously. Clinical trials run treatment and control arms in parallel. Software teams build frontend and backend concurrently. Parallel design reduces flow time but requires careful coordination to merge the streams.
+
+**Pooling resources** — having one shared queue feed multiple servers rather than having dedicated queues for each server — almost always reduces average wait times. This is why most airlines now use a single queue for multiple check-in agents, and why call centers pool agents across product lines. The mathematics of queuing theory confirm that pooled systems use capacity more efficiently and produce shorter, more predictable waits.
+
+## Process Thinking Beyond Manufacturing
+
+Operations thinking is sometimes dismissed as relevant only to factories. This is a costly misconception.
+
+Every professional service is a process. A law firm processing a deal, a VC firm evaluating an investment, a consulting firm delivering a project — all have flow time, WIP, throughput, and bottlenecks. The same principles apply.
+
+Software development processes are particularly amenable to operations thinking. Agile and DevOps practices — sprint limits, WIP constraints, continuous integration — are direct applications of process thinking to knowledge work. The shift to measuring cycle time (time from code commit to production deployment) as a primary engineering metric is pure operations management.
+
+Healthcare has been transformed by process thinking. The application of flow analysis to emergency departments, operating room scheduling, and discharge processes has reduced costs and improved outcomes simultaneously — demonstrating that quality and efficiency are not always in tension.
+
+<Takeaways>
+- A process is any set of activities that transforms inputs into outputs; every organization is a network of processes.
+- The four key process metrics are throughput, flow time, WIP, and capacity.
+- Little's Law (WIP = Throughput × Flow Time) links these metrics and reveals improvement levers.
+- The bottleneck sets system throughput; optimizing non-bottleneck steps is waste.
+- Variability forces you to choose between inventory buffers, capacity buffers, or time buffers.
+- Map the current state before designing improvements — follow an actual unit through the process.
+- Process thinking applies equally to manufacturing, services, software, and healthcare.
+</Takeaways>

@@ -1,0 +1,134 @@
+---
+slug: financial-planning
+title: "Financial Planning: Modeling, Forecasting, and Working Capital"
+subject: finance
+order: 6
+summary: "Financial planning translates strategy into numbers — and understanding the mechanics of financial modeling gives managers the ability to stress-test assumptions before they become expensive mistakes."
+difficulty: advanced
+readTime: 13
+prerequisites:
+  - finance/financial-statements
+  - finance/capital-structure
+related:
+  - strategy/strategy-in-practice
+---
+
+## Why Financial Planning Matters
+
+Strategy without numbers is aspiration. A beautifully articulated plan to enter a new market, build a new capability, or acquire a competitor is incomplete until someone asks: what does this cost, when do we break even, how much cash do we need to fund it, and what happens to our balance sheet in the bad scenario?
+
+Financial planning — building models, forecasting performance, managing working capital, and stress-testing assumptions — is the bridge between strategic intent and operational reality. Done well, it surfaces assumptions early, quantifies risks, and creates shared understanding of what the business needs to perform. Done poorly, it generates false precision that creates overconfidence in plans that should be scrutinized.
+
+## The Three-Statement Model
+
+The foundation of financial planning is the integrated three-statement model: income statement, balance sheet, and cash flow statement, built to flow through consistently. Changes in the income statement affect the balance sheet; changes in the balance sheet affect the cash flow statement; all three must balance.
+
+Building a three-statement model teaches you how financial statements interconnect:
+
+- Net income flows to retained earnings on the balance sheet
+- Capital expenditures appear in investing activities on the cash flow statement and increase PP&E on the balance sheet
+- Depreciation is a non-cash charge on the income statement that reduces PP&E on the balance sheet and is added back in operating cash flows
+- Working capital changes (accounts receivable, inventory, accounts payable) sit between profit and cash — a growing business often consumes cash even as it earns profit
+
+The discipline of building integrated models reveals disconnects between what a strategy implies and what it requires. A growth plan that assumes rapid revenue growth while simultaneously improving margins and reducing capital requirements may be internally inconsistent — growth typically requires working capital investment, and capacity expansion requires capital expenditure.
+
+<Diagram>
+graph LR
+    A[Revenue Forecast] --> B[Income Statement]
+    B --> C[Net Income]
+    C --> D[Balance Sheet - Retained Earnings]
+    A --> E[Working Capital Changes]
+    E --> D
+    F[CapEx Plan] --> D
+    F --> G[Cash Flow Statement]
+    C --> G
+    E --> G
+    D --> H[Equity and Debt Financing Needs]
+    H --> G
+</Diagram>
+
+## Forecasting: Revenue as the Anchor
+
+Every financial model starts with revenue. Revenue is the primary driver of almost everything else: cost of goods sold (typically a percentage of revenue), operating expenses (some fixed, some variable), working capital (accounts receivable and inventory scale with revenue), and capital requirements (capacity needs to match sales volume).
+
+Revenue forecasting approaches:
+
+**Top-down**: Start with the market size, estimate your share, and derive revenue. Useful for new businesses and strategic planning but relies on market size estimates that are notoriously unreliable.
+
+**Bottom-up**: Build revenue from first principles — number of customers × average contract value, or number of units × average selling price. More grounded in operational realities and better for near-term forecasting.
+
+**Driver-based**: Identify the key operational drivers of revenue (store count × revenue per store, sales reps × quota × attainment) and forecast the drivers. This builds models that managers can actually influence and test.
+
+<Callout type="warning">
+Revenue forecasts are systematically optimistic. Studies of corporate earnings forecasts find that actual results consistently fall short of projections, with the gap widening as the forecast horizon extends. The psychological and organizational reasons are well-documented: anchoring to desired outcomes, career incentives to project growth, difficulty modeling competitive response, and natural uncertainty about customer behavior. Build downside scenarios, not just base cases.
+</Callout>
+
+## Scenario Analysis
+
+Single-point forecasts are almost certainly wrong. The purpose of a financial model isn't to predict the future accurately — it's to understand the relationship between inputs and outputs, so you can assess what matters most and prepare for a range of outcomes.
+
+**Scenario analysis** builds multiple complete views of the business under different assumptions. Three scenarios is the practical standard:
+
+- **Base case**: Most likely outcome given current information
+- **Upside case**: Plausible optimistic scenario — what if the market grows faster, or competitive position strengthens?
+- **Downside case**: Plausible adverse scenario — what if revenue comes in 20% below plan, or a key customer is lost?
+
+The downside case is the most important strategically. It answers: can we survive the bad outcome? Do we have enough cash to fund operations while we recover? What does the downside scenario require in terms of cost actions?
+
+**Sensitivity analysis** complements scenarios by testing how the output (typically NPV or break-even) changes with a single variable at a time. If a 10% change in revenue changes NPV by 50%, you have a highly revenue-sensitive business model — you should invest in revenue forecasting accuracy. If a 10% change in operating costs changes NPV by 5%, cost forecasting precision matters less.
+
+## Working Capital Management
+
+Working capital — current assets minus current liabilities — is often misunderstood because it sits between profitability and cash generation. A business can be profitable but cash-poor if it doesn't manage working capital well.
+
+The three key components:
+
+**Accounts receivable**: Cash owed to you by customers. Growing receivables ties up cash. If a company makes $100M in sales but hasn't collected the cash, the uncollected amount sits in working capital. Days Sales Outstanding (DSO = AR / Daily Revenue) measures how long it takes to collect. Reducing DSO by 10 days releases significant cash.
+
+**Inventory**: Goods held for sale or in production. Excess inventory ties up cash and creates risk of obsolescence. Days Inventory Outstanding (DIO = Inventory / Daily COGS) measures inventory efficiency. Toyota's just-in-time system was revolutionary partly because it dramatically reduced DIO.
+
+**Accounts payable**: Cash owed to suppliers. Extending payment terms increases AP and frees up cash. Days Payable Outstanding (DPO = AP / Daily COGS) measures this. Amazon uses its massive scale to negotiate extended payment terms from suppliers while collecting from customers immediately — creating a "negative cash conversion cycle" where it holds suppliers' money until long after customer collections.
+
+**Cash Conversion Cycle (CCC) = DSO + DIO - DPO**
+
+A shorter CCC means the business converts its investments in inventory and receivables to cash more quickly. Retail and consumer businesses with low CCC can fund growth from operations; manufacturers and distributors with long CCC need external financing to support growth.
+
+<Example title="Dell's Negative Cash Conversion Cycle">
+In the 1990s, Dell's build-to-order model created a remarkable cash dynamic. Dell collected payment from customers before building computers. Customers ordered and paid; then Dell ordered components; components arrived just in time for assembly; finished computers shipped. Dell had a negative cash conversion cycle of roughly -8 days — it held customer cash for 8 days on average before paying suppliers. As Dell grew, this model generated enormous cash — growth actually produced cash rather than consuming it. This funded massive expansion without external capital. The model worked because of Dell's specific combination of build-to-order (near-zero inventory), direct sales (immediate payment), and purchasing scale (extended supplier terms).
+</Example>
+
+## The CFO's Decision Framework
+
+At the CFO level, financial planning integrates into a capital allocation framework:
+
+1. **What does the business generate?** Free cash flow from operations is the baseline
+2. **What should we reinvest?** Projects with positive NPV above the hurdle rate
+3. **What do we need to maintain optionality?** Minimum cash balance for operations and strategic flexibility
+4. **What should we return to shareholders?** The remainder — through dividends or buybacks
+
+The CFO's job is to ensure that cash generated by the business flows to its highest-value use. This requires resisting the pressure to over-invest in low-return projects when competitive intensity makes reinvestment feel necessary, and resisting the pressure to return all capital when genuine high-return opportunities exist.
+
+Treasury management — the mechanics of maintaining liquidity, managing foreign exchange exposure, and optimizing the company's borrowing — is the operational layer that implements the CFO's capital allocation framework.
+
+## Building Models That Work
+
+Practical guidance for financial modeling:
+
+**Separate inputs from calculations**: Put all assumptions (growth rates, margins, tax rates) in clearly labeled input cells. Never hard-code assumptions into formula cells — it makes the model impossible to update and to audit.
+
+**Label everything**: Clear labels on every row and column. Include units (% of revenue, $M, days). A model that requires its builder to explain it verbally doesn't work.
+
+**Build in checks**: An integrated model must balance — assets equal liabilities plus equity at all times. Build a check cell that verifies this. If it fails, something is wrong.
+
+**Start simple**: Build the simplest model that answers the question. Add complexity only when it changes the answer. A five-line revenue model may capture 90% of the insight; a fifty-line model may not improve the decision quality.
+
+**Stress-test the assumptions**: Before presenting a model, vary each major assumption ±20% and check whether the conclusion changes. If the business case still works with significantly worse assumptions, the decision is robust.
+
+<Takeaways>
+- The three-statement model (income statement, balance sheet, cash flow) is the foundation — they must flow through consistently
+- Build driver-based forecasts from operational metrics that management controls, not just percentage growth assumptions
+- Revenue forecasts are systematically optimistic — always build a credible downside case and ensure the business can survive it
+- Working capital management directly affects cash generation: reducing DSO and DIO, extending DPO, shortens the cash conversion cycle
+- The negative cash conversion cycle (Dell, Amazon) is a structural cash advantage — collecting before you pay creates float that funds growth
+- Good models are transparent, simple, and stress-tested — complexity that doesn't change the decision is cost, not value
+</Takeaways>

@@ -1,0 +1,153 @@
+---
+slug: markets
+title: "How Markets Work: Supply, Demand, and Price Signals"
+subject: economics
+order: 1
+summary: "Markets coordinate billions of decisions through prices — understanding supply, demand, elasticity, and market structures is the foundation of business economics."
+difficulty: foundational
+readTime: 12
+related:
+  - strategy/five-forces
+  - marketing/pricing
+---
+
+## The Market as an Information Machine
+
+Every time you check a competitor's price, adjust your inventory, or decide whether to expand into a new region, you are participating in a market. Markets are not just places — they are mechanisms that aggregate the preferences and knowledge of millions of people into a single number: the price.
+
+Friedrich Hayek made this point powerfully in 1945: no central planner could ever collect and process the scattered, local knowledge that prices automatically encode. When a drought cuts the coffee harvest in Brazil, retail prices rise in Tokyo before any newspaper reports it. Buyers and sellers respond without needing to understand why. This is the market's genius — and understanding it makes you a better strategist, marketer, and operator.
+
+## Supply and Demand: The Core Model
+
+### Demand
+
+The demand curve shows how much of something buyers want at each price, holding everything else equal. It slopes downward because lower prices make a product accessible to more buyers and encourage existing buyers to consume more.
+
+What shifts the whole curve (not just movement along it)?
+- **Income** — richer consumers buy more of most things
+- **Prices of substitutes and complements** — Netflix rising in price shifts demand toward Disney+; lower iPhone prices shift demand for AirPods upward
+- **Tastes and expectations** — anticipating a price rise next week shifts demand forward
+
+### Supply
+
+The supply curve shows how much producers will offer at each price. It slopes upward because higher prices make marginal production profitable and attract new entrants.
+
+Shifts in supply come from:
+- **Input costs** — a spike in shipping rates shifts supply curves left (less offered at every price)
+- **Technology** — shale fracking shifted the global oil supply curve massively rightward
+- **Number of producers** — new entrants after a profitable period push supply right
+
+### Equilibrium
+
+The market clears where supply equals demand. At that price, every willing buyer finds a willing seller. Surpluses (excess supply) push prices down; shortages (excess demand) push prices up.
+
+<Callout type="insight">
+The equilibrium price is not "fair" in a moral sense — it is simply the price that balances the decisions of all participants. Rent control keeps prices below equilibrium and creates persistent housing shortages; price gouging laws during disasters prevent the price signal from attracting emergency suppliers.
+</Callout>
+
+<Diagram>
+graph LR
+  A[Price Falls] --> B[Quantity Demanded Rises]
+  A --> C[Quantity Supplied Falls]
+  D[Price Rises] --> E[Quantity Demanded Falls]
+  D --> F[Quantity Supplied Rises]
+  B --> G[Shortage → Price Rises]
+  C --> G
+  E --> H[Surplus → Price Falls]
+  F --> H
+</Diagram>
+
+## Elasticity: How Sensitive Are Buyers and Sellers?
+
+Knowing that demand slopes down is useful. Knowing *how steeply* it slopes is essential for pricing decisions.
+
+**Price elasticity of demand** measures the percentage change in quantity demanded for a 1% change in price.
+
+- **Elastic demand (|elasticity| > 1)**: quantity is sensitive to price. Consumers have good alternatives. Raising prices hurts revenue. Example: generic paper towels — shoppers switch to the store brand instantly.
+- **Inelastic demand (|elasticity| < 1)**: quantity is insensitive to price. Few substitutes, urgent need. Raising prices increases revenue. Example: insulin — diabetics have no good alternative.
+
+<Callout type="definition">
+**Price Elasticity of Demand** = (% change in quantity demanded) ÷ (% change in price). A value of −2 means a 10% price increase reduces quantity demanded by 20%.
+</Callout>
+
+What makes demand inelastic?
+1. **Few substitutes** — prescription drugs, utilities
+2. **Necessity** — housing, petrol in car-dependent regions
+3. **Small share of budget** — table salt (a massive price hike barely registers)
+4. **Switching costs** — ERP software baked into operations
+
+This is why pharmaceutical companies price aggressively before patent expiry, and why Amazon charges Prime members more than non-members for the same items — Prime members are sticky.
+
+<Example title="Uber Surge Pricing">
+Uber's surge pricing is a real-time market experiment. When demand spikes (New Year's Eve, a rainstorm), Uber raises prices. This does two things simultaneously: it reduces demand (some riders choose alternatives or delay) and increases supply (more drivers log on for the higher fares). The surge price is the equilibrium that clears the market. Riders complain, but without it, everyone would wait longer — supply and demand would be mismatched.
+</Example>
+
+## Market Structures: A Spectrum
+
+Not all markets behave the same way. The degree of competition shapes how much pricing power firms have.
+
+<Matrix2x2
+  xAxis={{ label: "Number of Sellers", low: "Few (Oligopoly/Monopoly)", high: "Many (Competition)" }}
+  yAxis={{ label: "Product Differentiation", low: "Homogeneous", high: "Differentiated" }}
+  quadrants={[
+    { label: "Pure Monopoly", position: "bottom-left", description: "One seller, homogeneous product. Full pricing power. Regulated utilities, patented drugs." },
+    { label: "Monopolistic Competition", position: "top-right", description: "Many sellers, differentiated products. Moderate pricing power. Restaurants, clothing brands." },
+    { label: "Commodity Oligopoly", position: "bottom-right", description: "Few sellers, similar products. Interdependent pricing. Airlines on busy routes, oil majors." },
+    { label: "Differentiated Oligopoly", position: "top-left", description: "Few sellers, distinct products. High pricing power. Smartphones (Apple/Samsung), search (Google)." }
+  ]}
+/>
+
+**Perfect competition** (the textbook extreme): many sellers, identical products, free entry. Firms are price-takers — they charge the market price or sell nothing. Commodity agricultural markets approximate this. Profit is competed away over time; firms earn only a normal return.
+
+**Monopoly**: one seller with no close substitutes. The monopolist can set price above marginal cost and earn sustained profit. But monopolies attract regulation and invite substitution over time (cable TV vs. streaming).
+
+**Oligopoly** is where most interesting strategic action lives. A handful of firms control most of the market. Each firm's decisions affect the others. Should United Airlines match Delta's fare cut? Should Samsung cut chip prices if Intel does? These are game-theoretic problems — covered in the next chapter.
+
+## Market Failures: When Markets Get It Wrong
+
+Markets are powerful but not infallible. Several systematic failures justify business strategy adjustments and government intervention.
+
+### Externalities
+
+An externality is a cost or benefit that falls on a third party not involved in the transaction. The market price ignores it.
+
+**Negative externality**: a factory pollutes a river. The factory's private costs don't include the harm to downstream fishermen. Result: the market produces too much of the polluting good at too low a price. Carbon taxes and cap-and-trade systems try to internalize this cost.
+
+**Positive externality**: a firm trains workers who then spread skills to other employers. The firm bears the full training cost but captures only part of the benefit. Result: the market underinvests in training. This is why government subsidizes education.
+
+For businesses, positive externalities explain why some investments — building supplier capabilities, improving local infrastructure, funding university research — create competitive advantages that pure profit maximization would never generate. They're a strategic rationale for "doing good."
+
+### Information Asymmetry
+
+George Akerlof's "market for lemons" showed how hidden information destroys markets. When sellers know more than buyers, buyers fear overpaying and bid lower. This drives out high-quality sellers, leaving only lemons — which confirms buyer fears. The market for used cars, health insurance, and financial advice all suffer from this dynamic.
+
+<Callout type="warning">
+Information asymmetry is not just an academic curiosity — it affects every B2B sale. Buyers who can't evaluate quality before purchase will discount your offering, even if it's excellent. Warranties, certifications, trials, and case studies are market-design responses: they credibly signal quality to reduce buyer uncertainty.
+</Callout>
+
+**Adverse selection** (pre-contract): insurance companies can't perfectly screen applicants, so sick people disproportionately buy health insurance, raising premiums, driving out healthy people, spiraling costs upward.
+
+**Moral hazard** (post-contract): once insured, people take more risks. Banks with government deposit insurance take more trading risks. Managers with golden parachutes accept riskier strategies. Incentive design — deductibles, clawbacks, co-pays — is the engineering response.
+
+### Public Goods and Common Resources
+
+**Public goods** are non-rival (my using it doesn't reduce your use) and non-excludable (can't stop free riders). National defense, basic research, and open-source software are examples. Private markets underprovide them because firms can't capture the full value.
+
+**Common resources** (the "tragedy of the commons"): fisheries, aquifers, congested roads. Rival but non-excludable. Everyone has an incentive to overuse; no one has an incentive to conserve. Without governance — property rights, quotas, fees — they're depleted.
+
+## What This Means for Business
+
+Understanding markets is not just theory — it is a practical diagnostic toolkit:
+
+1. **Where does your firm sit on the market structure spectrum?** The answer determines your pricing power, competitive dynamics, and long-run profit potential.
+2. **How elastic is your customers' demand?** Inelastic demand is a pricing superpower. Building switching costs, differentiation, and necessity into your product is the path to inelastic demand.
+3. **Are there externalities you can internalize?** ESG strategies that reduce negative externalities often anticipate future regulation and build license to operate.
+4. **What information asymmetry works for or against you?** Platforms live and die on trust mechanisms that solve adverse selection.
+
+<Takeaways>
+- Markets use price signals to coordinate supply and demand without central coordination — price changes carry information.
+- Elasticity determines whether a price increase raises or lowers revenue: inelastic demand means you can raise prices; elastic demand punishes it.
+- Market structure (competition → monopoly) is the primary determinant of long-run profitability — Porter's Five Forces is partly an applied market structure analysis.
+- Market failures — externalities, information asymmetry, public goods — create both business risks and strategic opportunities.
+- The most durable competitive advantages convert elastic demand into inelastic demand through switching costs, differentiation, and necessity.
+</Takeaways>

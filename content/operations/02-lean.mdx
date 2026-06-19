@@ -1,0 +1,127 @@
+---
+slug: lean
+title: "Lean Operations: Eliminating Waste, Delivering Value"
+subject: operations
+order: 2
+summary: "Lean thinking — born at Toyota — provides a systematic framework for identifying and eliminating waste to deliver more value with less effort."
+difficulty: intermediate
+readTime: 13
+prerequisites:
+  - operations/process-thinking
+related:
+  - operations/quality
+  - entrepreneurship/lean-startup
+---
+
+## The Toyota Insight
+
+In the 1950s, Taiichi Ohno, a Toyota engineer, visited Ford's River Rouge plant — the largest, most efficient manufacturing facility in the world. He returned to Japan not in awe but with a clear-eyed diagnosis: Ford's system was enormously efficient but deeply wasteful. It produced millions of identical cars in enormous batches, pushing inventory through the system regardless of demand, building up defects in the process, and investing massively in coordination overhead to manage the complexity this created.
+
+Ohno's insight was that the way to produce more was not to push harder but to eliminate the things that prevented work from flowing. The Toyota Production System (TPS) he built over the following three decades became the foundation of what we now call lean manufacturing — and eventually lean thinking, applied to every industry from healthcare to software development.
+
+The core idea: the customer pays for value, not for effort. Everything that doesn't add value is waste, and waste should be systematically eliminated.
+
+## The Seven Wastes (Muda)
+
+Ohno identified seven categories of waste that exist in virtually every production system. The Japanese word for waste — muda — became the universal term.
+
+**Overproduction**: Producing more than the customer needs, or producing before the customer needs it. Overproduction is the worst waste because it creates most of the others: inventory, transport, waiting. The antidote is pull systems — producing only what has been demanded.
+
+**Waiting**: Time when work is not being performed because of delays, approvals, machine downtime, or upstream problems. Every process has waiting embedded in it. In healthcare, patients wait to see doctors, wait for test results, wait for discharge paperwork. Mapping waiting time reveals how little of total cycle time is actual value-adding time.
+
+**Transport**: Moving materials or information unnecessarily. Every movement is a chance for damage, delay, or error. Factory layouts that require parts to travel long distances between operations incur transport waste. Document approval workflows that route through six departments for sign-off add transport waste.
+
+**Overprocessing**: Doing more work than the customer requires or values. Adding features no one asked for. Producing reports that no one reads. Running statistical analysis to more decimal places than the decision requires. Overprocessing wastes effort while sometimes degrading quality by adding complexity.
+
+**Inventory**: Excess materials, work-in-progress, or finished goods beyond what is immediately needed. Inventory is a liability — it consumes space, obscures quality problems, ties up capital, and eventually becomes obsolete. The goal is to minimize inventory throughout the system.
+
+**Motion**: Unnecessary movement of people. An assembly worker who walks 10 feet between operations when a 2-foot walk would suffice incurs motion waste over thousands of cycles. Ergonomic analysis and workspace redesign address motion waste.
+
+**Defects**: Products or services that don't meet customer requirements, requiring rework or replacement. Defects are expensive not just because of the rework cost but because they reveal process instability, consume management attention, and damage customer relationships.
+
+<Callout type="definition">
+Some lean practitioners add an **eighth waste: underutilized talent**. Organizations that don't leverage the knowledge and problem-solving capability of front-line workers waste the most valuable resource they have. Toyota's system explicitly relies on workers to identify and solve problems — management's job is to support that capability, not to make all the decisions.
+</Callout>
+
+## Value Stream Mapping
+
+Value stream mapping (VSM) is lean's primary diagnostic tool: a visual representation of every step in a process, with cycle times, wait times, and inventory levels annotated. The map distinguishes value-adding steps (operations that transform the product toward what the customer wants) from non-value-adding steps (everything else).
+
+A typical VSM reveals two shocking facts. First, in most industrial processes, value-adding time is less than 5% of total lead time. A part that moves through a factory in 10 days is actually being worked on for 3 hours — the rest is waiting, moving, and sitting in queues. Second, the improvement opportunities are almost entirely in the non-value-adding steps, not the value-adding ones.
+
+The process for VSM:
+1. Define the product family or value stream to map
+2. Draw the current state map (what actually happens now)
+3. Identify improvement opportunities (usually obvious once the current state is visible)
+4. Design the future state map (what the process should look like)
+5. Implement changes to close the gap
+
+The power of mapping: it creates shared understanding of the process that individual functional perspective can't. The person responsible for shipping doesn't see the production delays; the person responsible for production doesn't see the receiving problems. The map makes the system visible to everyone simultaneously.
+
+<Diagram>
+graph LR
+    A[Customer Order] --> B[Order Processing]
+    B --> C[Wait]
+    C --> D[Production Planning]
+    D --> E[Wait]
+    E --> F[Procurement]
+    F --> G[Wait - Inventory]
+    G --> H[Manufacturing]
+    H --> I[Wait - WIP]
+    I --> J[Quality Check]
+    J --> K[Wait]
+    K --> L[Shipping]
+    L --> M[Customer]
+    style C fill:#ffcccc
+    style E fill:#ffcccc
+    style G fill:#ffcccc
+    style I fill:#ffcccc
+    style K fill:#ffcccc
+</Diagram>
+
+## Pull vs. Push Systems
+
+Traditional manufacturing is push-based: production schedules are set in advance, work is pushed through the system according to plan, and inventory accumulates between operations to buffer against variability. Push systems are efficient when demand is predictable and stable, but they create enormous waste when demand is variable or uncertain.
+
+Lean uses pull systems: downstream operations signal upstream operations when they need material. The production trigger is actual customer demand, not a forecast. Work is pulled through the system as needed rather than pushed through according to schedule.
+
+The practical implementation is the **kanban** (signboard) system: a visual signal — originally a card attached to a container — that authorizes production of a specific quantity when the downstream inventory reaches a trigger level. Nothing is produced without a kanban signal; production is directly controlled by actual consumption.
+
+Pull systems reduce work-in-progress inventory dramatically, expose problems that were previously hidden by buffer stock, and make customer demand directly visible throughout the process.
+
+## Continuous Improvement: Kaizen
+
+The word **kaizen** — improvement — combines the characters for "change" and "good." In practice, kaizen means continuous improvement: the organizational habit of constantly looking for small ways to eliminate waste and improve flow.
+
+Kaizen works differently at different scales:
+
+- **Daily kaizen**: Front-line workers making small improvements to their immediate work. Toyota's workers submit millions of improvement suggestions annually; most are minor, but collectively they constitute an enormous improvement program.
+
+- **Kaizen events (blitzes)**: A cross-functional team dedicates 3-5 days to intensively improving a specific process. The compressed time frame creates urgency and momentum; the cross-functional team avoids the functional siloing that allows waste to persist.
+
+- **Kaikaku**: Radical redesign, as opposed to incremental improvement. Sometimes the current process is so fundamentally flawed that incremental improvement won't get to where you need to be — a complete redesign is required.
+
+The organizational culture required for kaizen is psychologically safe: problems must be surfaced, not hidden. Toyota's famous **andon cord** — which any worker can pull to stop the production line when they identify a problem — symbolizes this. When a line stops, it's a signal for improvement, not punishment. Organizations where problems are hidden to protect careers have killed the feedback loop that makes improvement possible.
+
+## Lean Beyond Manufacturing
+
+Lean thinking has migrated extensively from manufacturing into services, healthcare, and knowledge work — sometimes productively, sometimes with ill-fitting application.
+
+In **healthcare**, lean has generated significant improvements in patient flow, medication error reduction, and cost management. Virginia Mason Medical Center's adoption of TPS in the 2000s became a landmark case: they applied lean tools to patient throughput, dramatically reducing wait times and eliminating a significant proportion of wasted effort from the clinical workflow.
+
+In **software development**, lean concepts heavily influenced Agile methods. Eliminating work-in-progress (smaller batches, smaller releases), creating pull systems (work pulled by capacity, not pushed by schedule), and continuous improvement (retrospectives) all have lean roots.
+
+The application requires judgment about what translates and what doesn't. Knowledge work is harder to map than physical processes. Creative work has different waste characteristics than repetitive manufacturing. The principles (eliminate waste, create flow, respect people) are universal; the specific tools need adaptation.
+
+<Example title="Lean in the Emergency Department">
+Denver Health's application of lean to its emergency department produced striking results. By mapping the patient flow from arrival to discharge — including every step, wait, and handoff — they identified that patients spent the majority of their time waiting for something rather than receiving care. They reorganized the department around patient flow rather than functional specialization, cross-trained staff to handle multiple roles to reduce handoffs, and used visual management tools to make delays visible in real time. Patient length-of-stay decreased by 40 minutes on average, patient satisfaction scores improved significantly, and the department handled more patients with the same staff. The lean principles worked because the problems were identical to manufacturing: excessive handoffs, waiting, and overprocessing — just with different content.
+</Example>
+
+<Takeaways>
+- Lean's core insight: the customer pays for value; everything else is waste that should be systematically eliminated
+- The seven wastes (muda): overproduction, waiting, transport, overprocessing, inventory, motion, defects — find them through value stream mapping
+- Value stream mapping reveals that value-adding time is typically less than 5% of total cycle time — the improvement potential is vast
+- Pull systems (kanban) replace forecast-driven push: work is produced when downstream demand signals it, reducing inventory and exposing problems
+- Kaizen — continuous improvement — is a cultural practice, not a project: problems must be surfaced, not hidden, for improvement to happen
+- Lean principles (eliminate waste, create flow, respect people) translate to services and knowledge work, but the specific tools need contextual adaptation
+</Takeaways>

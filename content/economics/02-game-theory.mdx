@@ -1,0 +1,105 @@
+---
+slug: game-theory
+title: "Game Theory: Strategic Interaction and Competitive Logic"
+subject: economics
+order: 2
+summary: "Game theory formalizes how rational actors should behave when their outcomes depend on what others do — providing a rigorous framework for competitive strategy, negotiation, and cooperation."
+difficulty: intermediate
+readTime: 13
+related:
+  - strategy/competitive-advantage
+  - economics/behavioral-economics
+---
+
+## When Your Outcome Depends on Others
+
+Standard economic analysis treats decisions in isolation: maximize your objective given your constraints. Game theory enters when the constraints themselves depend on what other people decide. A drug company deciding whether to invest in R&D cares not just about the drug's clinical potential but about whether a competitor is making the same investment. A firm deciding whether to cut prices must anticipate how rivals will respond. A negotiator deciding what to offer must model what the other side will accept and what alternatives they have.
+
+The word "game" is misleading — game theory is not about trivial situations. It was developed to analyze nuclear deterrence, trade policy, and market competition, and its insights apply to any situation where outcomes are interdependent.
+
+## The Basic Framework
+
+A game has three elements:
+- **Players**: The decision-makers (firms, countries, individuals)
+- **Strategies**: The possible choices available to each player
+- **Payoffs**: The outcomes each player receives for each combination of strategies
+
+A payoff matrix displays these elements. The famous **Prisoner's Dilemma** is the canonical example:
+
+Two suspects are separately offered the same deal: cooperate with the other (stay silent) or defect (testify against the other). If both cooperate, each gets 1 year in prison. If both defect, each gets 3 years. If one defects and the other cooperates, the defector goes free and the cooperator gets 5 years.
+
+The dilemma: each player, reasoning individually, chooses to defect regardless of what the other does. If the other cooperates, defecting is better (0 years vs. 1 year). If the other defects, defecting is still better (3 years vs. 5 years). Defecting is the **dominant strategy** — the best choice regardless of what the opponent does. But when both players follow their dominant strategy, they both get 3 years — worse than the 1 year they'd each get if both cooperated. Individual rationality produces collectively suboptimal outcomes.
+
+<Callout type="definition">
+**Nash Equilibrium** (named for mathematician John Nash) is a set of strategies where no player can improve their outcome by unilaterally changing their strategy, given what the other players are doing. In the Prisoner's Dilemma, both defecting is a Nash Equilibrium — neither player gains by switching to cooperation if the other is defecting. Nash Equilibria are not necessarily good outcomes (the Prisoner's Dilemma Nash Equilibrium is worse than both cooperating), just stable ones.
+</Callout>
+
+## Applications to Business Competition
+
+**Price competition (the Bertrand Paradox)**: If two firms compete on price with identical products, each has an incentive to undercut the other's price to capture the market. The Nash Equilibrium: both price at marginal cost, earning zero economic profit. This is the Bertrand Paradox — with just two competitors, price competition produces the same outcome as perfect competition. The real-world implication: undifferentiated industries with price-competing firms face brutal margin erosion.
+
+**Capacity competition (Cournot equilibrium)**: If firms compete on quantity rather than price, the equilibrium is less extreme — firms produce positive quantities and earn positive profits, but less than they would earn as a monopoly. Adding capacity is profitable until the industry reaches the Cournot equilibrium. Airlines in the 1980s-90s provide a classic example: each airline added capacity because it increased that airline's market share, but collectively the industry had chronic overcapacity and near-zero returns.
+
+**Product differentiation**: The antidote to Bertrand competition is differentiation. When products aren't identical, firms can sustain price premiums — the Nash Equilibrium is no longer at marginal cost pricing. This provides a clean economic rationale for the strategic value of differentiation.
+
+<Diagram>
+graph TD
+    A[Player 1 Defects] --> C[Both Defect: 3 years each]
+    A --> D[P1 Defects, P2 Cooperates: P1 = 0, P2 = 5]
+    B[Player 1 Cooperates] --> E[Both Cooperate: 1 year each]
+    B --> F[P1 Cooperates, P2 Defects: P1 = 5, P2 = 0]
+    style C fill:#ffcccc
+    style E fill:#ccffcc
+</Diagram>
+
+## Sequential Games and First-Mover Advantage
+
+The games above are simultaneous — players move at the same time without observing the other's choice. Many competitive situations are sequential — one player moves first, and the second observes the first move before deciding.
+
+Sequential games are analyzed using **backward induction**: reason from the end to the beginning. What will the second player do given each possible first player action? Given what the second player will do, what should the first player do?
+
+**First-mover advantage**: In some sequential games, moving first is advantageous. The Stackelberg model of quantity competition shows that the first mover produces more and earns higher profit than the follower. In real markets, being first to build capacity, secure a key supplier relationship, or establish a technology standard can confer advantages that the follower can't fully overcome.
+
+**First-mover disadvantage**: In other situations, moving first is costly — you reveal information, commit resources, and allow the follower to respond optimally. In technology markets, being second (and learning from the first mover's mistakes) is sometimes better than being first. Microsoft was not first in search, social networks, or smartphones but successfully followed the market in many categories.
+
+## Repeated Games and Cooperation
+
+The Prisoner's Dilemma result — mutual defection — applies to one-shot interactions. In **repeated games** — where the same players interact over time — cooperation becomes possible.
+
+Robert Axelrod's famous tournament demonstrated this experimentally. He invited game theorists to submit strategies for a repeated Prisoner's Dilemma tournament. The winning strategy was the simplest one submitted: **Tit-for-Tat** — cooperate on the first move, then do whatever the opponent did last time. Tit-for-Tat outperformed all more sophisticated strategies across the tournament.
+
+The intuitions behind Tit-for-Tat and repeated game cooperation:
+- **Reciprocity**: Reward cooperation, punish defection
+- **Forgiveness**: After retaliating, return to cooperation rather than escalating indefinitely
+- **Clarity**: Make your strategy transparent so the other party can predict it
+
+In business, repeated game logic explains why long-term relationships are more cooperative than one-off transactions: the shadow of future interactions disciplines current behavior. Suppliers treat their regular customers better than spot-market buyers. Oligopolists sustain implicit price coordination that would break down immediately in one-shot competition.
+
+**The folk theorem** proves formally that in infinitely repeated games, virtually any outcome — including full cooperation — can be sustained as an equilibrium if players care sufficiently about the future. The discount rate matters enormously: players who heavily discount future payoffs (short time horizons) behave more like one-shot game players and cooperate less.
+
+<Example title="Airline Pricing Signaling">
+Major airlines don't set prices in a vacuum — they observe each other's prices in real time and respond. This creates a repeated game dynamic. When an airline wants to test whether a price increase will stick, it raises prices on a small number of routes. If competitors match the increase, it holds. If competitors don't match, the initiating airline reverses within days. The result is a signaling game: airlines communicate pricing intentions and gauge industry response before committing. This is legal (airlines can't explicitly coordinate prices, but observing and responding to public prices is allowed) and creates a form of tacit coordination that's more cooperative than pure Bertrand competition would produce.
+</Example>
+
+## Signaling and Information Asymmetry
+
+Many strategic situations involve asymmetric information — one party knows something the other doesn't. **Signaling games** analyze how the informed party can credibly communicate private information.
+
+A classic example: how does a high-ability job candidate credibly signal their quality to an employer who can't directly observe ability? Michael Spence's Nobel Prize-winning work showed that education can function as a signal even if it adds no productive skills — simply because it's more costly for low-ability candidates to obtain. The high-ability candidate gets the education not for the skills but for the signal, because the cost difference makes it a credible commitment.
+
+The **key insight**: signals are credible only when they're costly to send and more costly to send for low-quality actors. A warranty credibly signals product quality because low-quality manufacturers can't afford to honor it. A startup taking equity rather than salary credibly signals founders' confidence in the company because they bear the cost if it fails. A retailer accepting product returns credibly signals quality because returns are expensive.
+
+## Auction Theory and Bidding Strategy
+
+Auctions are a specific class of game with well-developed theory. The winner's curse is the most important practical result: in a common-value auction (where the item has the same value to all bidders, but nobody knows what that value is), the highest bidder tends to be the one who overestimated the value most. Winning the auction is evidence that you bid more than everyone else — which is evidence that you overestimated.
+
+The winner's curse applies beyond formal auctions. Acquiring companies frequently overpay in competitive M&A processes — the winning bidder tends to be the most optimistic. Winning competitive contracts tends to produce below-average margins for the same reason. The discipline of anchoring your bid to the realistic value rather than your optimistic estimate, and being willing to lose rather than win at the wrong price, is the operational implication.
+
+<Takeaways>
+- Game theory analyzes strategic situations where your outcomes depend on others' decisions — players, strategies, and payoffs are the three elements
+- Nash Equilibrium: no player can improve by unilaterally changing strategy — it's stable but not necessarily good (see: Prisoner's Dilemma)
+- Dominant strategies eliminate the need to model opponents — if you have one, use it; if opponent has one, assume they will
+- Repeated games enable cooperation: Tit-for-Tat demonstrates that reciprocity, forgiveness, and clarity sustain cooperative equilibria
+- First-mover advantage exists in some games (Stackelberg quantity competition) but not others — the structure of the game determines which
+- Signals are credible only when they're costly to send — education, warranties, equity stakes all work because they're expensive for low-quality actors to mimic
+</Takeaways>

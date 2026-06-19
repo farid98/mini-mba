@@ -1,0 +1,126 @@
+---
+slug: organizational-design
+title: "Organizational Design: Structure, Systems, and Conway's Law"
+subject: leadership
+order: 4
+summary: "Organizational structure is strategy made visible — the way you organize determines what decisions get made, how fast, and by whom."
+difficulty: intermediate
+readTime: 13
+prerequisites:
+  - leadership/teams
+related:
+  - strategy/corporate-strategy
+  - leadership/culture
+---
+
+## Structure Is Not Bureaucracy
+
+When managers talk about organizational design, they often treat it as a drag — the bureaucracy that slows things down, the org chart politics that create friction, the committee structures that diffuse accountability. This framing misses the point.
+
+Organizational structure is the encoding of choices about how decisions get made, who is accountable for what, how information flows, and how the organization coordinates. A company with no structure doesn't have less politics — it has more, because everything is contested implicitly rather than resolved explicitly. The question isn't whether to have structure but what kind, and whether it's aligned with the strategy.
+
+The right organizational structure enables your strategy. The wrong structure fights it every day.
+
+## The Basic Structural Archetypes
+
+Organizations can be structured in a few fundamental ways, each with different strengths and weaknesses.
+
+**Functional structure**: Organized around functional expertise — sales, marketing, engineering, finance, operations, HR. Each function reports up through functional leadership to the CEO.
+
+*Strengths*: Deep expertise development within functions, economies of scale (one large engineering organization rather than many small ones), clear career paths within functions, ease of standardizing practices across the company.
+
+*Weaknesses*: Poor cross-functional coordination — product decisions require sales, engineering, marketing, and operations to agree, which requires escalation and creates delays. Incentive misalignment — functional leaders optimize for their function's metrics, which may conflict with overall company performance. Slow to respond to market-specific or product-specific needs.
+
+Best for: Single-product companies with stable environments, or very large companies with highly specialized functions.
+
+**Divisional structure**: Organized around products, geographies, or customer segments. Each division has its own functional capabilities (its own marketing, sales, engineering, etc.) and operates with significant autonomy. GE under Jack Welch was the archetype — dozens of business units, each running largely independently.
+
+*Strengths*: Clear P&L accountability, fast response to divisional market conditions, reduced coordination burden across divisions.
+
+*Weaknesses*: Duplication of functional capabilities across divisions, reduced economies of scale, potential for internal competition that doesn't serve the enterprise, difficulty sharing learning across divisions.
+
+Best for: Diversified companies with meaningfully different businesses, or companies with strong geographic differentiation.
+
+**Matrix structure**: Employees have two reporting relationships — a functional manager and a product/business/project manager. The engineer reports to both the VP of Engineering (functional) and the Product Manager for their squad (project/product).
+
+*Strengths*: Combines the expertise depth of functional structure with the market focus of divisional structure. Flexible allocation of resources.
+
+*Weaknesses*: Dual reporting creates ambiguity — whose priorities win? Political dynamics intensify because managers at the intersection must constantly negotiate. Accountability is diffused. Decision velocity suffers.
+
+Best for: Specific situations requiring both deep expertise and cross-functional integration. Often fails when implemented company-wide.
+
+<Callout type="warning">
+Matrix organizations tend toward highest-paid-person's-opinion (HiPPO) decision-making because ambiguous accountability means real decisions escalate to whoever has the most power. If you implement a matrix, ensure clear decision rights at every level — otherwise you've created structure without accountability, which is worse than no structure.
+</Callout>
+
+## Conway's Law
+
+Mel Conway observed in 1967 that "organizations which design systems are constrained to produce designs which are copies of the communication structures of those organizations." This is Conway's Law, and it applies far beyond software systems.
+
+In practical terms: your organizational structure determines your product architecture, your process design, and your strategic options. Amazon's two-pizza team structure (teams small enough to be fed by two pizzas) was explicitly designed to create independently deployable software services — the organizational structure generated an architectural structure (microservices) that would have been impossible in a more integrated functional organization.
+
+The implication for organizational design: if you want a modular product, build a modular organization. If you want integrated products, build an organization with strong integrating mechanisms. Misalignment between organizational structure and product or strategic requirements creates persistent friction that no amount of process improvement can fix.
+
+Spotify's "squad model" (small autonomous teams with end-to-end ownership of specific features) became famous partly because it aligned organizational structure (autonomous squads) with product architecture (modular features) and business strategy (rapid iteration). The organizational design was a strategic choice, not just an HR decision.
+
+## Centralization vs. Decentralization
+
+One of the most consequential design dimensions is how centralized decision-making should be. Centralization concentrates authority at the top; decentralization pushes it toward the front lines.
+
+The case for centralization:
+- Ensures consistency of standards, brand, and customer experience
+- Captures economies of scale in shared services
+- Enables integrated decision-making on complex trade-offs
+- Reduces the risk of locally rational but globally suboptimal decisions
+
+The case for decentralization:
+- Faster response to local conditions — the person closest to the information makes the decision
+- Higher engagement of local employees who have genuine authority
+- Develops decision-making capability broadly
+- Reduces bottlenecks at the center
+
+The right answer depends on several factors: How much does context vary across the organization (if a hospital system has dramatically different local needs, decentralize)? How much do decisions interact (if decisions in one unit significantly affect others, centralize)? How good is the judgment at the center vs. the front lines? How fast does the environment change?
+
+<Diagram>
+graph TD
+    A[Decision to Make] --> B[High local context?]
+    B -->|Yes| C[Significant spillovers?]
+    B -->|No| D[Centralize]
+    C -->|Yes| E[Hybrid with clear rules]
+    C -->|No| F[Decentralize]
+</Diagram>
+
+## Spans of Control and Layers
+
+**Span of control** is how many direct reports a manager has. Wide spans (8-15 reports) create flatter organizations; narrow spans (3-5 reports) create taller ones. The right span depends on:
+
+- Task complexity: Complex, novel work requires more manager involvement and favors narrow spans
+- Employee experience: Highly experienced, autonomous employees need less management, favoring wider spans
+- Work interdependency: If employees' work is highly interdependent, the manager needs more coordination capacity, favoring narrow spans
+
+Layers of hierarchy add communication delay and distortion. Each layer filters information going up (shielding senior leaders from bad news) and translates instructions going down (introducing drift from original intent). Jack Welch's effort to remove layers at GE — reducing from 9-11 layers to 4-5 — was explicitly about improving information velocity.
+
+The general trend in modern organizations is toward wider spans and fewer layers, particularly in knowledge work environments where the coordination cost of deep hierarchies is high.
+
+## The Role of Systems and Processes
+
+Formal structure is only part of organizational design. The systems and processes that run alongside the structure — planning cycles, resource allocation processes, performance review processes, information systems — equally shape how the organization functions.
+
+**Planning systems** determine how strategy translates into resource allocation. Does the company plan top-down (strategy set by leadership, cascaded down) or bottom-up (proposals from business units, aggregated and adjudicated at the center)? The planning system encodes power and information flow.
+
+**Metrics and accountability systems** determine what gets measured and what gets rewarded. Organizations do what they measure. Amazon's obsessive focus on specific metrics (customer satisfaction scores, defect rates, cost per unit) creates alignment around operational execution that structural design alone can't achieve.
+
+**Information systems** determine who knows what when. Flat information flows — where everyone has access to the same information simultaneously — create different organizational dynamics than hierarchical flows where information is a form of power.
+
+<Example title="Amazon's Two-Pizza Teams">
+Jeff Bezos's two-pizza team principle — if a team can't be fed by two pizzas, it's too big — was not an HR policy but a system design principle. Small teams have lower coordination costs, clearer accountability, and faster decision cycles. But the principle only worked because it was paired with other design choices: strong API contracts between teams (so teams could be independent), clear P&L ownership (so teams could be accountable), and common infrastructure services (so teams didn't reinvent wheels). The organizational design was a system of reinforcing choices, not a single rule about team size.
+</Example>
+
+<Takeaways>
+- Structure encodes choices about decision rights, accountability, information flow, and coordination — it's strategy made visible
+- Functional structures optimize expertise depth; divisional structures optimize market responsiveness; matrix structures attempt both and often achieve neither cleanly
+- Conway's Law: organizational structure produces product and process architectures that mirror it — align your org design with your product and strategic architecture
+- Centralization suits consistency, integrated decisions, and economy of scale; decentralization suits local responsiveness, speed, and employee development
+- Wider spans, fewer layers improve information velocity in knowledge work environments — deep hierarchies distort and delay
+- Formal structure only works with aligned systems: planning, metrics, information, and accountability systems must reinforce the structural choices
+</Takeaways>

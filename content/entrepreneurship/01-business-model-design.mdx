@@ -1,0 +1,127 @@
+---
+slug: business-model-design
+title: "Business Model Design"
+subject: entrepreneurship
+order: 1
+summary: "A great idea is worth nothing without a business model — learn how to design the system that turns insight into a sustainable, scalable business."
+difficulty: foundational
+readTime: 12
+related:
+  - strategy/strategic-positioning
+  - marketing/go-to-market
+---
+
+## The Idea Is the Easy Part
+
+Everyone has ideas. The graveyard of failed startups is not full of bad ideas — it's full of good ideas with broken business models. Friendster had the social networking idea before Facebook. Webvan had online grocery delivery before Instacart. Xerox PARC invented the graphical user interface before Apple. The idea wasn't the problem. The business model was.
+
+A business model is the logic of how an organization creates, delivers, and captures value. It answers three questions: What do you make or do? For whom? And how do you make money doing it? These questions sound simple, but working through them rigorously is one of the hardest things in business.
+
+<Callout type="definition">
+A **business model** describes how an organization creates value for customers, delivers it to them, and extracts a portion of that value as profit. It is the architecture of revenue, costs, and relationships that makes a business viable.
+</Callout>
+
+## The Business Model Canvas
+
+The most useful framework for mapping a business model is the Business Model Canvas, developed by Alex Osterwalder. It breaks the model into nine building blocks arranged on a single page, so you can see the whole system at once.
+
+<Diagram>
+graph LR
+  KP[Key Partners] --> KA[Key Activities]
+  KR[Key Resources] --> KA
+  KA --> VP[Value Proposition]
+  VP --> CR[Customer Relationships]
+  VP --> CH[Channels]
+  CR --> CS[Customer Segments]
+  CH --> CS
+  KP --> CS2[Cost Structure]
+  KA --> CS2
+  KR --> CS2
+  CS --> RS[Revenue Streams]
+</Diagram>
+
+The left side of the canvas represents the **operational** side: what you do, what you need to do it, and who helps you. The right side represents the **market** side: who you serve, how you reach them, and how you relate to them. The value proposition sits in the middle — it's the bridge between operations and market.
+
+The canvas forces you to make your assumptions explicit. Most early-stage founders have a vivid mental model of the right side (customers, channels) but haven't thought hard about the left (key activities, resources, partners). Mapping both surfaces the gaps.
+
+## The Value Proposition: The Heart of the Model
+
+A value proposition is not a product description. It is a statement of the specific benefit you deliver to a specific customer segment, and why you deliver it better than alternatives.
+
+Netflix's value proposition in 2007 wasn't "we mail DVDs" — Blockbuster did that too. It was "watch what you want, when you want, without late fees." Every word does work: *what you want* (selection), *when you want* (convenience), *without late fees* (relief from a specific pain). The value proposition named the enemy.
+
+A sharp value proposition answers: What job is the customer trying to get done? What pain are they experiencing? What gain do they want? (This is the Jobs-to-be-Done framing from Clayton Christensen, which we'll cover in depth in the disruption chapter.) When you can articulate the job better than the customer can, you're close to something real.
+
+<Callout type="insight">
+The best value propositions are pull, not push. They describe a world the customer wants to live in, not features you want to sell. Slack's early pitch wasn't "team messaging software" — it was "be less busy." The product was the means; the promise was the value proposition.
+</Callout>
+
+## Revenue Models: How You Actually Get Paid
+
+Getting the revenue model right is distinct from getting the value proposition right. Many startups nail the value proposition but choose the wrong revenue model and die. Here are the most important archetypes:
+
+**Transaction revenue**: charge per transaction. Simple, scales with usage. Risk: customers are price-sensitive on each transaction. Example: Stripe takes 2.9% + 30¢ per payment processed.
+
+**Subscription revenue**: charge a recurring fee for ongoing access. Predictable, creates switching costs, enables LTV compounding. Risk: churn kills you. Example: Salesforce, Spotify, most SaaS companies.
+
+**Marketplace/take rate**: connect buyers and sellers, take a percentage of each transaction. High leverage — you don't hold inventory or supply. Risk: liquidity problem (need both sides). Example: Airbnb (3% from hosts, 14% from guests), eBay, Etsy.
+
+**Freemium**: free tier acquires users, paid tier captures value. Requires genuine upgrade motivation. Risk: most users never convert. Example: Dropbox (2GB free, pay for more), LinkedIn.
+
+**Advertising**: free to users, sell their attention to advertisers. Requires massive scale. Risk: misaligned incentives, vulnerable to ad market cycles. Example: Google Search, Meta, YouTube.
+
+**Licensing**: sell rights to use IP, software, or a brand. High margin once IP exists. Risk: enforcement, copying. Example: Qualcomm, ARM Holdings.
+
+The revenue model shapes your entire operational strategy. A subscription business obsesses over churn and expansion revenue. A marketplace obsesses over liquidity and take rate. A transaction business obsesses over volume and conversion rates. Choose wrong and you'll be optimizing for the wrong thing.
+
+<Example title="Spotify vs. the music industry">
+When Spotify launched in 2008, the music industry's logic was "charge per song" (iTunes) or "charge per album." Spotify flipped to a subscription model and changed what consumers compared. Instead of "is this song worth $1.29?", consumers asked "is unlimited music worth $9.99/month?" The answer was obviously yes. Spotify's revenue model — not its technology — disrupted a two-decade-old transaction model. The music labels hated it; the consumers loved it; it worked.
+</Example>
+
+## Unit Economics: The Math That Matters
+
+A business model isn't just a narrative — it has to work as arithmetic. The two most important unit economics are **Customer Acquisition Cost (CAC)** and **Lifetime Value (LTV)**.
+
+**CAC** is what you spend, on average, to acquire one customer. If you spend $100,000 on marketing in a month and acquire 500 customers, your CAC is $200.
+
+**LTV** is the net revenue you expect to earn from a customer over their entire relationship with you. For a subscription business: LTV ≈ Average Revenue Per User / Monthly Churn Rate.
+
+The LTV:CAC ratio tells you whether your business model makes economic sense. A healthy SaaS business typically targets LTV:CAC > 3. If LTV:CAC is below 1, you're paying more to acquire customers than they'll ever give back — you can't grow your way out of that.
+
+<Callout type="warning">
+Many founders confuse revenue with unit economics. A business can be growing fast and still have fatal unit economics — every new customer makes the losses worse. WeWork raised $12B and was losing thousands of dollars per customer per month. Scale made the problem bigger, not smaller. Know your unit economics before you scale.
+</Callout>
+
+## Business Model Archetypes
+
+Beyond revenue models, there are recognizable business model archetypes — structural patterns that appear across industries:
+
+<Matrix2x2
+  xAxis={{ label: "Value chain position", low: "Narrow (specialist)", high: "Broad (integrator)" }}
+  yAxis={{ label: "Customer relationship", low: "Transactional", high: "Recurring" }}
+  quadrants={[
+    { label: "Product seller", position: "bottom-left", description: "Single-use product sold once. High margin per unit, no ongoing relationship. Example: consumer goods, hardware." },
+    { label: "Platform / ecosystem", position: "bottom-right", description: "Broad, but relationship resets each transaction. Marketplace model. Example: eBay, Craigslist." },
+    { label: "Niche SaaS", position: "top-left", description: "Deep specialist capability, delivered as subscription. Example: Figma (design tools), Calendly." },
+    { label: "Integrated solution", position: "top-right", description: "Full-stack delivery with recurring relationship. Example: Salesforce, Apple, Adobe Creative Cloud." }
+  ]}
+/>
+
+Knowing which archetype you're building tells you what capabilities matter most, what metrics to watch, and what competitive moats you can build.
+
+## The Business Model Is a Hypothesis
+
+Here's the critical mindset shift: your business model at founding is not a plan — it is a set of hypotheses. Every box on the Business Model Canvas represents an assumption that could be wrong. The most dangerous assumption is the one you forgot to question.
+
+Airbnb's founding team assumed travelers would rent a stranger's spare room. That was a genuinely uncertain hypothesis in 2008. They had to test it before scaling. They started by literally renting out air mattresses in their own apartment. The test confirmed the hypothesis; they invested in the model.
+
+This is what the Lean Startup methodology (covered in the next chapter) operationalizes: a structured process for testing business model hypotheses before you've spent your entire runway betting on them.
+
+<Takeaways>
+- A business model defines how you create, deliver, and capture value — the idea alone is not a business.
+- The Business Model Canvas maps nine interconnected building blocks; weaknesses on the left side (operations) often kill companies whose right side (market) looks strong.
+- The value proposition must articulate the specific job being done for a specific customer, not just product features.
+- Revenue model choice (subscription vs. transaction vs. marketplace) determines what you optimize for — choose it deliberately.
+- Unit economics (LTV:CAC) reveal whether the business model works mathematically; revenue growth without positive unit economics is a liability, not an asset.
+- Treat your business model as a set of hypotheses to be tested, not a fixed plan to be executed.
+</Takeaways>

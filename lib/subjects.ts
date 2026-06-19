@@ -1,0 +1,60 @@
+import type { Subject } from '@/types/content'
+
+export const SUBJECTS: Omit<Subject, 'chapters'>[] = [
+  {
+    slug: 'strategy',
+    title: 'Strategy',
+    order: 1,
+    color: '#1a4d8a',
+    colorBg: '#eef3fb',
+    description: 'How firms create and sustain competitive advantage in their industries.',
+  },
+  {
+    slug: 'finance',
+    title: 'Finance',
+    order: 2,
+    color: '#1a6b3a',
+    colorBg: '#edf7f1',
+    description: 'Valuation, capital allocation, and the financial mechanics of business.',
+  },
+  {
+    slug: 'marketing',
+    title: 'Marketing',
+    order: 3,
+    color: '#7a2d8a',
+    colorBg: '#f8eefb',
+    description: 'Understanding customers, building brands, and capturing market share.',
+  },
+  {
+    slug: 'leadership',
+    title: 'Leadership & Organizations',
+    order: 4,
+    color: '#8a4a1a',
+    colorBg: '#fbf2ee',
+    description: 'Motivating people, designing organizations, and leading through change.',
+  },
+  {
+    slug: 'operations',
+    title: 'Operations',
+    order: 5,
+    color: '#1a6b6b',
+    colorBg: '#edf7f7',
+    description: 'Designing systems that deliver quality at scale, reliably and efficiently.',
+  },
+  {
+    slug: 'economics',
+    title: 'Economics',
+    order: 6,
+    color: '#5a5a1a',
+    colorBg: '#f7f7ee',
+    description: 'Markets, incentives, and the economic forces shaping business decisions.',
+  },
+  {
+    slug: 'entrepreneurship',
+    title: 'Entrepreneurship',
+    order: 7,
+    color: '#8a1a2d',
+    colorBg: '#fbeeef',
+    description: 'Building new ventures from idea to scale — with real constraints.',
+  },
+]

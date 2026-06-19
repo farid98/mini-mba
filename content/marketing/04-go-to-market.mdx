@@ -1,0 +1,105 @@
+---
+slug: go-to-market
+title: "Go-to-Market: Channels, Funnels, and Launch Strategy"
+subject: marketing
+order: 4
+summary: "How you bring a product to market — channels, acquisition motion, and launch sequencing — often determines success more than the product itself."
+difficulty: intermediate
+readTime: 12
+prerequisites:
+  - marketing/segmentation-targeting-positioning
+related:
+  - entrepreneurship/business-model-design
+  - marketing/growth
+---
+
+## More Than a Launch Event
+
+"Go-to-market" is sometimes treated as synonymous with the product launch — the press release, the launch event, the initial marketing push. This is the wrong mental model. Go-to-market strategy is the complete system for bringing a product to its target customers: the channels through which customers discover and buy it, the acquisition motion that drives growth, the economics that determine whether the business scales, and the sequencing of market entry that positions you for long-term success.
+
+Getting go-to-market right can save a mediocre product; getting it wrong can sink a great one. The history of technology is full of technically superior products that were outcompeted by inferior ones that were better distributed. Google was not the first search engine. Facebook was not the first social network. iPhone was not the first smartphone. Each succeeded partly because of superior go-to-market execution.
+
+## Channel Strategy
+
+**Channels** are the paths through which customers discover, evaluate, purchase, and receive your product. Channel strategy involves choosing which channels to use, how to manage channel relationships, and how channels change as the business scales.
+
+The fundamental tension in channel strategy is **control vs. reach**. Direct channels (selling to customers yourself, through your own sales force or website) give maximum control over the customer experience, brand presentation, and economics. Indirect channels (distributors, resellers, marketplaces, retailers) give wider reach but at the cost of margin, control, and customer relationship ownership.
+
+**Channel types**:
+
+- *Direct sales*: A sales team sells directly to customers. Highest CAC (customer acquisition cost) and lowest margin sacrifice. Appropriate for complex, high-value products that require consultative selling.
+- *Online/e-commerce*: Direct to consumer through owned digital channels. Low variable cost per sale, requires investment in demand generation, full margin capture.
+- *Marketplace*: Amazon, App Store, Google Play, Salesforce AppExchange. High reach, but platform takes 15-30% of revenue and you don't own the customer relationship.
+- *Retail*: Physical shelf space. Reach is enormous but retailers require significant margin, have promotional pricing expectations, and provide no data on customer behavior.
+- *Distributors and resellers*: Partners who buy your product wholesale and resell. Efficient for reaching fragmented markets but add cost and reduce control.
+- *Partner/channel sales*: Other companies sell your product as part of their offering (systems integrators, consultants, VAR networks). Effective for enterprise software where integration and implementation services matter.
+
+<Callout type="insight">
+The channel determines the customer experience and brand positioning as much as the product does. Apple's decision to open its own retail stores — against nearly universal industry advice — was strategic, not vanity. Carriers and electronics retailers were presenting Apple as just another phone brand. Apple needed direct control over the environment in which customers experienced its products to communicate differentiation effectively. The stores worked not just as distribution but as brand.
+</Callout>
+
+## The Three GTM Motions
+
+Modern SaaS and technology companies have converged on three primary go-to-market motions, each requiring different organizational designs and economics.
+
+**Sales-led growth (SLG)**: The sales team is the primary acquisition engine. Enterprise software is the archetype — Salesforce, Workday, ServiceNow. High-touch sales teams identify, qualify, and close deals. Requires significant investment in sales headcount, but enables selling complex, high-value deals where customers need education and relationship.
+
+*Works when*: The product is complex, the buying decision involves multiple stakeholders, the contract value is high enough to justify sales costs, or the customer needs to be convinced of a new behavior.
+
+**Marketing-led growth (MLG)**: Demand generation (content marketing, SEO, paid advertising, events, PR) creates awareness and leads that feed a sales team or convert directly. HubSpot built its business through marketing-led growth — its content on inbound marketing attracted buyers who then purchased marketing software.
+
+*Works when*: The customer knows they have a problem and is actively searching for solutions, content expertise is a genuine source of authority, or the sales cycle is short enough that self-serve conversion is feasible.
+
+**Product-led growth (PLG)**: The product itself is the primary acquisition mechanism. Users discover the product, adopt it through free trial or freemium, and upgrade to paid. Slack, Dropbox, Figma, Zoom are canonical examples. Lower CAC, faster adoption cycles, and built-in virality.
+
+*Works when*: The product has immediate value that users can discover without sales support, network effects make the product more valuable as more users join, and users have power to make purchase decisions (consumer or professional buyer, not pure enterprise).
+
+<Matrix2x2
+  xAxis={{ label: "Buying Complexity", low: "Low", high: "High" }}
+  yAxis={{ label: "Contract Value", low: "Low", high: "High" }}
+  quadrants={[
+    { label: "Product-Led", position: "bottom-left", description: "Low friction, low value. Self-serve conversion, viral loops, freemium models." },
+    { label: "Marketing-Led", position: "bottom-right", description: "Complex buying, low value. Content-driven demand generation, outbound support." },
+    { label: "Expand PLG", position: "top-left", description: "High value, low complexity. Individual users buy, expand to teams. Bottom-up enterprise." },
+    { label: "Sales-Led", position: "top-right", description: "High value, complex buying. Enterprise sales motion with full sales team support." }
+  ]}
+/>
+
+## Unit Economics
+
+Go-to-market strategy must be built on sound unit economics. The two fundamental metrics:
+
+**Customer Acquisition Cost (CAC)**: The total cost of acquiring a customer, including all sales and marketing expenses divided by new customers acquired. If you spend $1M on sales and marketing in a quarter and acquire 100 new customers, your CAC is $10,000.
+
+**Lifetime Value (LTV)**: The net present value of the profit a customer generates over their entire relationship with you. LTV = (Average Revenue × Gross Margin) / Churn Rate.
+
+The **LTV:CAC ratio** determines whether your GTM model is economically sustainable. A ratio above 3:1 is generally considered healthy for SaaS businesses — you're generating $3 of value for every $1 you spend acquiring customers. Below 1:1, you're destroying value with every customer you acquire.
+
+**Payback period** — how many months of gross profit it takes to recover the CAC — determines capital efficiency. A 12-month payback means you need to fund 12 months of working capital for every new customer before you start profiting from them. Businesses with 24+ month payback periods require significant capital to scale.
+
+<Example title="Airbnb's Channel Innovation">
+Airbnb's early growth was constrained by the chicken-and-egg problem of marketplaces: hosts wouldn't list without guests; guests wouldn't come without listings. Their breakthrough was an unconventional channel hack: they built a tool that allowed Airbnb hosts to cross-post their listings to Craigslist with a single click. Craigslist had millions of short-term rental seekers. By essentially treating Craigslist as a free distribution channel (without Craigslist's knowledge or permission), Airbnb bootstrapped supply-side growth. The channel strategy was creative, low-cost, and perfectly targeted to their specific supply-demand problem. It wouldn't work for most businesses — but it was exactly right for Airbnb's moment.
+</Example>
+
+## Launch Sequencing
+
+How you sequence your market entry matters as much as which market you enter. The two extremes of launch strategy:
+
+**Beachhead strategy**: Enter one narrow segment, establish dominance, then expand. Facebook launched at Harvard, then elite universities, then all universities, then the public. This allowed it to build density (everyone you knew was on it) before scale. Salesforce started with SMB sales automation before moving enterprise. The beachhead gives you a sustainable position from which to expand.
+
+**Broad launch**: Launch broadly and let customers find you. Works when network effects or brand scale are critical from day one, or when a narrow segment would create perception problems that prevent expansion to the target market.
+
+The beachhead strategy is generally safer for resource-constrained organizations — it allows you to succeed somewhere before attempting to succeed everywhere. It also allows you to learn from a defined segment and refine the product and pitch before facing more demanding customers.
+
+<Callout type="warning">
+The "enterprise beachhead" trap is common in B2B: starting with small, easy-to-close customers to build revenue, then discovering that the product and sales process built for small customers won't work for enterprise buyers. Sequencing matters — if enterprise is the ultimate target, design the product and GTM with enterprise requirements in mind from the start, even if you close smaller deals initially.
+</Callout>
+
+<Takeaways>
+- Go-to-market is the complete system for bringing a product to customers — channels, acquisition motion, unit economics, and launch sequencing
+- Direct channels give control; indirect channels give reach — the right mix depends on product complexity and buyer behavior
+- The three GTM motions (sales-led, marketing-led, product-led) require different organizational designs and work in different contexts
+- Unit economics: LTV:CAC above 3:1 and payback under 18 months are healthy benchmarks for scalable GTM
+- The beachhead strategy — dominate one segment before expanding — is usually the right starting point for resource-constrained organizations
+- Channel choice is brand strategy: it determines how customers experience your product and what they compare it to
+</Takeaways>

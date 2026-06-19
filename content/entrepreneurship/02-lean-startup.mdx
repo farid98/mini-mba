@@ -1,0 +1,129 @@
+---
+slug: lean-startup
+title: "The Lean Startup: Build, Measure, Learn"
+subject: entrepreneurship
+order: 2
+summary: "The Lean Startup methodology provides a rigorous framework for testing business hypotheses before committing resources — dramatically reducing the waste of building products nobody wants."
+difficulty: foundational
+readTime: 11
+prerequisites:
+  - entrepreneurship/business-model-design
+related:
+  - operations/lean
+  - strategy/strategy-in-practice
+---
+
+## The Fundamental Problem
+
+Every startup begins with a set of beliefs: customers have this problem, they'll pay this much to solve it, this product will solve it, this channel will reach them. These beliefs are not facts — they're hypotheses, guesses based on the founder's intuition, industry observation, and wishful thinking.
+
+The traditional approach to turning a startup into a business was to write a business plan, raise money based on that plan, spend 12-18 months building the product, and then launch. The problem: by the time you launch, you've spent a year and significant capital validating or refuting hypotheses you could have tested in weeks. Most of those hypotheses were wrong.
+
+Eric Ries's Lean Startup methodology — drawing heavily on Steve Blank's customer development work and Toyota's lean manufacturing principles — provides an alternative: treat startup activities as a set of experiments designed to test hypotheses. Build the minimum necessary to run the test. Measure the result. Learn whether the hypothesis was right. Repeat.
+
+## The Build-Measure-Learn Loop
+
+The fundamental unit of lean startup activity is the **Build-Measure-Learn feedback loop**. Instead of planning and building features over months, you rapidly cycle through three stages:
+
+**Build**: Create the minimum experiment necessary to test a specific hypothesis. This might be a landing page, a prototype, a concierge service, or a wizard-of-oz mockup — not necessarily a fully functioning product.
+
+**Measure**: Collect the data that will tell you whether the hypothesis was right. This requires defining your metric before you build — not rationalizing data afterward.
+
+**Learn**: Interpret the data. Did the hypothesis hold? Does the business model need adjustment? Should you pivot or persevere?
+
+The goal is to make this loop as fast and cheap as possible, because the rate at which you learn is the key metric for startup progress — not features shipped or lines of code written.
+
+<Diagram>
+graph LR
+    A[Ideas] --> B[Build]
+    B --> C[Product]
+    C --> D[Measure]
+    D --> E[Data]
+    E --> F[Learn]
+    F --> A
+    style A fill:#eef3fb
+    style C fill:#edf7f1
+    style E fill:#fffbeb
+</Diagram>
+
+## Minimum Viable Product
+
+The **Minimum Viable Product (MVP)** is the centerpiece of lean startup methodology. Ries defines the MVP as "that version of the product that enables a full turn of the Build-Measure-Learn loop with minimum effort and the least amount of development time."
+
+The MVP is not a minimal version of the final product. It's the minimum necessary to test the core hypothesis. This requires clarity about what you're actually trying to learn.
+
+If the hypothesis is "customers want this product," the MVP might be a landing page that describes the product and measures sign-up intent — you never build the product at all, just test whether people would want it. If the hypothesis is "users will find value in feature X," the MVP is a version with only feature X and bare-bones everything else.
+
+**Types of MVPs**:
+
+*Landing page test*: Describe the product, measure click-through or sign-up. Tests demand but not product.
+
+*Concierge MVP*: Manually deliver the service that you eventually intend to automate. Airbnb founders manually photographed New York apartments. Food delivery services started with manual order-taking before building apps. Tests willingness to use the service and value delivery without the infrastructure investment.
+
+*Wizard of Oz MVP*: The user-facing experience works as expected, but the backend is powered by humans, not software. Measures user behavior with a real interface without building the full system.
+
+*Piecemeal MVP*: Assemble from existing tools (Zapier, spreadsheets, off-the-shelf software) rather than building. Tests behavior at low development cost.
+
+<Callout type="warning">
+The most common MVP mistake is building something that doesn't actually test the core hypothesis. Founders often build a "minimum" product that still requires significant engineering effort and doesn't isolate the assumption that needs testing. Ask: what's the cheapest possible way to get evidence about this specific hypothesis? The answer is almost never "build the product."
+</Callout>
+
+## Validated Learning
+
+**Validated learning** is Ries's term for learning based on empirical evidence — as opposed to learning based on intuition, anecdote, or vanity metrics.
+
+Vanity metrics are numbers that feel good but don't help you make decisions. Total registered users. Total page views. App store downloads. These metrics go up when you do marketing, regardless of whether the product is actually creating value. They don't tell you whether your core business hypothesis is valid.
+
+**Actionable metrics** connect to specific business decisions. They're comparable across different experiments. They enable clear learning: if we change X, does metric Y go up or down?
+
+The classic example: Ries's company IMVU measured "avatar creation rate" — a proxy for whether new users found the core product valuable. Not total registrations, not total page views. The metric that mattered for the specific hypothesis about user value.
+
+Validated learning requires:
+1. Forming specific, falsifiable hypotheses ("30% of users who complete registration will create a second conversation")
+2. Defining the metric before running the experiment
+3. Setting a success threshold in advance ("if below 20%, pivot; if above 20%, persevere")
+4. Actually making a decision based on the result, not rationalizing ambiguous data
+
+## Pivot or Persevere
+
+The pivot is one of lean startup's most influential concepts. A **pivot** is a structured course correction designed to test a new fundamental hypothesis about the product, strategy, or business model.
+
+Pivoting is not giving up — it's applying the validated learning from failed experiments to change direction efficiently. Instagram pivoted from Burbn (a Foursquare-like location check-in app) to photo sharing when founders Kevin Systrom and Mike Krieger noticed that the photo feature was disproportionately popular. YouTube started as a video dating site before becoming a general video platform.
+
+Types of pivots:
+- *Zoom-in pivot*: What was one feature becomes the whole product
+- *Zoom-out pivot*: The single product becomes one feature of a larger product
+- *Customer segment pivot*: Same product, different target customer
+- *Customer need pivot*: Different problem for the same customer
+- *Platform pivot*: Application to platform, or platform to application
+- *Business model pivot*: Revenue model changes (freemium to paid, transaction to subscription)
+- *Channel pivot*: Same product, different acquisition channel
+
+**Persevering** — staying the course when the evidence supports it — is equally important. The pressure to pivot is often as dangerous as reluctance to pivot: founders change course at the first sign of difficulty before they've truly validated that the current hypothesis is wrong. The decision framework: have we collected enough validated learning to make this judgment, or are we making an emotional decision based on insufficient data?
+
+<Example title="Slack: The Pivot That Created a $26B Company">
+Slack was not built as a messaging app. It was built as a side project for a company building a massively multiplayer online game called Glitch. When Glitch launched and failed to attract sufficient players, the company had accumulated an internal communication tool (called "Linefeed" internally) that the team had come to rely on heavily. Stewart Butterfield, the CEO, had already pivoted once — Flickr had started as a feature of a game called Game Neverending. He recognized the pattern. The team pivoted to focus entirely on the communication tool that had emerged from their game development work. Slack launched in 2013 and reached $1 billion in valuation in 18 months. The pivot worked because the evidence was clear: the game had failed, the communication tool had genuine user value, and the same founding team could execute in the new direction.
+</Example>
+
+## Where Lean Startup Has Limits
+
+The lean startup framework is enormously valuable but not universally applicable. Understanding its limits is part of using it wisely.
+
+**Long development cycles**: Some products can't be built incrementally. Pharmaceutical drugs require completed clinical trials before any user feedback is meaningful. Space rockets need to fly before you learn if they work. The MVP concept breaks down for products where the testing infrastructure is inherently expensive.
+
+**Breakthrough innovation**: Truly transformative products often can't be validated in advance, because customers don't know they want something that doesn't exist yet. Jobs famously said Apple didn't do market research because you can't ask customers what they want before they've seen it. There's real truth to this for certain categories of innovation — though Jobs was also wrong about it sometimes.
+
+**Regulatory environments**: In healthcare, financial services, and other regulated industries, the ability to launch experimental products and iterate based on user feedback is constrained by compliance requirements.
+
+**Enterprises as customers**: Enterprise B2B sales cycles are long, procurement decisions are complex, and getting the evidence of product-market fit requires sustained relationship investment that doesn't fit neatly into rapid iteration cycles.
+
+The solution isn't abandoning lean startup principles in these contexts but adapting them: the specific tools change but the underlying logic (test before committing, learn before scaling, validate before building) remains valuable.
+
+<Takeaways>
+- The Build-Measure-Learn loop replaces lengthy planning: rapid, cheap experiments test specific hypotheses before committing resources
+- The MVP is the minimum necessary to test a core hypothesis — not a minimal product, but the minimum required for validated learning
+- Validated learning requires actionable metrics, specific hypotheses, and predetermined decision thresholds — not vanity metrics and post-hoc rationalization
+- The pivot is a structured course correction applying validated learning — not giving up, but updating strategy based on evidence
+- Lean startup principles (test before committing, validate before scaling) apply broadly even where specific tools need adaptation
+- The biggest lean startup failures are failing to actually make decisions from the data, or pivoting emotionally before sufficient evidence is collected
+</Takeaways>

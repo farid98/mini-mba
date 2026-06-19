@@ -1,0 +1,123 @@
+---
+slug: investment-decisions
+title: "Investment Decisions: Capital Budgeting in Practice"
+subject: finance
+order: 5
+summary: "How firms decide which projects to fund is one of the most consequential choices in management — and the right frameworks prevent billions in value destruction."
+difficulty: intermediate
+readTime: 12
+prerequisites:
+  - finance/time-value-of-money
+related:
+  - strategy/corporate-strategy
+  - finance/valuation
+---
+
+## The Capital Allocation Question
+
+Every year, large corporations collectively allocate trillions of dollars across thousands of investment opportunities — new factories, product development, acquisitions, technology upgrades, geographic expansion. The quality of these decisions is the single largest determinant of long-term shareholder value creation.
+
+Yet capital budgeting is one of the least systematic processes in most organizations. Investment proposals are often driven by internal politics (whichever division has the loudest advocate), anchored to last year's budget, or evaluated with inappropriate metrics. Understanding how to evaluate investment decisions rigorously — and why certain common approaches fail — is among the most practically valuable things a manager can learn.
+
+## Net Present Value: The Gold Standard
+
+**Net Present Value (NPV)** is the theoretically correct method for evaluating investments. NPV equals the present value of all cash inflows minus the present value of all cash outflows, discounted at the project's risk-adjusted cost of capital.
+
+**NPV = Σ CFₜ / (1+r)ᵗ - Initial Investment**
+
+The decision rule is simple: accept projects with positive NPV, reject projects with negative NPV, choose between mutually exclusive projects by selecting the one with higher NPV.
+
+Why NPV is correct: it directly measures value creation in today's dollars, accounts for the time value of money, adjusts for risk through the discount rate, and is additive (you can sum NPVs across independent projects to get the NPV of a portfolio of investments).
+
+A project with $10M NPV creates $10M of value — the math is direct and unambiguous. A factory investment that costs $50M today but generates present value of $65M in future cash flows has NPV of $15M and should be accepted. The same factory with present value of $45M in cash flows has NPV of -$5M and should be rejected.
+
+<Callout type="definition">
+**The Hurdle Rate** is the minimum required return on an investment, equal to its risk-adjusted cost of capital. An investment creates value only when its expected return exceeds the hurdle rate. Using a single company-wide hurdle rate for all projects is a common mistake — riskier projects should have higher hurdle rates, because they require higher expected returns to compensate investors for the additional risk.
+</Callout>
+
+## IRR: Widely Used, Frequently Misused
+
+**Internal Rate of Return (IRR)** is the discount rate that makes the NPV of an investment equal to zero — the implied return on the investment. Decision rule: accept projects whose IRR exceeds the cost of capital.
+
+IRR is intuitive (it speaks in percentage return terms, which managers find natural) and is by far the most commonly used capital budgeting metric in practice. Unfortunately, it has several serious problems.
+
+**Scale problem**: IRR doesn't measure absolute value creation. A $1,000 investment with 50% IRR creates $500 in value. A $1,000,000 investment with 20% IRR (above the 10% hurdle rate) creates $100,000 in value. A firm that maximizes IRR may reject large value-creating projects in favor of small ones.
+
+**Reinvestment rate assumption**: IRR implicitly assumes that intermediate cash flows are reinvested at the IRR itself — which may be unrealistic for very high-IRR projects.
+
+**Multiple IRRs**: Projects with unconventional cash flows (negative, positive, negative again) can have multiple mathematically valid IRRs, making the metric uninterpretable.
+
+**Mutually exclusive projects**: When choosing between competing projects, IRR gives the wrong answer when projects differ significantly in scale or timing of cash flows.
+
+The practical rule: use NPV as the primary decision metric. Use IRR as supplementary information — it tells you how much buffer you have against being wrong about the discount rate.
+
+<Diagram>
+graph TD
+    A[Investment Opportunity] --> B[Calculate NPV at WACC]
+    B --> C[NPV > 0?]
+    C -->|Yes| D[Value Creating: Accept]
+    C -->|No| E[Value Destroying: Reject]
+    B --> F[Calculate IRR]
+    F --> G[IRR > Hurdle Rate?]
+    G -->|Yes| H[Usually Consistent with NPV Accept]
+    G -->|No| I[Usually Consistent with NPV Reject]
+    H --> J[Verify IRR and NPV Agree]
+    I --> J
+</Diagram>
+
+## Payback Period: Its Uses and Limits
+
+**Payback period** is how long it takes to recover the initial investment from project cash flows. A project costing $10M that generates $2.5M annually has a 4-year payback.
+
+Payback is simple, intuitive, and widely used. It has two major problems: it ignores cash flows after the payback period, and it doesn't discount for the time value of money.
+
+A project with 3-year payback but zero cash flows afterward has the same payback as a project with 3-year payback and 20 years of additional cash flows — but the latter is vastly more valuable. Payback systematically biases toward short-term projects and against long-duration investments.
+
+Where payback is legitimately useful: as a liquidity screen. For firms with constrained cash, projects that return capital quickly matter not just for their NPV but for their impact on financing needs. Payback as a secondary metric, alongside NPV, gives a useful picture of when an investment starts generating cash versus when it creates value.
+
+## Real Options: Value Beyond the Base Case
+
+Standard NPV analysis treats investment decisions as now-or-never: invest today or don't invest at all. But many real investments are better described as options — the right but not the obligation to make further investments contingent on how uncertainty resolves.
+
+Consider a pharmaceutical company evaluating a Phase I drug trial costing $50M. A standard NPV calculation discounts all future development stages (Phase II, Phase III, FDA approval, commercialization) and their probabilities. But the company doesn't have to commit to Phase II today — it will only proceed if Phase I results are promising. The option to abandon if Phase I fails is valuable, and a static DCF misses it.
+
+Real options thinking changes the investment analysis in important ways:
+
+- **Option to expand**: If a pilot project succeeds, we have the option to scale up. The pilot's value includes not just its direct return but the option value of the larger investment it enables.
+- **Option to delay**: Sometimes it's worth paying the opportunity cost of waiting to resolve key uncertainties before committing. The option to delay is valuable when uncertainty is high and information will arrive over time.
+- **Option to abandon**: The ability to cut losses and exit creates value relative to a locked-in commitment.
+
+Real options are particularly important in technology investments, pharmaceutical development, natural resource exploration, and any business where uncertainty is high and investments are staged.
+
+<Example title="Intel's Real Option on RISC Architecture">
+In the 1980s, Intel maintained a small research group working on RISC (Reduced Instruction Set Computing) architecture while its main business was x86. This research investment looked like a poor NPV decision in isolation — small probability of success, long time horizon. But it functioned as a real option: if RISC proved superior and threatened x86's market position, Intel had an internal capability to respond. The option value justified the research investment even when the static NPV was marginal. Keeping the option open allowed Intel to understand the competitive threat from RISC-based workstations and respond intelligently to it.
+</Example>
+
+## Capital Rationing and Portfolio Selection
+
+In a frictionless world, firms accept all positive-NPV projects — capital is unlimited at the WACC. In the real world, capital is often constrained: management bandwidth, organizational capacity, balance sheet limitations, or strategic priorities create scarcity.
+
+When capital is rationed, the right metric is the **Profitability Index (PI)**: PI = NPV / Initial Investment. This ranks projects by value created per dollar invested. Under capital rationing, select projects in descending order of PI until the budget is exhausted.
+
+Portfolio selection also requires attention to risk. Two projects with identical expected NPV can have very different risk profiles — one with stable expected returns, one with high variance. For a firm with limited ability to absorb losses (due to leverage, customer relationships, or regulatory constraints), lower-variance projects may be preferred even at some cost to expected return.
+
+## The Organization Problem in Capital Allocation
+
+The technical tools are the easier part. The harder part is organizational: how do firms ensure that capital flows to its highest-return uses rather than to the most politically effective advocates?
+
+Common dysfunctions:
+- **Budget anchoring**: This year's budget is last year's budget plus or minus a percentage, regardless of the relative merits of different investments
+- **Empire building**: Division managers have incentives to grow their budgets regardless of the marginal return on additional investment
+- **Risk-aversion in the middle**: Managers who don't fully share in the upside of successful projects but bear career risk from failures will systematically underinvest in high-variance, high-expected-return projects
+- **Short-termism**: Pressure to hit quarterly earnings targets leads to cutting long-gestation investments (R&D, brand building, talent development) that are strategically critical
+
+The best capital allocators — Berkshire Hathaway, Danaher, Constellation Software — solve the organizational problem by concentrating capital allocation authority at the top, using rigorous financial analysis, and maintaining long-enough time horizons to evaluate investments properly.
+
+<Takeaways>
+- NPV is the theoretically correct method: accept positive-NPV projects, reject negative-NPV projects — it directly measures value creation in today's dollars
+- IRR is widely used but has problems with scale, mutually exclusive projects, and reinvestment rate assumptions — always cross-check with NPV
+- Payback period ignores post-payback cash flows and time value of money; useful only as a liquidity screen alongside NPV
+- Real options analysis captures the value of flexibility — the ability to expand, delay, or abandon contingent on how uncertainty resolves
+- Under capital rationing, rank projects by Profitability Index (NPV/Investment) to maximize value created per dollar
+- The binding constraint in most organizations isn't analytical tools but organizational dynamics: politics, short-termism, and risk aversion
+</Takeaways>

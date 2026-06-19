@@ -1,0 +1,120 @@
+---
+slug: valuation
+title: "Valuation: What Is a Business Worth?"
+subject: finance
+order: 3
+summary: "Valuation is the art and science of converting expectations about future cash flows into a present-day price — and understanding it changes how you see every business decision."
+difficulty: intermediate
+readTime: 15
+prerequisites:
+  - finance/time-value-of-money
+related:
+  - strategy/competitive-advantage
+  - entrepreneurship/fundraising
+---
+
+## Why Valuation Matters
+
+A company's stock price is the market's current best estimate of all future cash flows, discounted to the present. Every strategic decision — a new product, an acquisition, a cost-cutting program — is really a question about value: does this create more value than it costs? Every investment a firm makes is implicitly a valuation question.
+
+Understanding valuation doesn't require being a finance professional. But having a working grasp of the mechanics — how a DCF works, what drives multiples, what "enterprise value" means — makes you a better strategic thinker, a better acquirer and allocator of capital, and a better reader of market signals.
+
+## DCF: The Foundational Method
+
+Discounted cash flow (DCF) valuation is the theoretical foundation of all valuation. Its logic is simple: a business is worth the present value of all the cash flows it will ever generate, discounted at a rate that reflects the risk of those cash flows.
+
+The formula: **V = Σ FCFₜ / (1+r)ᵗ**
+
+Where FCF is free cash flow in each period, r is the discount rate, and t is the time period. In practice, you forecast cash flows for a specific period (typically 5-10 years), then estimate a terminal value for everything beyond the forecast horizon.
+
+**Free Cash Flow** is operating profit after taxes, minus the capital investment required to sustain and grow the business. The formula: FCF = EBIT(1-t) + Depreciation - Capital Expenditure - Change in Working Capital. This measures the actual cash the business generates for all capital providers — debt and equity.
+
+**The Discount Rate** — usually the weighted average cost of capital (WACC) — reflects the blended cost of debt and equity. A business with higher risk should be discounted at a higher rate, producing a lower present value.
+
+**Terminal Value** captures the value of all cash flows beyond the forecast period. It's typically calculated using the Gordon Growth Model: TV = FCF_n × (1+g) / (r-g), where g is the long-run growth rate. Terminal value often represents 60-80% of total enterprise value in a DCF — which is why it deserves careful scrutiny.
+
+<Callout type="warning">
+Terminal value sensitivity is the Achilles heel of DCF analysis. A small change in the assumed long-run growth rate has enormous impact on the output. If you change g from 2% to 3% and r is 8%, the terminal value multiplier changes from 16.7x to 20x — a 20% change in valuation from a 1 percentage point assumption shift. Always check sensitivity to terminal value assumptions.
+</Callout>
+
+## What Drives Valuation
+
+The DCF framework implies that four variables drive value:
+
+1. **Revenue growth** — faster-growing businesses generate more cash over time
+2. **Operating margins** — more cash generated per dollar of revenue
+3. **Capital efficiency** — how much capital investment is required per dollar of growth (the "reinvestment rate")
+4. **Cost of capital** — the riskiness of the cash flows
+
+The interaction between growth, margins, and capital efficiency produces a quantity called **Return on Invested Capital (ROIC)**. Companies that earn high ROIC — above their cost of capital — create value with every dollar they reinvest. Companies earning below their cost of capital destroy value with growth. This is why profitable growth is worth far more than unprofitable growth: a company that grows rapidly by burning cash is not creating value, regardless of how its revenue line looks.
+
+<Diagram>
+graph LR
+    A[Revenue Growth] --> E[Value Creation]
+    B[Operating Margins] --> E
+    C[Capital Efficiency] --> D[ROIC]
+    D --> E
+    F[Cost of Capital] --> E
+    E --> G[Enterprise Value]
+</Diagram>
+
+## Comparable Company Analysis
+
+DCF is theoretically correct but practically difficult — it requires many assumptions, all of which affect the output. Comparable company analysis (comps) provides a market-based sanity check.
+
+Comps work by finding publicly traded companies similar to the one being valued, observing what multiples the market assigns to them, and applying those multiples to the target company's metrics.
+
+Common multiples:
+- **EV/EBITDA**: Enterprise value divided by EBITDA. Widely used across industries. Typical ranges: 6-10x for industrial companies, 15-25x for consumer staples, 20-40x for software.
+- **EV/Revenue**: Used when companies are unprofitable or in early growth. Software companies often trade at 5-15x revenue.
+- **P/E (Price/Earnings)**: Stock price divided by earnings per share. Simple but affected by capital structure and accounting choices.
+- **EV/FCF**: Enterprise value relative to free cash flow — arguably the cleanest measure of operating value.
+
+<Example title="Valuing Spotify: Where Comps Get Complicated">
+When Spotify trades at 4x revenue but Apple Music (owned by Apple) isn't separately valued, and Pandora (now owned by SiriusXM) trades at 1x revenue, which is the right comparable? Spotify's business model — paying 70% of revenue to rights holders, leaving thin margins — means revenue multiples need heavy adjustment for margin differences. This is where comps analysis requires judgment: applying a multiple mechanically without understanding the underlying economics of the comparables produces misleading results. You need to understand *why* each company trades at its multiple before applying that multiple to someone else.
+</Example>
+
+## Enterprise Value vs. Equity Value
+
+A critical distinction that trips up many people: **enterprise value** and **equity value** are not the same thing.
+
+**Enterprise value (EV)** is the total value of the business to all capital providers — both equity and debt holders. It's what you'd pay to buy the entire company free of its current capital structure. EV = Market Cap + Net Debt (debt minus cash).
+
+**Equity value** (market capitalization) is what belongs to shareholders after debt has been serviced. Equity Value = Enterprise Value - Net Debt.
+
+When comparing businesses or computing multiples, use EV-based metrics (EV/EBITDA, EV/FCF) to make fair comparisons across companies with different capital structures. If you compare P/E ratios of a highly leveraged company with a debt-free company, you're comparing apples to oranges — the leverage inflates returns to equity in good times.
+
+<Callout type="definition">
+**Enterprise Value** is the cost to purchase the entire business — assuming you take on its debt and receive its cash. If Apple's market cap is $2.8T and it has $50B in net cash, its enterprise value is $2.75T. If a struggling retailer has a market cap of $500M but $2B in debt, its enterprise value is $2.5B — you'd need to pay $500M for the equity AND take on $2B in debt obligations.
+</Callout>
+
+## Valuation in M&A: The Control Premium
+
+When one company acquires another, it typically pays 20-40% above the current stock price — the "control premium." This premium reflects the acquirer's belief that it can unlock value that the current stock price doesn't capture, plus the competitive pressure from other potential bidders.
+
+The acquirer needs to generate synergies that exceed the premium paid. If you pay $1.4B for a company trading at $1B, you've paid a 40% premium — you need to generate at least $400M in present value of synergies just to break even.
+
+Studies consistently find that acquiring companies' stocks decline on deal announcement. This isn't irrational market pessimism — it reflects the market's accurate assessment that most acquirers overpay and fail to capture the synergies that justified the premium.
+
+The implication for managers: scrutinize acquisition valuations ruthlessly. The synergy projections in deal models are almost always too optimistic. Revenue synergies (cross-selling opportunities, market access) are harder to capture than cost synergies (overhead elimination, procurement scale). Time horizons for realization are almost always longer than projected.
+
+## Valuation of Early-Stage Companies
+
+DCF analysis breaks down for companies with no current cash flows and highly uncertain futures. Startup and venture investors use different approaches:
+
+**Comparable transactions**: What have investors paid for similar companies at similar stages? If Series A SaaS companies with $5M ARR and 150% NRR have raised at 20-30x ARR, that's a market reference.
+
+**Expected value with scenario analysis**: Assign probabilities to outcomes (success, moderate success, failure), value each outcome, and weight by probability.
+
+**Venture capital method**: Work backward from the expected exit. If the company will be worth $1B in 7 years, and you expect a 10x return to compensate for the risk, you should invest at a $100M valuation today — implying a specific ownership percentage at any given investment amount.
+
+What these approaches share: they're all trying to estimate the expected value of highly uncertain future cash flows, anchored by market comparables where available. The discipline is less about precision than about understanding the key value drivers and what would have to be true for the investment to succeed.
+
+<Takeaways>
+- Intrinsic value is the present value of future free cash flows discounted at the risk-adjusted cost of capital
+- The four drivers of value: revenue growth, operating margins, capital efficiency (ROIC), and cost of capital
+- Terminal value dominates DCF outputs and is highly sensitive to long-run growth assumptions — always stress-test it
+- Comparable company analysis applies market multiples to provide a market-based reference point — EV/EBITDA and EV/FCF are cleaner than P/E
+- Enterprise value equals equity value plus net debt — use EV-based metrics to compare companies with different capital structures
+- In acquisitions, the premium must be exceeded by the present value of synergies — most acquirers fail this test
+</Takeaways>

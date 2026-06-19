@@ -1,0 +1,179 @@
+---
+slug: time-value-of-money
+title: "Time Value of Money"
+subject: finance
+order: 2
+summary: "A dollar today is worth more than a dollar tomorrow — this single idea underpins every investment decision, valuation, and capital allocation choice in finance."
+difficulty: foundational
+readTime: 11
+prerequisites:
+  - finance/financial-statements
+---
+
+Here is the most important idea in all of finance: **a dollar today is worth more than a dollar tomorrow.** Not because of inflation — though that's real — but because a dollar you have right now can be invested and grow. This concept, called the time value of money, is the foundation on which every valuation model, every investment decision, and every loan pricing formula is built.
+
+If you understand present value deeply, you understand why long-duration assets (real estate, infrastructure, growth stocks) are far more sensitive to interest rates than short-duration ones. You understand why private equity firms obsess over cash flow timing. You understand why a 30-year bond paying 5% loses 15% of its value when rates rise to 6%.
+
+Let's build the intuition from scratch.
+
+## Future Value: Compounding Forward
+
+Suppose you invest $1,000 today at 8% annual interest. What's it worth in 10 years?
+
+After year 1: $1,000 × 1.08 = $1,080  
+After year 2: $1,080 × 1.08 = $1,166  
+...  
+After year 10: $1,000 × (1.08)^10 = **$2,159**
+
+The formula is:
+
+**FV = PV × (1 + r)^n**
+
+Where:
+- FV = future value
+- PV = present value (what you invest today)
+- r = interest rate per period
+- n = number of periods
+
+The "(1 + r)^n" term is the **compound growth factor** — and the exponential nature of compounding is why Warren Buffett says compounding is the eighth wonder of the world. At 10% annually for 30 years, $1 becomes $17.45. At 15% annually, it becomes $66.21. Small differences in growth rate create enormous differences over time.
+
+<Example title="The Retirement Math Most People Don't Do">
+Two investors start with $10,000. Alex invests for 20 years starting at age 25, contributing $5,000 per year at 8% returns, then stops at age 45. Jamie starts at 45 with $10,000 and contributes $5,000 per year at 8% returns through age 65. Alex ends up with roughly $700,000. Jamie ends up with roughly $247,000. Alex invested less total money but started earlier — the extra 20 years of compounding more than doubled the outcome. Time is the most powerful variable in the compounding equation.
+</Example>
+
+## Present Value: Discounting Back
+
+Now flip the question. If someone promises to pay you $2,159 in 10 years, and 8% is the appropriate rate of return, what is that promise worth today?
+
+**PV = FV / (1 + r)^n**
+
+PV = $2,159 / (1.08)^10 = **$1,000**
+
+This is discounting — working backwards from a future cash flow to its current value. The interest rate used in this process is called the **discount rate**. It represents the return you could earn on an alternative investment of equal risk. This is also called the **opportunity cost of capital**.
+
+<Callout type="definition">
+**Present Value (PV)**: The current worth of a future sum of money, discounted at a rate that reflects the risk and opportunity cost of capital. If you'd accept less than $1 today in exchange for $1 tomorrow, that discount is precisely what present value calculates.
+</Callout>
+
+The discount rate is doing heavy work. It encodes:
+
+1. **Time preference**: People prefer cash now to cash later
+2. **Inflation**: A dollar tomorrow buys slightly less than a dollar today
+3. **Risk**: The further out the cash flow, the more uncertain it is
+
+<Diagram>
+graph LR
+  A["$1,000 today"] -->|"Compound: × (1+r)^n"| B["$2,159 in 10 years"]
+  B -->|"Discount: ÷ (1+r)^n"| A
+</Diagram>
+
+## Net Present Value: The Decision Framework
+
+When a company considers an investment — building a factory, launching a product, acquiring a competitor — it needs a way to compare dollars spent today against dollars earned in the future. NPV does this.
+
+**NPV = Sum of all PVs of future cash flows − Initial Investment**
+
+If NPV > 0: The investment earns more than the required rate of return. Accept it.  
+If NPV < 0: The investment destroys value. Reject it.  
+If NPV = 0: The investment earns exactly the required return. Indifferent.
+
+<Callout type="insight">
+NPV is the theoretically correct decision rule in corporate finance. It accounts for the magnitude of cash flows, their timing, and the risk-adjusted required return. When you read that NPV "greater than zero creates shareholder value," this is what it means — the investment earns more than investors could get elsewhere for the same risk.
+</Callout>
+
+Let's work through an example. A retail chain considers opening a new store:
+
+- Initial investment: $2,000,000 (year 0)
+- Expected annual cash flows: $400,000 for years 1–7
+- Required rate of return: 10%
+
+The present value of $400,000/year for 7 years at 10% is calculated by discounting each year:
+
+| Year | Cash Flow | Discount Factor | Present Value |
+|------|-----------|-----------------|---------------|
+| 1 | $400,000 | 1/1.10 = 0.909 | $363,636 |
+| 2 | $400,000 | 1/1.21 = 0.826 | $330,579 |
+| 3 | $400,000 | 1/1.331 = 0.751 | $300,526 |
+| 4 | $400,000 | 1/1.464 = 0.683 | $273,205 |
+| 5 | $400,000 | 1/1.611 = 0.621 | $248,369 |
+| 6 | $400,000 | 1/1.772 = 0.564 | $225,790 |
+| 7 | $400,000 | 1/1.949 = 0.513 | $205,264 |
+| **Total PV** | | | **$1,947,369** |
+
+NPV = $1,947,369 − $2,000,000 = **−$52,631**
+
+The NPV is slightly negative. At a 10% required return, this store doesn't quite make the cut. But if the team is confident it can generate $430,000/year (only 7.5% more than projected), the NPV turns positive. This sensitivity analysis is exactly what real managers do.
+
+## The Discount Rate Matters Enormously
+
+Nothing in finance has more leverage over a valuation than the discount rate. Consider a perpetuity — an investment that pays $100 per year forever:
+
+**PV of perpetuity = Cash Flow / r**
+
+At r = 5%: PV = $100 / 0.05 = **$2,000**  
+At r = 8%: PV = $100 / 0.08 = **$1,250**  
+At r = 10%: PV = $100 / 0.10 = **$1,000**
+
+A 5 percentage point increase in the discount rate cuts the value in half. This is why rising interest rates crush long-duration assets like real estate and growth stocks. When the Fed raises rates from 2% to 5%, the "right" discount rate for everything goes up, and present values fall — sometimes dramatically.
+
+<Example title="Why Tech Stocks Fell in 2022">
+In 2020–2021, growth companies were valued at 30–50× revenues because interest rates were near zero. With almost no discount rate, even cash flows 10–15 years out had significant present value. When the Fed raised rates from 0.25% to 5.25% through 2022–2023, those distant cash flows got discounted much more aggressively. A company projecting $1B in free cash flow in year 10 that was worth $820M discounted at 2% became worth only $614M discounted at 5% — a 25% cut from that single cash flow alone. Apply that across 20 years of projections and valuations collapsed 60–80%.
+</Example>
+
+## Annuities and Shortcuts
+
+Real-world finance deals with streams of cash flows, not just single amounts. Two useful formulas:
+
+**Annuity** (equal payments for n periods):
+PV = PMT × [1 − (1+r)^−n] / r
+
+**Growing perpetuity** (payments growing at rate g forever):
+PV = CF₁ / (r − g)
+
+The growing perpetuity formula is used constantly in DCF valuation to calculate terminal value — the value of all cash flows beyond the explicit forecast period. You'll see it again in the valuation chapter.
+
+<Diagram>
+graph TD
+  A[Future Cash Flows] --> B[Apply Discount Rate]
+  B --> C[Present Value of Each Cash Flow]
+  C --> D[Sum All PVs]
+  D --> E[Net Present Value]
+  E --> F[NPV > 0?]
+  F -->|Yes| G[Investment Creates Value]
+  F -->|No| H[Investment Destroys Value]
+</Diagram>
+
+## What Determines the Right Discount Rate?
+
+For personal decisions, the discount rate is often your cost of borrowing (your mortgage rate, for instance) or your expected investment return. For corporate decisions, it's the **Weighted Average Cost of Capital (WACC)** — the blended cost of the company's debt and equity financing. We'll cover WACC in detail in the capital structure chapter.
+
+For now, know the rough intuition:
+
+- **Safe investments** (government bonds, stable utilities): 4–7%
+- **Average corporate investments**: 8–12%
+- **Risky investments** (startups, emerging markets): 15–25%+
+
+The riskier the future cash flows, the higher the discount rate, and the less they're worth in present value terms. This creates a neat symmetry: investors demand higher returns for bearing more risk, and that demand shows up mathematically as a higher discount rate that shrinks the present value of those risky cash flows.
+
+<Callout type="warning">
+**Garbage in, garbage out.** NPV is only as good as your cash flow forecasts and your discount rate assumption. Managers are routinely overoptimistic about both the size and speed of future cash flows. A standard correction: build three scenarios (base, bull, bear) and weight them probabilistically rather than relying on a single projection. Small errors in a 10-year DCF can lead to decisions that are tens of millions of dollars wrong.
+</Callout>
+
+## Practical Applications
+
+**Lease vs. buy**: A company can lease equipment for $50K/year for 5 years or buy it for $200K today. Discount the lease payments at the borrowing rate to find the PV of leasing, then compare to the purchase price.
+
+**Bond pricing**: A bond's price is the present value of its coupon payments plus the present value of its face value at maturity. When interest rates rise, bond prices fall because future cash flows are discounted at a higher rate.
+
+**Project evaluation**: Every capital allocation decision — new factory, product launch, acquisition — should be evaluated using NPV. Companies that do this rigorously allocate capital better than those that chase gut feel or accounting metrics like payback period.
+
+**Personal finance**: A mortgage is just an annuity. You're discounting 360 monthly payments to find the loan principal. A 30-year $500K mortgage at 7% means you'll pay $998K total — the difference is the time value of money.
+
+<Takeaways>
+- The time value of money states that a dollar today is worth more than a dollar tomorrow because today's dollar can be invested and grow.
+- Future value compounds forward: FV = PV × (1 + r)^n. Present value discounts backward: PV = FV / (1 + r)^n.
+- The discount rate encodes time preference, inflation, and risk — it's the opportunity cost of capital.
+- NPV sums the present values of all future cash flows and subtracts the initial investment; positive NPV means value creation.
+- The discount rate has enormous leverage over valuations — a 3-percentage-point change can alter value by 30–50%.
+- Use NPV for all capital allocation decisions; it's the theoretically correct rule because it captures magnitude, timing, and risk simultaneously.
+</Takeaways>

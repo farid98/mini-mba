@@ -1,0 +1,157 @@
+---
+slug: teams
+title: "Teams: How Groups Actually Work"
+subject: leadership
+order: 2
+summary: "How teams form, what makes them effective, the science of psychological safety, and how to run meetings that don't waste everyone's time."
+difficulty: foundational
+readTime: 12
+prerequisites:
+  - leadership/motivation
+---
+
+Organizations run on teams. Hiring brilliant individuals isn't enough—how those individuals function together determines whether the sum is greater than, or less than, the parts. Understanding group dynamics isn't soft knowledge; it's central to execution.
+
+This chapter covers how teams develop, what actually predicts team effectiveness, and the practical mechanics of making teams work day to day.
+
+## Tuckman's Stages of Group Development
+
+In 1965, psychologist Bruce Tuckman described a model of how groups evolve over time. The four stages—Forming, Storming, Norming, and Performing—remain the most useful map for understanding where a team is and what it needs.
+
+<Diagram>
+graph LR
+    A[Forming] --> B[Storming]
+    B --> C[Norming]
+    C --> D[Performing]
+    D --> E[Adjourning]
+    style A fill:#e8f4fd
+    style B fill:#fdecea
+    style C fill:#fff8e1
+    style D fill:#e8f5e9
+    style E fill:#f3e5f5
+</Diagram>
+
+**Forming** — The team comes together. Everyone is on their best behavior. Roles are unclear, goals are vague, and people are orienting themselves to one another and to the task. Leaders need to provide clear direction here: what are we doing, why does it matter, how will we work together?
+
+**Storming** — The honeymoon ends. Conflicts emerge: about roles, priorities, working styles, and who has authority over what. This stage is uncomfortable, but it's essential. Teams that skip storming (by avoiding conflict) don't actually skip it—they just have the conflicts later, usually at worse moments.
+
+**Norming** — The team works through its conflicts and develops shared norms: how decisions get made, how disagreement is expressed, how work gets coordinated. Trust develops. Communication becomes more efficient.
+
+**Performing** — The team is firing on all cylinders. Members know each other's strengths, trust each other's judgment, and can work with relatively little coordination overhead. This is where productivity compounds.
+
+**Adjourning** (added later) — The team disbands or restructures. People need acknowledgment and closure; ignoring this stage leaves people feeling unvalued.
+
+<Callout type="insight">
+Every time the team changes meaningfully—a new member joins, a major project launches, a crisis hits—it can reset to an earlier stage. An experienced leader recognizes this and adjusts rather than wondering why a previously high-performing team seems to be struggling again.
+</Callout>
+
+## What Predicts Team Effectiveness: Google's Project Aristotle
+
+In 2012, Google launched Project Aristotle—an internal research effort to discover what made some of their teams brilliant and others mediocre. They studied 180 teams for years and expected to find that the best teams had the right mix of skills, or the smartest people, or the best managers.
+
+They didn't. The single most important factor was **psychological safety**—a term coined by Harvard professor Amy Edmondson.
+
+Psychological safety is the shared belief that it's safe to take interpersonal risks. In a psychologically safe team, you can:
+- Admit you don't know something
+- Disagree with a more senior person's idea
+- Raise a concern without fear of being dismissed or punished
+- Propose a half-formed idea
+- Own a mistake without fear of humiliation
+
+<Callout type="definition">
+**Psychological safety** (Amy Edmondson, 1999): A team climate characterized by interpersonal trust and mutual respect, in which people are comfortable being themselves. It is *not* about being nice—it's about the ability to engage in honest, challenging dialogue without fear.
+</Callout>
+
+Google's research found that psychological safety mattered more than individual talent. A team of average performers with high psychological safety will outperform a team of stars operating in a fear-based environment.
+
+Why? Because high-stakes work is uncertain. Uncertainty requires experimentation. Experimentation produces failure. If failure is punished, people stop experimenting—and the organization stops learning. Psychological safety isn't touchy-feely; it's the organizational condition for learning and adaptation.
+
+<Example title="The Columbia Shuttle Disaster">
+NASA's Columbia investigation found that engineers had raised concerns about the foam strike that damaged the shuttle's heat shields before reentry. Those concerns were dismissed. Engineers who pushed back were discouraged from escalating. The absence of psychological safety in mission management contributed directly to the loss of the shuttle and crew. The technical failure had an organizational cause.
+</Example>
+
+Project Aristotle also identified four other factors that predicted team effectiveness:
+- **Dependability**: Team members reliably complete quality work on time
+- **Structure and clarity**: Clear goals, roles, and execution plans
+- **Meaning**: The work is personally important to team members
+- **Impact**: Members believe their work matters
+
+Notice that every one of these maps back to intrinsic motivation (from the previous chapter). Effective teams are, in part, well-motivated individuals who trust each other.
+
+## Team Size and Its Consequences
+
+Jeff Bezos articulated the "two-pizza rule" for Amazon teams: if a team can't be fed with two pizzas, it's too big. The underlying insight is real, even if the specific metric is imprecise.
+
+Research on group decision-making shows that performance on complex tasks follows an inverted-U as group size increases. Too small (1-2 people) and you lack diverse perspectives. Too large (10+ people) and coordination costs explode.
+
+**3–7 people** is the range where most real work happens most efficiently. Above 8–10, you need formal coordination mechanisms that didn't exist before, and the probability of free-riding increases (the diffusion of responsibility effect—each member assumes someone else will handle it).
+
+<Callout type="warning">
+Adding people to a late project makes it later. Frederick Brooks identified this in software engineering (The Mythical Man-Month, 1975), but it applies broadly. New team members require onboarding, and every new member increases communication links—the number of pairs in a team of n is n(n-1)/2. A team of 5 has 10 communication pairs; a team of 10 has 45.
+</Callout>
+
+## Decision-Making in Teams
+
+Teams make worse decisions than individuals in predictable ways. Understanding these failure modes lets you design around them.
+
+**Groupthink** occurs when the desire for harmony overrides realistic appraisal of alternatives. The team converges on a decision before genuinely evaluating options, typically because dissent feels costly (low psychological safety). Signs: unanimous agreement on complex questions, no one asks "what could go wrong?", early consensus before full exploration.
+
+**Common knowledge effect**: Teams systematically over-discuss information that everyone already knows and under-discuss information held by only one or two members. This biases decisions toward confirming pre-existing views rather than integrating new signal.
+
+**Escalating commitment**: Teams (and individuals) throw good money after bad. Once significant resources are invested in a path, there's social and psychological pressure to continue even when new evidence suggests stopping.
+
+<Diagram>
+graph TD
+    A[Team Decision Failure Modes] --> B[Groupthink]
+    A --> C[Common Knowledge Effect]
+    A --> D[Escalating Commitment]
+    B --> E[Structural fix: Designated devil's advocate]
+    C --> F[Structural fix: Pre-read unique info before meeting]
+    D --> G[Structural fix: Pre-commit to stop criteria]
+</Diagram>
+
+Each failure mode has a structural fix. The key insight: don't rely on people's willpower or courage to overcome group dynamics. Design the process to produce better outcomes.
+
+## How to Run Effective Meetings
+
+Meetings are where most team coordination failures happen, and where most organizations waste the most time. The principles for running good meetings are simple and almost universally ignored.
+
+**Before the meeting:**
+- Every meeting needs a stated purpose. Is this a decision, a discussion, an update, a brainstorm? The type determines the structure.
+- Share relevant materials in advance. Never use meeting time to deliver information that could have been an email.
+- Invite only people who need to be there. Each additional attendee increases coordination cost and dilutes speaking time.
+
+**During the meeting:**
+- Start with the purpose. Restate it in one sentence.
+- For decisions: state the decision to be made, not just the topic.
+- Silence the loudest voice first. If the senior person speaks first, they anchor everyone else. Ask for written input before discussion, or poll silently before revealing results.
+- Designate a devil's advocate if the decision is important and initial consensus seems too easy.
+
+**After the meeting:**
+- Send written decisions and action items within 24 hours. Without this, meetings dissolve into ambiguity.
+- Distinguish: what did we decide vs. what did we discuss vs. what still needs to be resolved?
+
+<Example title="Amazon's 6-Pager">
+Amazon banned PowerPoint in senior meetings. Instead, every meeting starts with 20–30 minutes of silent reading of a 6-page narrative memo. The memo forces the presenter to think clearly (you can't hide fuzzy thinking in bullet points), and every attendee starts with the same information. The result: richer debate, less HiPPO effect (Highest Paid Person's Opinion), and more genuine engagement with hard questions.
+</Example>
+
+## Building Psychological Safety Practically
+
+Psychological safety isn't a vibe—it's a practice. Things that build it:
+
+- **Model fallibility**: Leaders who admit mistakes signal that it's safe to be imperfect. This has more impact than any team-building activity.
+- **Respond well to bad news**: The first time someone brings you a problem, your reaction sets a template. Thank them. Don't shoot the messenger.
+- **Separate idea evaluation from person evaluation**: "That idea has a problem" is different from "your judgment is bad."
+- **Ask, don't tell**: Questions invite participation. Directives close it down.
+- **Make disagreement explicit**: "Who sees this differently?" forces people to surface dissent rather than suppress it.
+
+What doesn't build psychological safety: mandatory fun, offsite trust-falls, team-building workshops that don't address underlying dynamics. Safety is built through consistent behavior in real work, not declared in workshops.
+
+<Takeaways>
+- Teams move through predictable stages (Forming, Storming, Norming, Performing). Every major change can reset a team to an earlier stage.
+- Psychological safety is the strongest predictor of team performance—more than individual talent or team composition.
+- Optimal team size is 3–7. Beyond 8–10, coordination costs rise and accountability diffuses.
+- Common team decision failures—groupthink, common knowledge effect, escalating commitment—have structural fixes. Design around them.
+- Effective meetings require a stated purpose, pre-shared materials, and written decisions with owners afterward.
+- Psychological safety is built through consistent behavior (especially how leaders respond to mistakes and bad news), not team-building exercises.
+</Takeaways>

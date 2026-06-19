@@ -1,0 +1,191 @@
+---
+slug: financial-statements
+title: "Reading Financial Statements"
+subject: finance
+order: 1
+summary: "The three financial statements — income statement, balance sheet, and cash flow — are the language of business. Learn to read them fluently."
+difficulty: foundational
+readTime: 14
+---
+
+Every business decision leaves a financial footprint. When Apple launches a new iPhone, launches a subscription service, or acquires a company, those choices show up in three documents that together tell the complete financial story of a business. This chapter teaches you to read those documents not as an accountant counting beans, but as a manager or investor understanding what actually happened.
+
+## The Three Statements and What They Answer
+
+Before diving in, understand what each statement is answering:
+
+- **Income statement**: Did we make money this period?
+- **Balance sheet**: What do we own, what do we owe, and what's left over?
+- **Cash flow statement**: Where did cash come from, and where did it go?
+
+They're connected. Net income from the income statement flows into retained earnings on the balance sheet. Cash from operations on the cash flow statement reconciles accounting profit with actual cash. Missing any one of them gives you a dangerously incomplete picture.
+
+## The Income Statement
+
+The income statement (also called the P&L, for profit and loss) measures financial performance over a period of time — a quarter or a year.
+
+```
+Revenue
+− Cost of Goods Sold (COGS)
+= Gross Profit
+
+− Operating Expenses (R&D, Sales & Marketing, G&A)
+= Operating Income (EBIT)
+
+− Interest Expense
+± Other Income/Expense
+= Pre-tax Income (EBT)
+
+− Income Taxes
+= Net Income
+```
+
+<Callout type="definition">
+**Gross margin** = Gross Profit / Revenue. It tells you how much of every revenue dollar survives after the direct cost of making the product or delivering the service. Software companies often have 70–80% gross margins. Grocery stores run 25–30%.
+</Callout>
+
+Take Apple's fiscal year 2023 income statement (in billions):
+
+- Revenue: $383B
+- COGS: $214B
+- **Gross Profit: $169B** (44% gross margin)
+- Operating Expenses: $55B
+- **Operating Income: $114B** (30% operating margin)
+- Net Income: $97B
+
+That 30% operating margin is extraordinary. For every $10 of iPhone you buy, Apple keeps $3 as operating profit before taxes. Contrast that with Amazon's retail segment, which runs on 1–3% operating margins — Amazon's profit engine is AWS, its cloud business, which operates at 25%+ margins.
+
+The line items that matter most to managers:
+
+**Revenue** is recognized when goods or services are delivered, not when cash changes hands. Apple recognizes iPhone revenue at point of sale. But it defers revenue from multi-year service contracts, spreading it over the contract period. This is accrual accounting.
+
+**COGS** contains only direct costs: materials, manufacturing labor, and overhead directly tied to production. A software company's COGS is mostly hosting costs and customer support. A car manufacturer's COGS is steel, labor, and factory depreciation.
+
+**Operating expenses** are the costs of running the business: R&D, sales, marketing, and general & administrative costs (executives, finance, HR). These are period costs — they're expensed as incurred, not tied to specific units sold.
+
+**EBITDA** (Earnings Before Interest, Taxes, Depreciation, and Amortization) is used heavily in valuation because it approximates operating cash generation. Analysts strip out interest (a financing decision, not an operating one), taxes (a jurisdiction quirk), and depreciation/amortization (accounting artifacts that don't represent cash outflows). Apple's 2023 EBITDA was roughly $127B.
+
+## The Balance Sheet
+
+The balance sheet is a snapshot in time — a photograph of what the company owns and owes on a specific date. It must always balance:
+
+**Assets = Liabilities + Shareholders' Equity**
+
+This isn't a coincidence — it's a definition. Everything the company has (assets) was financed by either borrowing (liabilities) or owner investment/retained earnings (equity).
+
+<Diagram>
+graph LR
+  A[Assets] --> C[Balance Sheet]
+  B[Liabilities + Equity] --> C
+  C --> D[Always Equal]
+</Diagram>
+
+Assets are listed in order of liquidity (how quickly they can be converted to cash):
+
+**Current assets** (convertible within a year):
+- Cash & equivalents
+- Accounts receivable (money owed by customers)
+- Inventory
+- Prepaid expenses
+
+**Non-current assets** (long-term):
+- Property, plant & equipment (PP&E)
+- Intangible assets (patents, brand value)
+- Goodwill (premium paid in acquisitions)
+- Long-term investments
+
+Liabilities follow the same pattern:
+
+**Current liabilities** (due within a year):
+- Accounts payable (money owed to suppliers)
+- Accrued liabilities
+- Short-term debt
+- Deferred revenue
+
+**Non-current liabilities**:
+- Long-term debt
+- Pension obligations
+- Deferred tax liabilities
+
+**Shareholders' equity** is what's left after subtracting liabilities from assets. It includes paid-in capital (what investors put in) plus retained earnings (cumulative profits not paid as dividends) minus treasury stock (shares repurchased).
+
+<Example title="Apple's Balance Sheet, September 2023">
+Apple had $352B in total assets and $290B in total liabilities — leaving $62B in shareholders' equity. Here's what's interesting: Apple carried $166B in total debt but also held $166B in cash and investments. Effectively, Apple's net debt was near zero. That's unusual. Most companies either don't borrow or borrow to grow. Apple borrows to buy back its own shares — taking advantage of low interest rates to return capital to shareholders without repatriating overseas cash.
+</Example>
+
+**Working capital** = Current Assets − Current Liabilities. It measures short-term liquidity. A positive number means you can cover near-term obligations. A negative number isn't always bad — Amazon and Walmart famously run negative working capital because customers pay before suppliers do. They're using their suppliers' money to fund operations.
+
+## The Cash Flow Statement
+
+Net income and cash are not the same thing. This is one of the most important truths in finance. A profitable company can run out of cash and go bankrupt. A loss-making startup can survive for years by burning investor cash.
+
+The cash flow statement reconciles this by starting with net income and adjusting for:
+
+1. **Operating activities**: Adjustments for non-cash charges (depreciation, stock comp) and working capital changes
+2. **Investing activities**: Capital expenditures, acquisitions, purchases/sales of investments
+3. **Financing activities**: Debt issuance/repayment, equity issuance, dividends, buybacks
+
+<Callout type="insight">
+**Free Cash Flow (FCF)** = Operating Cash Flow − Capital Expenditures. This is what most analysts actually care about — the cash the business generates after paying to maintain and grow its assets. FCF is what funds acquisitions, dividends, buybacks, and debt repayment. For Apple in 2023, FCF was roughly $99B — one of the highest in history.
+</Callout>
+
+Why does net income differ from operating cash flow? Two main reasons:
+
+**Non-cash charges**: Depreciation reduces net income but doesn't use cash. If you buy a $10M machine and depreciate it over 10 years, you record $1M/year as an expense — but you only wrote the check once, in year one. Add depreciation back to reconcile.
+
+**Working capital changes**: If your customers owe you more money at year-end than at the start, that's cash you earned (recognized in revenue) but haven't received. Your accounts receivable went up, which uses cash. Conversely, if you owe your suppliers more, accounts payable increased — that's free short-term financing, which adds cash.
+
+<Example title="Amazon's Cash Conversion Cycle">
+Amazon collects from customers immediately (credit card at checkout) but pays suppliers on 30–60 day terms. Meanwhile, it turns inventory quickly. This negative cash conversion cycle means Amazon is constantly float-financed by suppliers and customers. In 2023, Amazon's operating cash flow was $85B — far exceeding its $20B net income — largely because of this working capital advantage plus massive depreciation from its logistics investments.
+</Example>
+
+## How the Three Statements Connect
+
+<Diagram>
+graph TD
+  IS[Income Statement] -->|Net Income| BS[Balance Sheet]
+  IS -->|Net Income| CFS[Cash Flow Statement]
+  CFS -->|Ending Cash Balance| BS
+  BS -->|Opening Balances| CFS
+</Diagram>
+
+The connections are explicit accounting rules:
+
+1. **Net income** from the income statement flows into the equity section of the balance sheet (as retained earnings) and is the starting point of the cash flow statement.
+2. **Ending cash** on the cash flow statement equals the cash line on the balance sheet.
+3. **Changes in balance sheet items** (inventory, receivables, payables) appear as adjustments in the operating section of the cash flow statement.
+
+## What Managers Actually Use These For
+
+You'll rarely sit down and read all three statements sequentially. In practice:
+
+**Income statement**: Monitor gross margin trends. If gross margin is compressing, either pricing is weakening or input costs are rising. Watch operating leverage — as revenue grows, do fixed costs as a percentage of revenue shrink? They should.
+
+**Balance sheet**: Track the debt load (debt/EBITDA is a common leverage ratio). Monitor receivables and inventory relative to revenue — rising days-sales-outstanding means customers are paying slower, which is a credit risk. Check cash runway.
+
+**Cash flow statement**: Verify that net income is converting to cash. A company that consistently earns profits but generates no cash is either aggressive in revenue recognition or consuming cash in working capital. Neither is good. Watch capex intensity — capital-heavy businesses need to constantly reinvest just to maintain their asset base.
+
+<Callout type="warning">
+**Earnings can be managed; cash is harder to fake.** Companies have discretion in how they recognize revenue, depreciate assets, and capitalize versus expense costs. These choices can make net income look better or worse than the underlying business reality. Always check whether cash flow from operations tracks net income over time. Large, persistent divergences warrant investigation.
+</Callout>
+
+## Key Ratios to Know
+
+From these three statements, dozens of ratios can be calculated. The essential ones:
+
+- **Gross margin** = Gross Profit / Revenue
+- **Operating margin** = Operating Income / Revenue
+- **Net margin** = Net Income / Revenue
+- **Return on Equity (ROE)** = Net Income / Shareholders' Equity
+- **Return on Assets (ROA)** = Net Income / Total Assets
+- **Current ratio** = Current Assets / Current Liabilities (above 1 = can cover short-term debts)
+- **Debt/EBITDA** = Total Debt / EBITDA (banks often require this below 3–4x)
+
+<Takeaways>
+- The income statement measures profitability over time; the balance sheet shows financial position at a point in time; the cash flow statement tracks where cash came from and went.
+- Revenue recognition is accrual-based — cash and revenue are often recognized in different periods.
+- Gross margin reveals pricing power and cost structure; operating margin shows how efficiently a company converts revenue to profit.
+- Net income and cash flow diverge due to non-cash charges (depreciation) and working capital changes — always check both.
+- Free cash flow (operating cash flow minus capex) is the truest measure of a business's cash-generating ability.
+- The three statements are mathematically connected — net income flows to the balance sheet and anchors the cash flow statement.
+</Takeaways>

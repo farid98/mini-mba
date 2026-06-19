@@ -1,0 +1,111 @@
+---
+slug: fundraising
+title: "Fundraising: Venture Capital, Term Sheets, and the Startup Money Game"
+subject: entrepreneurship
+order: 4
+summary: "Understanding how venture capital works — the economics, the incentives, and the mechanics — helps founders make better decisions about when and how much to raise."
+difficulty: intermediate
+readTime: 14
+prerequisites:
+  - entrepreneurship/business-model-design
+related:
+  - finance/valuation
+  - finance/capital-structure
+---
+
+## Why Fundraising Literacy Matters
+
+Most startup founders will spend significant time and energy raising external capital. The process is poorly understood going in — not because it's intellectually complex, but because VC industry terminology, norms, and incentive structures are rarely explained from first principles.
+
+Founders who don't understand how VCs make money make suboptimal decisions about valuation, dilution, governance, and term sheets. Founders who do understand these mechanics negotiate from a position of knowledge rather than naivety. This chapter explains the mechanics — without the mystique.
+
+## The VC Business Model
+
+Venture capital funds are investment vehicles that pool capital from institutional investors (pension funds, endowments, foundations, sovereign wealth funds) — called **limited partners (LPs)** — and invest in early-stage companies. The venture capital firm manages the fund and is the **general partner (GP)**.
+
+VCs make money two ways:
+
+**Management fees**: Typically 2% of committed capital per year during the investment period, and 2% of invested capital thereafter. On a $500M fund, that's $10M/year in fees during the investment period. Management fees cover operating costs (salaries, offices, deal sourcing) and provide GP income during the fund's life.
+
+**Carried interest (carry)**: The GP typically receives 20% of profits above the amount returned to LPs. On a $500M fund that returns $2B, the GP's carry is 20% × $1.5B = $300M. Carry is the primary wealth creation mechanism for VCs and drives their investment behavior.
+
+The implication for founders: VCs need **home runs**. Because carry is 20% of profits and the baseline return to LPs must be exceeded first, a fund needs to return 3-5x its invested capital (above the preferred return hurdle) to generate meaningful carry. Most investments will fail or return less than invested — so the successful investments must return many multiples of cost to make up for the losses. A VC who invests in 30 companies needs some companies to return 50-100x just to make the fund work. This shapes VC behavior: they look for companies that could potentially be enormous, not merely good businesses.
+
+<Callout type="insight">
+The "power law" in venture returns means that a fund's entire return often comes from one or two investments. Sequoia's investment in Google returned more than all other Sequoia investments combined. Andreessen Horowitz's investment in Facebook, Coinbase, or GitHub often dominated their respective fund's returns. VCs know this — which is why they invest in founders and markets where the upside is theoretically unlimited rather than settling for moderately successful companies.
+</Callout>
+
+## Funding Stages
+
+Startup funding progresses through recognizable stages, each with different investor types, check sizes, and expectations.
+
+**Pre-seed** ($100K-$2M): Friends and family, angel investors, pre-seed funds. Used to build an MVP, validate early assumptions, and get to a point where there's enough signal to pitch seed investors. Founders typically give up 5-15% equity.
+
+**Seed** ($1M-$5M): Seed-stage VCs, angels, and some early-stage funds. Funds the first 12-18 months of focused development — building the product, getting initial customers, and establishing the key metrics that will drive a Series A. Founders typically give up 15-25% equity.
+
+**Series A** ($5M-$20M): Institutional venture capital. The company has demonstrated some product-market fit, has initial revenue or strong growth metrics, and is ready to scale the go-to-market motion. The question Series A investors are asking: can this become a large company? Founders typically give up 20-25% equity.
+
+**Series B** ($20M-$50M): Scaling the business model that worked. Usually when unit economics are proven and the question is how fast to grow. 15-25% dilution.
+
+**Series C and beyond**: Growth capital. Expanding to new markets, building new product lines, M&A, pre-IPO growth. Companies at this stage are often valued at hundreds of millions or billions.
+
+## Valuation and Dilution
+
+Startup valuation is both art and negotiation. Unlike public companies with liquid markets, private company valuations are determined by what an investor will pay, based on comparable transactions, growth metrics, and market potential.
+
+**Pre-money vs. post-money valuation**: If a company is valued at $20M (pre-money) and raises $5M, the post-money valuation is $25M. The investor who invested $5M owns $5M/$25M = 20% of the company.
+
+**Dilution**: Each funding round dilutes existing shareholders. A founder who owned 80% before the round owns 80% × 80% = 64% after a round in which the investor takes 20%. This compounds across rounds. A founder who raises 4 rounds, each with 20% dilution, ends up owning 80% × 80% × 80% × 80% = 41% of the company before employee stock options and other dilution.
+
+**Option pools**: Investors typically require founders to set aside an option pool (usually 10-20% of post-money shares) for future employee grants. This dilution is almost always taken pre-money — the investor's 20% is 20% of post-money including the option pool, meaning the option pool dilution falls on the founders, not the investor.
+
+## Understanding Term Sheets
+
+A term sheet is a non-binding document outlining the key terms of an investment. The economics and governance provisions deserve careful attention.
+
+**Economics**:
+
+*Liquidation preference*: This is the most economically significant term. In a liquidation (acquisition or bankruptcy), preferred shareholders (investors) get paid before common shareholders (founders, employees). A 1x liquidation preference means the investor gets their money back before founders get anything. A 2x preference means they get twice their investment first.
+
+*Participating preferred vs. non-participating*: With participating preferred, investors take their liquidation preference AND participate pro-rata in remaining proceeds. With non-participating, they choose between their liquidation preference OR pro-rata participation (whichever is higher). Participating preferred is more investor-friendly and materially reduces founder proceeds in outcomes below the level where founders can convert to common.
+
+**Governance**:
+
+*Board composition*: Early-stage term sheets typically specify board composition (e.g., 2 common seats + 1 investor seat + 2 independent directors). Board control matters because the board can fire the CEO, approve major transactions, and issue new shares.
+
+*Protective provisions*: Investors typically require approval for major decisions — issuing new shares, taking on debt above a threshold, selling the company, changing the certificate of incorporation. These veto rights protect investors from having value diluted away.
+
+*Anti-dilution protection*: If the company raises a future round at a lower valuation (a "down round"), anti-dilution provisions protect the investor by adjusting their share count. Broad-based weighted average anti-dilution is standard; full ratchet is very investor-friendly and founder-unfavorable.
+
+<Example title="The Liquidation Preference in Practice">
+A company raises $10M at a $40M pre-money valuation ($50M post-money). The investor owns 20% with a 2x participating liquidation preference. The company sells for $30M (below the post-money valuation). Without the liquidation preference, the investor gets 20% × $30M = $6M — less than they invested. With the 2x liquidation preference, the investor gets $20M first, then participates pro-rata in the remaining $10M (20% × $10M = $2M), for a total of $22M — 73% of the exit proceeds despite owning 20% of the company. The founders and employees who owned 80% split $8M. This is why liquidation preferences matter enormously in smaller outcomes — and why founders should negotiate 1x non-participating wherever possible.
+</Example>
+
+## Bootstrapping vs. Raising
+
+Not every company should raise venture capital. The VC model requires companies to pursue very large markets aggressively — because VCs need home runs. This creates alignment problems for businesses that could be excellent, profitable, and significant at a scale that doesn't deliver VC-level returns.
+
+**When bootstrapping makes sense**:
+- The business can become cash-flow positive quickly with modest initial capital
+- The market is too small to attract or satisfy VC expectations
+- The founder values control and doesn't want VC-driven pressure for growth over profitability
+- The business model generates revenue from day one (services, consulting, some SaaS)
+
+**When raising makes sense**:
+- The market opportunity genuinely requires capital to build before revenue materializes
+- Speed to scale creates winner-take-all dynamics where capital velocity is competitive
+- Network effects require user base investment before monetization
+- Infrastructure costs (hardware, clinical trials, regulatory) require upfront capital
+
+The decision matters because they lead to different outcomes. Bootstrapped companies can be very valuable businesses without being enormous. VC-backed companies are pushed to grow as fast as possible, take on more risk, and ultimately sell or go public.
+
+Jason Fried (Basecamp/37signals) and David Heinemeier Hansson are the most articulate advocates for bootstrapping profitable software companies. Their approach produced a highly profitable, independent company that has remained relevant for 20+ years. It hasn't produced a $10B company — but it has produced a fundamentally sound business that the founders control.
+
+<Takeaways>
+- VCs make money from carry (20% of profits) — this requires portfolio home runs, which drives their preference for high-risk/high-potential investments
+- Funding stages: pre-seed (product validation), seed (PMF search), Series A (scaling proven model), Series B+ (growth acceleration)
+- Liquidation preferences protect investors in small exits; participating preferred further reduces founder proceeds — 1x non-participating is the founder-friendly norm
+- Dilution compounds across rounds — a 20% dilution per round across 4 rounds leaves founders with 41% before option pools and other dilution
+- Anti-dilution provisions (broad-based weighted average) and board governance terms can be as economically significant as valuation
+- Bootstrapping is a legitimate alternative to VC for businesses that don't require large upfront capital and where the founder values control and profitability over maximum growth
+</Takeaways>

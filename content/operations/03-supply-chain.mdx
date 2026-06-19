@@ -1,0 +1,124 @@
+---
+slug: supply-chain
+title: "Supply Chain: Design, Risk, and the Resilience-Efficiency Trade-off"
+subject: operations
+order: 3
+summary: "Supply chain design determines cost, speed, and resilience — and the COVID-19 disruptions exposed how decades of efficiency optimization had made global supply chains dangerously brittle."
+difficulty: intermediate
+readTime: 12
+prerequisites:
+  - operations/process-thinking
+related:
+  - operations/lean
+  - strategy/competitive-advantage
+---
+
+## The Invisible Infrastructure
+
+Supply chains are most visible when they fail. For decades, consumers could order a product and have it arrive in two days — or two hours — without thinking about the vast global network of factories, ships, warehouses, trucks, and software systems that made it possible. Then COVID-19 hit, semiconductor shortages created 18-month waits for new cars, baby formula disappeared from shelves, and the supply chain moved from the operations function to the front page.
+
+The underlying tension that the pandemic exposed had been building for decades: the relentless optimization for efficiency — lower inventory, fewer suppliers, concentrated manufacturing, just-in-time delivery — had created supply chains that worked beautifully until they didn't. Disruption resilience had been systematically traded away for cost efficiency.
+
+Understanding supply chain design means understanding this tension and how to navigate it.
+
+## Supply Chain Design Choices
+
+A supply chain is the network of entities — suppliers, manufacturers, distributors, retailers, service providers — involved in creating and delivering a product or service. Designing that network involves choices about:
+
+**Make vs. buy**: Which activities do you perform internally versus source from suppliers? The make-or-buy decision is simultaneously a strategy question (what capabilities define our competitive advantage?) and an economics question (what is the cost of producing internally versus purchasing?).
+
+Apple makes its own chips but outsources most manufacturing to Foxconn. Amazon makes its own cloud infrastructure but uses third-party package carriers. The principle: internalize activities that generate competitive advantage and are difficult to contract for; outsource commodity activities where the market provides better economics than internal production.
+
+**Supplier structure**: How many suppliers for each component, and how concentrated? Single sourcing from one preferred supplier creates efficiency (volume discounts, relationship investment, simplified management) but creates single points of failure. Dual or multi-sourcing increases resilience at some cost to efficiency.
+
+**Inventory policy**: How much inventory to hold at each point in the chain? More inventory buffers against supply disruptions and demand variability but ties up capital, creates obsolescence risk, and requires storage. Less inventory reduces cost but creates vulnerability.
+
+**Network geography**: Where to locate manufacturing, distribution centers, and service facilities? Decisions involve labor cost, proximity to customers, logistics cost, regulatory requirements, and geopolitical risk.
+
+<Callout type="insight">
+The efficiency of a supply chain is measured by its cost and speed under normal conditions. The resilience of a supply chain is measured by its performance under disruption. These objectives conflict: the investments that improve resilience (redundant suppliers, safety stock, diversified manufacturing) increase cost. The COVID-19 lesson was not "efficiency is bad" — it's that the optimal point on the efficiency-resilience trade-off had been systematically overweighted toward efficiency, and the portfolio of risks hadn't been properly evaluated.
+</Callout>
+
+## The Bullwhip Effect
+
+One of the most important and counterintuitive phenomena in supply chains is the **bullwhip effect**: demand variability amplifies as it moves upstream through the supply chain. A small fluctuation in retail demand creates progressively larger fluctuations in wholesale orders, which creates still larger fluctuations in manufacturer orders, which creates enormous volatility in raw material procurement.
+
+Why does this happen? Each player in the supply chain adds safety stock to protect against uncertainty. When demand increases slightly, the retailer orders more to replenish inventory and build safety stock. The wholesaler sees the larger order and adds their own safety stock buffer. The manufacturer sees an even larger increase and responds by ramping production. The raw material supplier sees a spike in demand that looks like a major trend change.
+
+When demand drops, the same process works in reverse: everyone simultaneously cuts orders and runs down inventory, creating a severe trough for upstream suppliers.
+
+The bullwhip effect explains why industries like semiconductors, commodities, and industrial equipment experience dramatic boom-bust cycles even when underlying end-demand is relatively stable.
+
+**Reducing the bullwhip effect**:
+- **Information sharing**: Give upstream suppliers visibility into point-of-sale data, not just orders. Walmart's early information sharing with suppliers was a landmark improvement in supply chain efficiency.
+- **Vendor-managed inventory (VMI)**: Let the supplier manage inventory at your location. They can see actual consumption rates and replenish efficiently without the ordering lag.
+- **Stable ordering patterns**: Avoid large, infrequent orders that create artificial variability. Frequent, small orders transmit demand signals more accurately.
+- **Price stability**: Price promotions (buy three cases, get one free) cause demand spikes that are purely an ordering artifact, not genuine demand variation.
+
+<Diagram>
+graph LR
+    A[Customer: 1% demand change] --> B[Retailer: 5% order change]
+    B --> C[Wholesaler: 10% order change]
+    C --> D[Distributor: 20% order change]
+    D --> E[Manufacturer: 40% production change]
+    E --> F[Supplier: 80% material order change]
+</Diagram>
+
+## Inventory Management
+
+Inventory management is about maintaining service levels — not running out of stock — while minimizing the capital tied up in inventory. The key concepts:
+
+**Safety stock**: Buffer inventory held to protect against variability in demand and supply lead time. Safety stock = z × σ × √(L + R), where z is the service level z-score, σ is the standard deviation of demand, L is lead time, and R is review period. Higher service level requirements, more variable demand, and longer lead times all require more safety stock.
+
+**Reorder point**: The inventory level at which a new order should be placed. Reorder point = (Average demand during lead time) + Safety stock.
+
+**Economic Order Quantity (EOQ)**: The order size that minimizes total inventory cost (ordering costs + holding costs). EOQ = √(2DS/H), where D is annual demand, S is ordering cost, and H is annual holding cost per unit. The EOQ model is simplified (assumes constant demand, fixed lead time), but the insight is useful: there's a trade-off between order frequency (smaller, more frequent orders reduce inventory but increase ordering cost) and order size (larger orders reduce ordering cost but increase holding cost).
+
+**ABC analysis**: Classify inventory items by value: A items are high-value (tight control, frequent review), B items are medium-value (moderate control), C items are low-value (simple rules, minimal management overhead). Apply management effort proportionate to inventory value.
+
+## Supply Chain Risk
+
+The COVID-19 disruptions illustrated how supply chain risk had been systematically underestimated. The risk categories:
+
+**Supplier concentration**: Over-reliance on single suppliers or single geographies. The concentration of semiconductor manufacturing in Taiwan (TSMC) creates systemic risk for the entire global electronics industry.
+
+**Just-in-time vulnerability**: Lean inventory systems that minimize buffer stock are highly efficient but have minimal disruption tolerance. A three-day supply of components means a four-day shipping delay causes a production shutdown.
+
+**Complexity risk**: Long, multi-tier supply chains create opacity. You may know your direct suppliers but not your suppliers' suppliers. Tier 2 and Tier 3 problems are often invisible until they cause disruptions.
+
+**Geopolitical risk**: Trade restrictions, tariffs, port closures, and political instability can disrupt supply chains built around global arbitrage. The China-plus-one strategy — maintaining primary China manufacturing while developing alternative capacity — became widespread post-COVID.
+
+**Natural disaster risk**: Hurricanes, earthquakes, floods, and pandemics affect specific geographies. Geographic concentration of manufacturing or key suppliers creates correlated risk.
+
+**Risk mitigation strategies**:
+- Dual sourcing for critical components
+- Geographic diversification of manufacturing
+- Strategic safety stock for high-risk items
+- Scenario planning for major disruptions
+- Supply chain mapping to tier 3+ visibility
+- Nearshoring for items where proximity reduces lead time risk
+
+<Example title="Apple's Supply Chain as Competitive Advantage">
+Apple's supply chain is not just a cost center — it's a competitive weapon. Apple's scale allows it to commit to purchasing so many components years in advance that it effectively locks up manufacturing capacity. In the years after the first iPhone, Apple reportedly bought most of the world's production capacity for gorilla glass, causing competitors to scramble for supply. Apple's scale allows it to negotiate component prices that smaller competitors can't match. Its supply chain team — legendary for its precision and rigor — executes product launches of millions of units globally with near-flawless execution. Tim Cook built his reputation as COO managing exactly this system before becoming CEO.
+</Example>
+
+## The New Supply Chain Agenda
+
+The priorities in supply chain management have shifted post-pandemic:
+
+**Resilience investment**: Building redundancy that would previously have been rejected as unnecessary cost. Companies are accepting higher supply chain costs in exchange for lower variance — the risk premium is now recognized.
+
+**Nearshoring and reshoring**: Moving manufacturing closer to end markets to reduce logistics cost, lead time, and geopolitical risk. Not a reversal of globalization, but a rebalancing.
+
+**Visibility technology**: Investment in supply chain visibility tools that provide real-time tracking of inventory and orders across the full supply network, including tier 2+ suppliers.
+
+**Sustainability**: Carbon emissions from supply chains (often 70-90% of a company's total emissions) are under increasing regulatory and customer scrutiny. The supply chain is the primary lever for decarbonization in most companies.
+
+<Takeaways>
+- Supply chain design balances efficiency (cost, speed) and resilience (disruption tolerance) — these objectives conflict and require explicit trade-offs
+- The bullwhip effect: demand variability amplifies upstream through the supply chain — reduce it with information sharing, VMI, and stable ordering
+- Inventory management balances service levels against capital cost — safety stock, reorder points, and EOQ provide the analytical framework
+- Supply chain risk comes from supplier concentration, JIT vulnerability, complexity, geopolitical exposure, and natural disasters — mitigation requires dual sourcing, geographic diversification, and visibility
+- The post-COVID shift: resilience is now valued, nearshoring is growing, and supply chain visibility investment is accelerating
+- Supply chains can be strategic differentiators, not just cost centers — Apple's supply chain is itself a source of competitive advantage
+</Takeaways>

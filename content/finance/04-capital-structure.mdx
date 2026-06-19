@@ -1,0 +1,106 @@
+---
+slug: capital-structure
+title: "Capital Structure: Debt, Equity, and the Cost of Capital"
+subject: finance
+order: 4
+summary: "How a firm finances itself affects its cost of capital, risk profile, and strategic flexibility — and the right answer depends on the business, not a universal formula."
+difficulty: intermediate
+readTime: 12
+prerequisites:
+  - finance/valuation
+related:
+  - entrepreneurship/fundraising
+---
+
+## The Financing Choice
+
+Every business needs capital. The question is where to get it and in what form. Equity comes from shareholders who own a residual claim on the business — they get whatever is left after everyone else is paid. Debt comes from lenders who have contractual claims to specific payments — they get paid before equity holders but have no upside beyond their agreed return.
+
+This difference in claim structure creates different risk and return profiles for each type of capital, which in turn affects how much each costs the firm. Understanding capital structure means understanding this tradeoff: how much should come from debt versus equity, and what are the consequences of each choice?
+
+## The Modigliani-Miller Theorem
+
+The starting point for all capital structure analysis is Modigliani and Miller's (MM) famous irrelevance theorem from 1958. Their argument: in a world without taxes, transaction costs, or information asymmetries, capital structure doesn't matter. The total value of the firm is determined by its operating cash flows, not by how those cash flows are divided among different capital providers.
+
+The intuition is simple. If I take a leveraged firm and replace its debt with equity, I've just transferred claims between investors — I haven't changed the underlying business or its earning power. Rational investors can replicate any capital structure themselves by borrowing or lending on personal account ("homemade leverage"). So why would the mix of the firm's claims matter?
+
+<Callout type="insight">
+MM's theorem is valuable not because the world is frictionless (it isn't) but because it tells you *where* capital structure matters: wherever the MM assumptions are violated. Taxes, distress costs, information asymmetries, and agency problems are the real factors in capital structure decisions — the theorem points you directly to them.
+</Callout>
+
+Once you relax the MM assumptions, capital structure matters in several ways:
+
+**Tax shield**: Interest payments on debt are tax-deductible, while equity dividends are not. A firm with $1B in debt at 5% interest gets a $50M annual interest deduction, worth $16.5M per year if the tax rate is 33%. The present value of this tax shield — discounted appropriately — adds to firm value. This is a genuine advantage of debt.
+
+**Distress costs**: High debt levels increase the probability of financial distress. Direct distress costs include legal fees, management time, and operational disruption. Indirect distress costs — often larger — include customers avoiding long-term relationships, employees leaving, suppliers tightening terms, and competitive predation by better-capitalized rivals.
+
+**Agency costs**: Debt creates tensions between shareholders and debt holders. Highly leveraged shareholders may prefer risky investments ("asset substitution" — if it pays off, shareholders get the upside; if it fails, debtholders bear the loss). Debt covenants are designed to prevent this, but they impose their own costs.
+
+## The Weighted Average Cost of Capital
+
+WACC is the blended required return on capital, weighted by the share of debt and equity in the firm's capital structure.
+
+**WACC = (E/V) × Re + (D/V) × Rd × (1-t)**
+
+Where:
+- E = market value of equity, D = market value of debt, V = E + D
+- Re = cost of equity, Rd = pre-tax cost of debt, t = tax rate
+
+**Cost of debt** is relatively easy to observe — it's the yield on the company's outstanding bonds, or the rate on its credit facilities.
+
+**Cost of equity** requires a model. The Capital Asset Pricing Model (CAPM) is the standard approach: Re = Rf + β(Rm - Rf), where Rf is the risk-free rate, β is the stock's sensitivity to market movements, and (Rm - Rf) is the equity risk premium.
+
+The implication: adding debt to the capital structure has two effects. First, it increases the after-tax cost of debt advantage (tax shield). Second, it makes the remaining equity riskier — because debt holders have senior claims, equity holders face more volatile returns, so Re rises. The optimal capital structure balances these effects.
+
+<Diagram>
+graph LR
+    A[More Debt] --> B[Lower WACC via Tax Shield]
+    A --> C[Higher Re as Equity Gets Riskier]
+    A --> D[Higher Distress Risk]
+    B --> E[Optimal Capital Structure]
+    C --> E
+    D --> E
+</Diagram>
+
+## Leverage and Risk
+
+Leverage amplifies both returns and losses. A firm with no debt that earns $100M on $1B of assets earns a 10% return on assets. A firm with $500M of debt and $500M of equity that earns $100M on those same assets (after paying $25M in interest at 5%) earns $75M for equity holders — a 15% return on equity. Leverage raised the equity return from 10% to 15%.
+
+But if earnings fall to $50M, the unlevered firm earns 5% on assets. The levered firm earns $25M for equity after interest — a 5% return on equity. Same decline in operating performance, but the levered firm's equity return has fallen more dramatically in absolute terms.
+
+Financial distress is the extreme case. If earnings fall below the $25M interest payment, the levered firm cannot service its debt. The unlevered firm is unaffected by the same decline. This asymmetry explains why capital-intensive businesses with volatile revenues (airlines, mining, hospitality) tend to use less leverage than stable, cash-generative businesses (utilities, consumer staples) despite the tax advantage.
+
+<Example title="The Leveraged Buyout">
+Private equity firms use leverage as a core value-creation tool. In a leveraged buyout (LBO), PE firms acquire businesses using primarily debt — often 60-70% of the purchase price. This has two effects. First, it amplifies equity returns: if the business grows its value by 3x over 5 years, a 70% leveraged equity stake grows by much more. Second, it imposes debt service discipline: management must generate free cash flow to service the debt, focusing attention on operational efficiency. The PE model works best for stable, cash-generative businesses where leverage can be safely applied. It fails for cyclical businesses where a demand downturn makes debt service impossible — which is why the worst LBO outcomes happen at cycle peaks.
+</Example>
+
+## Capital Structure in Practice
+
+Theory provides a framework; practice involves judgment. Several empirical patterns describe how real firms manage capital structure:
+
+**Trade-off theory**: Firms target an optimal leverage ratio that balances tax benefits against distress costs. Firms below their target lever up; firms above it pay down debt. This is the prescriptive theory of capital structure.
+
+**Pecking order theory**: Firms prefer internal financing (retained earnings) first, then debt, then equity — to avoid the adverse signaling costs of issuing equity. When managers issue equity, markets interpret this as a signal that managers think the stock is overvalued. This explains why equity issuances often depress the stock price.
+
+**Market timing**: Firms issue equity when markets are high and buy back equity when markets are low. While not a theory of optimal capital structure, this behavior is empirically well-documented.
+
+In practice, large U.S. corporations operate in a target leverage range — enough debt to capture the tax shield and impose capital discipline, but not so much as to create meaningful distress risk. Investment-grade companies (rated BBB or above) typically have net debt/EBITDA ratios of 1-3x. Companies with more volatile cash flows, or those needing strategic flexibility for acquisitions, maintain lower leverage.
+
+## Dividends and Share Buybacks
+
+Capital structure also encompasses how firms return capital to shareholders. Companies can retain earnings, pay dividends, or repurchase shares.
+
+The MM dividend irrelevance theorem makes an analogous argument: in frictionless markets, investors are indifferent between dividends and capital gains — they can manufacture their preferred income pattern by selling shares if they want cash. In practice, tax treatment, investor preferences, and signaling effects make the choice consequential.
+
+Share buybacks have become the dominant form of shareholder return in the U.S., partly because they're more tax-efficient (capital gains taxes are often lower than dividend income taxes) and more flexible (dividends are sticky — cutting them is a negative signal, so companies are reluctant to raise dividends unless they're confident in sustaining them).
+
+The right capital return policy depends on a firm's investment opportunities. A fast-growing company with high-return reinvestment opportunities should retain capital. A mature company generating more cash than it can profitably invest should return it — either through dividends or buybacks. Hoarding cash without returning it to shareholders (when there are no high-return uses) destroys value through the denominator effect on returns.
+
+<Takeaways>
+- Modigliani-Miller: capital structure doesn't matter in frictionless markets — its value comes from where those frictions exist: taxes, distress costs, and agency problems
+- Debt creates a tax shield (interest deductibility) but increases distress risk and equity cost — the optimal structure balances these
+- WACC is the blended cost of capital; lower WACC means higher firm value for the same operating cash flows
+- Leverage amplifies returns in good times and losses in bad times — appropriate leverage depends on business stability and cash flow visibility
+- Pecking order theory: firms prefer internal financing, then debt, then equity — equity issuance signals overvaluation
+- Capital return policy (dividends vs. buybacks) should be driven by the availability of high-return reinvestment opportunities
+</Takeaways>

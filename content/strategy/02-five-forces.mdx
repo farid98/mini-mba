@@ -1,0 +1,145 @@
+---
+slug: five-forces
+title: "Industry Analysis: Porter's Five Forces"
+subject: strategy
+order: 2
+summary: "Porter's Five Forces reveals why some industries are structurally attractive and others are profit traps — before you even consider individual companies."
+difficulty: foundational
+readTime: 12
+prerequisites:
+  - strategy/what-is-strategy
+related:
+  - strategy/competitive-advantage
+  - economics/markets
+---
+
+## Why Industry Structure Matters More Than You Think
+
+Here is a fact that surprises most people when they encounter it: the airline industry has destroyed more capital than it has created over its entire history. Since commercial aviation began, the cumulative net profit of all US airlines combined is roughly zero — or negative, depending on the year. Yet individual airlines have tried everything: hub-and-spoke networks, loyalty programmes, premium products, budget fares, new aircraft, new routes. They compete ferociously. They are not stupid or lazy.
+
+The problem is not the companies. The problem is the industry. Certain industries are structurally hostile to profit, regardless of how hard individual participants try. Others are structurally generous — incumbents earn excellent returns with no unusual genius required.
+
+This is the insight at the heart of Michael Porter's Five Forces framework. Before asking "is this a well-run company?", ask "is this an attractive industry to be in at all?"
+
+<Callout type="definition">
+**Porter's Five Forces** is a framework for analysing the competitive structure of an industry. The five forces — threat of new entry, supplier power, buyer power, threat of substitutes, and rivalry among existing competitors — collectively determine how much of the value an industry creates flows to producers versus being competed away.
+</Callout>
+
+## The Framework
+
+The five forces are not a checklist. They are a model of how value flows (or does not flow) to companies in an industry. Each force represents a type of competitive pressure that erodes profitability. When all five are weak, incumbent companies can earn excellent returns. When several are strong, even excellent execution produces mediocre results.
+
+<FiveForces
+  threat_of_entry={{ rating: 'high', summary: 'Low capital requirements for point-to-point routes, airport slots sometimes available, and periodic new entrant attempts (Spirit, Frontier, Virgin America) keep incumbents from raising prices freely.' }}
+  supplier_power={{ rating: 'high', summary: 'Two aircraft manufacturers (Boeing and Airbus), unionised pilots and mechanics, and jet fuel markets mean airlines have almost no leverage over their major input costs.' }}
+  buyer_power={{ rating: 'high', summary: 'Tickets are commoditised and easily compared on aggregators. Business travellers are price-sensitive on discretionary trips; leisure travellers are extremely price-sensitive. Switching costs are low.' }}
+  substitutes={{ rating: 'medium', summary: 'For short-haul routes, high-speed rail (Eurostar, Japanese Shinkansen) and video conferencing are viable substitutes. Long-haul has fewer substitutes, limiting this force somewhat.' }}
+  rivalry={{ rating: 'high', summary: 'Airlines compete on price, schedule, and routes in overlapping networks. Capacity is hard to reduce quickly (you own the planes), so price wars erupt whenever demand dips.' }}
+/>
+
+The airline industry scores poorly on four of five forces — which explains the structurally terrible profitability. Notice that this analysis tells you nothing about which airline is best-run. It tells you that *all* of them face a brutal structural environment.
+
+## Force 1: Threat of New Entry
+
+New entrants bring fresh capacity and competitive ambition. The threat of entry — even if no one actually enters — disciplines incumbent pricing. If existing players raise prices above a certain level, new entrants appear and force them back down.
+
+Barriers to entry are what protect incumbents. The key ones are:
+
+- **Economies of scale**: If you need to be big to be cost-competitive, small entrants are at a structural disadvantage. Semiconductor fabrication requires billion-dollar fabs. Airlines can start with a few planes.
+- **Capital requirements**: The raw investment needed to compete. Launching an airline requires capital but is feasible. Launching a new search engine at Google's scale is not.
+- **Switching costs**: If customers face friction changing suppliers, new entrants must offer a dramatic improvement just to get a trial. Enterprise software buyers face enormous switching costs (data migration, retraining), which is why Oracle and SAP incumbents are so durable.
+- **Network effects**: When the product becomes more valuable as more people use it, incumbents have a self-reinforcing advantage. This is why Facebook, despite many missteps, has never lost its core network to a competitor.
+- **Incumbent access to distribution**: If existing players control the shelf space, the relationships, or the regulatory approvals, new entrants face a structural disadvantage regardless of their product quality.
+
+<Example title="Pharmaceuticals">
+The pharmaceutical industry has high barriers to entry on new drug development — regulatory approval is expensive, slow, and uncertain. Yet once a drug loses patent protection, generic manufacturers enter immediately and drive prices down 80–90%. The barrier to entry for generics is low (formulation, not discovery), so the value created by the original patent evaporates once protection ends. This is why pharma companies spend so much on developing the next patented compound — the structural protection is time-limited.
+</Example>
+
+## Force 2: Supplier Power
+
+Suppliers are powerful when they can charge more, deliver less, or impose terms on buyers in the industry. A powerful supplier extracts value from the industry it supplies rather than leaving it to incumbents.
+
+Suppliers are powerful when:
+- The supplier industry is more concentrated than the buyer industry (two aircraft manufacturers selling to dozens of airlines)
+- There are no good substitutes for what the supplier provides
+- Switching suppliers is costly (proprietary components, long-term contracts, integration costs)
+- The supplier's product is a critical input (you cannot make steel without iron ore)
+- The supplier could plausibly enter the buyer's industry (forward integration threat)
+
+<Callout type="insight">
+Supplier power is relative to the industry being analysed. Steel is a commodity with many suppliers, giving car manufacturers reasonable bargaining leverage. But TSMC — the Taiwanese chipmaker — manufactures chips that no other company can replicate at the same quality and scale, giving it enormous power over Apple, Nvidia, and AMD, who depend on it for their most advanced products.
+</Callout>
+
+## Force 3: Buyer Power
+
+Buyers are powerful when they can force prices down, demand better quality, or play competitors off against each other. A powerful buyer extracts value from the industry — leaving producers with thin margins.
+
+Buyers are powerful when:
+- Purchases are large relative to a seller's revenue (Walmart negotiates brutally with consumer goods companies because losing Walmart as a customer would be catastrophic)
+- The product is undifferentiated — a commodity where switching is easy
+- Buyers face low switching costs
+- Buyers have full information about prices and alternatives
+- Buyers could credibly produce the product themselves (backward integration threat)
+
+The rise of price comparison websites dramatically increased buyer power in insurance, mortgages, and travel — buyers can now instantly see every available option. This is one reason margins in those industries compressed.
+
+## Force 4: Threat of Substitutes
+
+Substitutes are products or services from *outside the industry* that perform the same function. They cap the price an industry can charge — if industry prices rise too high, customers switch to substitutes.
+
+The key question is not whether substitutes exist but whether customers will actually switch. Video calls are a substitute for business air travel, but until the pandemic most business travellers would not use them for important meetings. The pandemic changed that calculus permanently — the threat became real.
+
+<Diagram>
+graph TD
+  A[Industry Price Rises] --> B[Substitute Attractive?]
+  B -->|Yes - Low switching cost| C[Customers Migrate\nto Substitute]
+  B -->|No - High switching cost\nor inferior substitute| D[Industry Retains\nCustomers]
+  C --> E[Industry Must\nLower Prices]
+  D --> F[Industry Can\nSustain Premium]
+</Diagram>
+
+The constraint substitutes impose is price-related: they set a ceiling. The pharmaceutical industry faces substitutes in generic drugs. The hotel industry faces substitutes in Airbnb. Taxis faced a substitute in Uber — one with dramatically lower switching costs because you could compare the two on your phone in real time.
+
+## Force 5: Rivalry Among Existing Competitors
+
+Intense rivalry among incumbents drives down prices, increases costs (marketing, R&D, product features), and erodes margins. The question is what makes rivalry intense.
+
+Rivalry is most intense when:
+- Competitors are roughly equal in size and capability (no dominant player can impose order)
+- Industry growth is slow (companies fight for each other's customers rather than growing the pie)
+- Fixed costs are high and marginal costs are low (airlines, steel mills, hotels — once the plane flies, the empty seat costs almost nothing, so cutting price to fill it is rational even at very low prices)
+- Products are undifferentiated and switching is easy
+- Exit barriers are high — companies keep competing even at a loss because they cannot afford to leave
+
+The airline industry scores poorly on nearly all of these dimensions. Aircraft are expensive assets that must keep flying. Routes overlap extensively. Prices are completely transparent. No airline can afford to simply exit a route — the debt on the plane does not go away.
+
+## Using Five Forces: The Right Questions
+
+The framework is a diagnostic tool, not a formula. The goal is not to score each force 1–10 and add them up. The goal is to understand *why* profitability looks the way it does in an industry, and what it would take to change it.
+
+The most useful questions to ask:
+
+- **Which forces are most constraining?** In pharmaceuticals, the patent system manages entry and substitutes. In professional services (law, accounting), buyer power and entry are the key constraints.
+- **Is the industry structure changing?** Digital distribution changed music (new entry, new substitutes, increased buyer power). Cloud computing changed enterprise software (reduced switching costs, new entry from SaaS players).
+- **Where in the value chain is the profit?** Even in a difficult industry, parts of the value chain may be attractive. Airports are more profitable than airlines. Drug distributors are more profitable than some drug manufacturers.
+- **What would improve the industry's attractiveness?** Industry consolidation reduces rivalry. Proprietary standards increase switching costs. Patents create barriers to entry.
+
+<Callout type="warning">
+A common mistake is to use Five Forces to analyse a single company rather than an industry. Five Forces is an industry-level tool. It tells you whether you want to be *in* an industry at all. Once you are in, you need different frameworks (competitive advantage, value chain, positioning) to understand how to win within that industry.
+</Callout>
+
+## From Industry to Position
+
+Five Forces explains why some industries are attractive and others are not — but it does not tell you how to succeed within a given industry. That requires understanding competitive advantage: how a particular company creates and captures more value than its rivals.
+
+The relationship between the two is important. In an attractive industry, a poorly positioned company can still earn mediocre returns. In a terrible industry, an exceptional competitive position can still produce excellent results — Southwest is the canonical example. For decades, while the rest of the airline industry cycled through losses and bankruptcies, Southwest earned a profit in 47 consecutive years before the pandemic.
+
+Industry structure sets the average. Your strategy determines whether you perform above or below it.
+
+<Takeaways>
+- Industry structure — not company quality — determines the average profitability available to participants. Analyse the industry before analysing the company.
+- The five forces are: threat of new entry, supplier power, buyer power, threat of substitutes, and rivalry among existing competitors. Each represents a claim on the value the industry creates.
+- Airlines score poorly on four of five forces, explaining decades of aggregate losses despite fierce competition and genuine managerial effort.
+- Five Forces is an industry-level diagnostic, not a company-level tool. Use it to decide whether to enter an industry, not to decide how to win within one.
+- Even in unattractive industries, exceptional strategic positioning (like Southwest's) can produce superior returns — but you are fighting the tide.
+</Takeaways>
