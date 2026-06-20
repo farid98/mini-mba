@@ -59,6 +59,23 @@ export default function ChapterListItem({
             {String(index + 1).padStart(2, '0')}
           </span>
           <div style={{ flex: 1 }}>
+            {/* Pill above title — mobile only */}
+            <div className="sm:hidden" style={{ marginBottom: '0.375rem' }}>
+              <span
+                style={{
+                  fontSize: '0.6875rem',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  padding: '0.125rem 0.5rem',
+                  borderRadius: '999px',
+                  background: d.bg,
+                  color: d.color,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {chapter.difficulty}
+              </span>
+            </div>
             <div
               style={{
                 fontWeight: 600,
@@ -72,10 +89,15 @@ export default function ChapterListItem({
             <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
               {chapter.summary}
             </div>
+            {/* Read time below summary — mobile only */}
+            <div className="sm:hidden" style={{ marginTop: '0.375rem', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+              {chapter.readTime} min
+            </div>
           </div>
+          {/* Right meta column — desktop only */}
           <div
+            className="hidden sm:flex"
             style={{
-              display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-end',
               gap: '0.25rem',
