@@ -29,8 +29,8 @@ export default function HomePage() {
           Mini MBA
         </h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', maxWidth: '560px' }}>
-          A concise graduate business curriculum — seven subjects, thirty-five chapters.
-          Built for practitioners who want the substance without the two-year detour.
+          A concise MBA refresher.
+          A quick cheat-sheet to everything they teach you in 2 years ;)
         </p>
       </header>
 
