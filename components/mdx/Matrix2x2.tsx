@@ -42,27 +42,20 @@ export default function Matrix2x2({ xAxis, yAxis, quadrants }: Matrix2x2Props) {
       boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
     }}>
       <div style={{ display: 'flex', gap: '0.625rem' }}>
-        {/* Y-axis label — writing-mode keeps layout dimensions correct so space-between works */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            width: '1.5rem',
-            flexShrink: 0,
-            paddingTop: '0.25rem',
-            paddingBottom: '0.375rem',
-          }}
-        >
-          <span style={{ fontSize: '0.625rem', color: '#888', writingMode: 'vertical-rl', transform: 'rotate(180deg)', display: 'flex', alignItems: 'center', gap: '2px' }}>
-            ↑ {yAxis.high}
+        {/* Y-axis: two columns — outer for high/low endpoints, inner for axis label */}
+        {/* Outer column: high at top, low at bottom */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', width: '1rem', flexShrink: 0, paddingTop: '0.25rem', paddingBottom: '0.25rem' }}>
+          <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '0.5625rem', color: '#aaa' }}>
+            {yAxis.high}
           </span>
-          <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: '#555', writingMode: 'vertical-rl', transform: 'rotate(180deg)', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+          <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '0.5625rem', color: '#aaa' }}>
+            {yAxis.low}
+          </span>
+        </div>
+        {/* Inner column: axis label centered */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1rem', flexShrink: 0 }}>
+          <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '0.6875rem', fontWeight: 700, color: '#555', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
             {yAxis.label}
-          </span>
-          <span style={{ fontSize: '0.625rem', color: '#888', writingMode: 'vertical-rl', transform: 'rotate(180deg)', display: 'flex', alignItems: 'center', gap: '2px' }}>
-            {yAxis.low} ↓
           </span>
         </div>
 

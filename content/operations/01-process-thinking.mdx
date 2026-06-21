@@ -36,7 +36,7 @@ A **process flow diagram** (or flowchart) is a visual map of the activities in a
 In a flow diagram, rectangles represent activities, diamonds represent decisions, and arrows show the direction of flow. When you draw a process for the first time — even a simple one — you almost always discover steps that nobody realized existed, handoffs that cause delays, and rework loops that consume huge amounts of time.
 
 <Diagram>
-flowchart LR
+flowchart TD
     A([Customer Order]) --> B[Check Inventory]
     B --> C[In Stock?]
     C -- Yes --> D[Pick & Pack]

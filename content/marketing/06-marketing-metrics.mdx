@@ -1,0 +1,172 @@
+---
+slug: marketing-metrics
+title: "Marketing Metrics: The Measurement Vocabulary"
+subject: marketing
+order: 6
+summary: "DAU, MAU, CAC, LTV, NPS — every growth conversation relies on a shared measurement vocabulary. Here is what each metric means, what it reveals, and how to use it."
+difficulty: foundational
+readTime: 12
+prerequisites:
+  - marketing/growth
+related:
+  - finance/financial-planning
+  - entrepreneurship/lean-startup
+---
+
+Every product meeting eventually produces a slide full of numbers. Monthly active users are up. CAC is creeping higher. NPS improved. Net revenue retention hit 112%. The people who own those numbers have power in the room — not because they have more data, but because they have a shared vocabulary for what the data means.
+
+This chapter is that vocabulary. It covers the core metrics across three domains: how engaged users are, how valuable they are economically, and how satisfied they are. None of these metrics is complete on its own — the skill is reading them together.
+
+## The Customer Lifecycle
+
+Every metric attaches to a stage in the customer journey. Acquisition metrics measure how people find you. Activation and engagement metrics measure what they do once they arrive. Retention and revenue metrics measure whether they stay and how much they're worth. Referral metrics measure whether they bring others.
+
+<Diagram>
+graph TD
+    A["🎯 Acquisition\nCAC · CPC · CTR"] --> B["⚡ Activation\nConversion Rate · Onboarding"]
+    B --> C["🔄 Engagement\nDAU · MAU · Stickiness"]
+    C --> D["🔒 Retention\nChurn Rate · NRR"]
+    D --> E["💰 Revenue\nARPU · MRR · LTV"]
+    E --> F["📣 Referral\nNPS · Virality Coefficient"]
+    F --> A
+    classDef stage fill:#edf7f1,stroke:#1a6b3a,color:#111
+    class A,B,C,D,E,F stage
+</Diagram>
+
+Understanding which stage a metric belongs to prevents a common mistake: trying to fix an acquisition problem when the real issue is retention, or investing in retention features when the product hasn't reached activation yet.
+
+## Engagement Metrics
+
+### DAU, WAU, MAU
+
+**Daily Active Users (DAU)**, **Weekly Active Users (WAU)**, and **Monthly Active Users (MAU)** measure how many unique users engage with a product in a given time window. "Active" needs a definition — for Slack it might be sending a message; for Spotify it might be playing a track; for a banking app it might be opening the app. The definition matters: what counts as active should reflect genuine product value delivered, not mere logins.
+
+These metrics are most useful as trends (are they growing?), not as absolutes. A DAU of 500,000 means nothing without knowing whether that's up 20% year-over-year or down 15%.
+
+<Callout type="warning">
+**Beware inflated MAU.** A user who opened the app once in 30 days counts as "monthly active" in most implementations. MAU is easy to inflate with push notifications, email re-engagement, and dark patterns that create logins without delivering value. Always interrogate the definition before trusting the number.
+</Callout>
+
+### The Stickiness Ratio: DAU/MAU
+
+The ratio of DAU to MAU is called the **stickiness ratio** — it measures what fraction of monthly users engage on a typical day. A stickiness ratio of 0.50 means the average monthly active user opens the product on 15 of 30 days. A ratio of 0.10 means they open it on three days.
+
+Benchmarks by product category:
+- **Communication and social tools** (WhatsApp, Slack): 50–70%
+- **Entertainment** (Netflix, Spotify): 20–35%
+- **Utilities and productivity**: 10–25%
+- **E-commerce**: 5–15%
+
+Stickiness below your category benchmark is a signal of weak habit formation — the product isn't integrated enough into users' routines to create daily pull. Stickiness above benchmark is a strong moat: users who open a product daily are far less likely to churn than those who open it monthly.
+
+## Revenue Metrics
+
+### MRR and ARR
+
+For subscription businesses, **Monthly Recurring Revenue (MRR)** is the normalized monthly revenue from active subscriptions. **Annual Recurring Revenue (ARR)** is MRR × 12. Both strip out one-time fees and non-recurring payments to show the stable, predictable base.
+
+MRR can be decomposed into its components:
+- **New MRR**: Revenue from new customers added this month
+- **Expansion MRR**: Revenue from existing customers upgrading or buying more
+- **Churned MRR**: Revenue lost from cancellations
+- **Contraction MRR**: Revenue lost from downgrades
+
+**Net New MRR = New MRR + Expansion MRR − Churned MRR − Contraction MRR**
+
+Healthy SaaS businesses have expansion MRR that partially or fully offsets churn — meaning existing customers are worth more over time even before accounting for new acquisition.
+
+### ARPU
+
+**Average Revenue Per User (ARPU)** = Total Revenue / Total Users (in a given period). It measures the average economic contribution of a single user and is useful for comparing monetization efficiency across time or segments.
+
+ARPU is heavily influenced by pricing strategy and customer mix. A company that raises prices, moves upmarket, or introduces a premium tier will see ARPU rise even if total user count stays flat. Rising ARPU on flat or growing users is a strong signal of improving monetization.
+
+<Example title="Spotify's ARPU Strategy">
+Spotify has consistently grown ARPU by shifting users from the free ad-supported tier to paid Premium subscriptions. In markets where this shift happens — typically as local purchasing power increases — ARPU jumps dramatically. Spotify's global ARPU is depressed by its large free user base; its Premium-only ARPU is much higher and growing. Investors track the free-to-paid conversion rate as a leading indicator of future ARPU and revenue expansion.
+</Example>
+
+## Acquisition Economics
+
+### CAC
+
+**Customer Acquisition Cost (CAC)** = Total Sales & Marketing Spend / Number of New Customers Acquired (in the same period). It's the all-in cost of landing one new customer.
+
+The most common mistake is using a narrow definition of marketing spend. CAC should include not just ad spend but also salesperson salaries, sales tools, marketing team headcount, and agency fees. Narrowing the definition makes CAC look artificially low and leads to overconfidence in unit economics.
+
+CAC is also best calculated by channel and cohort. Overall blended CAC hides the fact that some channels (SEO, word-of-mouth, partner referrals) have very low CAC while others (paid search, outbound sales) are expensive. A rising blended CAC often means the cheap channels are saturating and the company is relying more heavily on expensive ones.
+
+### LTV
+
+**Customer Lifetime Value (LTV)** is the total net revenue a customer is expected to generate over their entire relationship with the business. The most common formula for subscription businesses:
+
+**LTV = ARPU × Gross Margin % × (1 / Monthly Churn Rate)**
+
+If a customer pays $100/month, gross margin is 70%, and monthly churn is 2%: LTV = $100 × 0.70 × (1/0.02) = **$3,500**.
+
+LTV is a forecast, not a fact — it depends on churn assumptions that may not hold as the business scales or competition increases. Treat LTV calculations with appropriate skepticism, especially when the customer relationship is still young and churn behavior isn't fully established.
+
+### LTV:CAC Ratio
+
+The **LTV:CAC ratio** is the single most important unit economics metric for subscription and recurring revenue businesses. It answers: for every dollar spent acquiring a customer, how many dollars of lifetime value do we get back?
+
+Industry benchmarks:
+- **Below 1:1** — Economically unviable. Each customer costs more to acquire than they'll ever return.
+- **1:1 to 3:1** — Marginal. May work at scale with structural cost reduction, but thin.
+- **3:1** — Healthy benchmark for most SaaS businesses.
+- **Above 5:1** — Either excellent unit economics or underinvestment in acquisition (leaving growth on the table).
+
+<Matrix2x2
+  xAxis={{ label: "Customer Acquisition Cost", low: "Low CAC", high: "High CAC" }}
+  yAxis={{ label: "Customer Lifetime Value", low: "Low LTV", high: "High LTV" }}
+  quadrants={[
+    { label: "Gold Mine", position: "top-left", description: "Strong unit economics. Scale acquisition aggressively — each dollar spent returns many multiples." },
+    { label: "Venture Bet", position: "top-right", description: "High acquisition cost but high lifetime value. Viable if payback period is acceptable and retention holds." },
+    { label: "Volume Play", position: "bottom-left", description: "Thin margins per customer. Only works at massive scale — commoditized markets, viral loops, near-zero marginal cost." },
+    { label: "Death Zone", position: "bottom-right", description: "Spending more to acquire customers than they return. No path to profitability without fundamental rethink." }
+  ]}
+/>
+
+### Payback Period
+
+**CAC Payback Period** = CAC / (ARPU × Gross Margin %). It measures how many months it takes to recover the cost of acquiring a customer.
+
+A payback period of 12 months means you break even on a new customer after one year. Consumer businesses typically target 6–12 months; enterprise SaaS can sustain 18–24 months given lower churn and higher expansion revenue. Longer payback periods require more working capital — you're effectively lending money to each new customer at zero interest and waiting to get it back.
+
+<Callout type="insight">
+**Payback period drives fundraising strategy.** A business with a 6-month payback period can largely self-fund growth — acquired customers start generating surplus cash quickly. A business with an 18-month payback period needs external capital to bridge the acquisition gap. This is why VCs care deeply about payback period: it determines how much capital a company needs to reach each revenue milestone.
+</Callout>
+
+## Satisfaction Metrics
+
+### NPS
+
+**Net Promoter Score (NPS)** asks customers a single question: *How likely are you to recommend this product to a friend or colleague?* Respondents score 0–10. Scores of 9–10 are **Promoters**, 7–8 are **Passives**, 0–6 are **Detractors**.
+
+**NPS = % Promoters − % Detractors**
+
+NPS ranges from −100 to +100. Above 0 is generally positive (more advocates than detractors). Above 50 is exceptional. Apple's iPhone NPS has historically been above 70; most banks sit below 30.
+
+NPS is most valuable as a trend and as a segmentation tool — understanding *why* Detractors are dissatisfied is more actionable than the score itself. The score tells you there's a problem; the follow-up open text tells you what it is.
+
+### CSAT
+
+**Customer Satisfaction Score (CSAT)** measures satisfaction with a specific interaction — a support ticket, a product feature, an onboarding experience — rather than overall brand sentiment. Typically a 1–5 scale immediately after an interaction.
+
+NPS and CSAT measure different things: NPS is a long-run relationship signal; CSAT is a short-run transactional signal. A product can have high CSAT (great customer support) and low NPS (the core product still disappoints) — the two metrics diagnose different parts of the experience.
+
+### Net Revenue Retention
+
+**Net Revenue Retention (NRR)** measures what percentage of last period's revenue from existing customers remains this period, including upsells, cross-sells, and downgrades — but excluding new customer acquisition.
+
+**NRR = (Starting MRR + Expansion MRR − Churned MRR − Contraction MRR) / Starting MRR**
+
+NRR above 100% means the existing customer base grows in revenue even with zero new sales. Best-in-class SaaS companies (Snowflake, Datadog) have historically maintained NRR of 120–140%, creating a compounding base that makes each new customer acquisition more valuable.
+
+<Takeaways>
+- DAU/MAU stickiness ratio reveals habit strength — compare against your product category benchmark, not absolute numbers
+- CAC must include all sales and marketing costs; blended CAC hides channel-level efficiency and saturation
+- LTV:CAC of 3:1 is the standard SaaS benchmark; below 1:1 is economically unviable at any scale
+- Payback period determines how capital-intensive your growth is — short payback enables self-funded growth, long payback requires external financing
+- NPS measures long-run brand relationship; CSAT measures short-run interaction quality — both are needed to diagnose the full experience
+- Net Revenue Retention above 100% means your existing base compounds without new acquisition — it is the strongest signal of product-market fit in subscription businesses
+</Takeaways>

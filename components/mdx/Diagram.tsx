@@ -9,7 +9,12 @@ function extractText(node: React.ReactNode): string {
   if (!node) return ''
   if (Array.isArray(node)) return node.map(extractText).join('')
   if (React.isValidElement(node)) {
-    return extractText((node.props as { children?: React.ReactNode }).children)
+    const inner = extractText((node.props as { children?: React.ReactNode }).children)
+    // Paragraph breaks must become newlines — without this, a blank line in the MDX
+    // source splits the diagram code into separate <p> elements that get joined
+    // without newlines, breaking diagram types like sankey-beta that need line-separated data.
+    if (node.type === 'p') return inner + '\n'
+    return inner
   }
   return ''
 }
@@ -32,6 +37,10 @@ export default function Diagram({ children }: { children: React.ReactNode }) {
           theme: 'default',
           fontFamily: 'inherit',
           fontSize: 14,
+          sankey: {
+            height: 400,
+            width: 600,
+          },
         })
         mermaidReady = true
       }
