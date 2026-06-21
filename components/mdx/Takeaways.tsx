@@ -4,28 +4,28 @@ interface TakeawaysProps {
 
 export default function Takeaways({ children }: TakeawaysProps) {
   return (
-    <div
+    <aside
       style={{
-        background: 'var(--bg-secondary)',
-        border: '1px solid var(--border-color)',
-        borderRadius: '8px',
-        padding: '1.25rem 1.5rem',
+        background: '#f0f7f4',
+        borderLeft: '3px solid #1a6b6b',
+        borderRadius: '0 6px 6px 0',
+        padding: '1rem 1.25rem 1rem 1.5rem',
         margin: '2rem 0',
       }}
     >
       <div
         style={{
-          fontWeight: 600,
-          fontSize: '0.875rem',
+          fontWeight: 700,
+          fontSize: '0.6875rem',
           textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-          color: 'var(--text-tertiary)',
-          marginBottom: '0.75rem',
+          letterSpacing: '0.1em',
+          color: '#1a6b6b',
+          marginBottom: '0.625rem',
         }}
       >
         Key Takeaways
       </div>
-      <div style={{ color: 'var(--text-secondary)' }}>{children}</div>
-    </div>
+      <div className="takeaways-body">{children}</div>
+    </aside>
   )
 }

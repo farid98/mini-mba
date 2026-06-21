@@ -83,3 +83,71 @@ body {
   border-color: var(--border-color);
   margin: 2rem 0;
 }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+
+.prose thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  border-bottom: 2px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+}
+
+.prose tbody td {
+  padding: 0.5rem 0.75rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Right-align numeric columns (all but first) */
+.prose thead th:not(:first-child),
+.prose tbody td:not(:first-child) {
+  text-align: right;
+}
+
+.takeaways-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.takeaways-body ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.takeaways-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.takeaways-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1a6b6b;
+}

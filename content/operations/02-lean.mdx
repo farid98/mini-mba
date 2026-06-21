@@ -59,24 +59,42 @@ The process for VSM:
 The power of mapping: it creates shared understanding of the process that individual functional perspective can't. The person responsible for shipping doesn't see the production delays; the person responsible for production doesn't see the receiving problems. The map makes the system visible to everyone simultaneously.
 
 <Diagram>
-graph LR
-    A[Customer Order] --> B[Order Processing]
-    B --> C[Wait]
+graph TD
+    A([Customer Order]) --> B[Order Processing]
+    B --> C[/Wait/]
     C --> D[Production Planning]
-    D --> E[Wait]
+    D --> E[/Wait/]
     E --> F[Procurement]
-    F --> G[Wait - Inventory]
+    F --> G[/Inventory Wait/]
     G --> H[Manufacturing]
-    H --> I[Wait - WIP]
+    H --> I[/WIP Wait/]
     I --> J[Quality Check]
-    J --> K[Wait]
+    J --> K[/Wait/]
     K --> L[Shipping]
-    L --> M[Customer]
-    style C fill:#ffcccc
-    style E fill:#ffcccc
-    style G fill:#ffcccc
-    style I fill:#ffcccc
-    style K fill:#ffcccc
+    L --> M([Delivered to Customer])
+    classDef process fill:#edf7f1,stroke:#1a6b3a,color:#111
+    classDef waste fill:#fef2f2,stroke:#dc2626,color:#991b1b
+    class B,D,F,H,J,L process
+    class C,E,G,I,K waste
+</Diagram>
+
+The flow diagram shows the sequence of steps, but not the brutal arithmetic of where time actually goes. In a typical 10-day manufacturing lead time, value-adding work occupies less than half a day — everything else is waiting in one form or another.
+
+<Diagram>
+sankey-beta
+
+"10-Day Lead Time","Order Processing & Planning",1
+"10-Day Lead Time","Procurement & Manufacturing",1.5
+"10-Day Lead Time","Quality Check & Shipping",0.5
+"10-Day Lead Time","Approval Waits",2
+"10-Day Lead Time","Inventory Buildup",4
+"10-Day Lead Time","WIP Queue Time",1
+"Order Processing & Planning","Value-Adding Work",1
+"Procurement & Manufacturing","Value-Adding Work",1.5
+"Quality Check & Shipping","Value-Adding Work",0.5
+"Approval Waits","Waste",2
+"Inventory Buildup","Waste",4
+"WIP Queue Time","Waste",1
 </Diagram>
 
 ## Pull vs. Push Systems
