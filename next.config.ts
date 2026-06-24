@@ -8,7 +8,6 @@ const withMDX = createMDX({
 })
 
 const nextConfig: NextConfig = {
-  output: 'export',
   pageExtensions: ['ts', 'tsx', 'mdx'],
 }
 

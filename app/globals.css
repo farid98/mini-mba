@@ -151,3 +151,123 @@ body {
   border-radius: 50%;
   background: #1a6b6b;
 }
+
+/* Slide content — rendered on white background inside SlideShow */
+.slide-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.slide-body {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #444444;
+}
+
+.slide-body p {
+  margin-bottom: 1rem;
+  color: #444444;
+}
+
+.slide-body ul,
+.slide-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444444;
+  list-style: revert;
+}
+
+.slide-body li {
+  margin-bottom: 0.6rem;
+}
+
+.slide-body strong {
+  color: #111111;
+  font-weight: 600;
+}
+
+.slide-body em {
+  color: #666666;
+  font-style: italic;
+}
+
+.slide-body blockquote {
+  border-left: 3px solid #1a4d8a;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: #444444;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+/* Slide variant overrides — dark and title variants need light text */
+.slide-body--title p,
+.slide-body--title ul,
+.slide-body--title ol,
+.slide-body--title li,
+.slide-body--dark p,
+.slide-body--dark ul,
+.slide-body--dark ol,
+.slide-body--dark li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.slide-body--title strong,
+.slide-body--dark strong {
+  color: #ffffff;
+}
+
+.slide-body--title blockquote,
+.slide-body--dark blockquote {
+  border-left-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Discussion questions — teacher-only, gated by auth */
+.discussion-body {
+  font-size: 0.9375rem;
+  color: #444444;
+  line-height: 1.7;
+}
+
+.discussion-body ol {
+  padding-left: 1.25rem;
+  margin: 0;
+  list-style: decimal;
+}
+
+.discussion-body li {
+  margin-bottom: 0.6rem;
+  color: #444444;
+}
+
+.discussion-body li:last-child {
+  margin-bottom: 0;
+}
+
+.slide-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.slide-body thead th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888888;
+  border-bottom: 2px solid #e5e5e5;
+  padding: 0.5rem 0.75rem;
+}
+
+.slide-body tbody td {
+  padding: 0.5rem 0.75rem;
+  color: #444444;
+  border-bottom: 1px solid #e5e5e5;
+}
