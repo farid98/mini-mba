@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import ThemeProvider from '@/components/layout/ThemeProvider'
 import FirebaseAnalytics from '@/components/FirebaseAnalytics'
 import SearchModal from '@/components/search/SearchModal'
+import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mini-mba.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Mini MBA',
     template: '%s — Mini MBA',

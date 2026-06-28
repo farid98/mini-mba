@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getAllSubjectSlugs, getAllChapters } from '@/lib/content'
-
-const BASE_URL = 'https://mini-mba.app'
+import { SITE_URL as BASE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [

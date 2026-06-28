@@ -68,11 +68,11 @@ export default async function ChapterPage({ params }: Props) {
     '@type': 'Article',
     headline: chapter.title,
     description: chapter.summary,
-    url: `https://mini-mba.app/${subject}/${chapterSlug}`,
+    url: `https://mini-mba-seven.vercel.app/${subject}/${chapterSlug}`,
     isPartOf: {
       '@type': 'Course',
       name: subjectMeta.title,
-      url: `https://mini-mba.app/${subject}`,
+      url: `https://mini-mba-seven.vercel.app/${subject}`,
     },
     educationalLevel: chapter.difficulty,
     timeRequired: `PT${chapter.readTime}M`,

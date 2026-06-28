@@ -40,13 +40,13 @@ export default async function SubjectPage({ params }: Props) {
     '@type': 'Course',
     name: meta.title,
     description: meta.description,
-    url: `https://mini-mba.app/${subject}`,
-    provider: { '@type': 'Organization', name: 'Mini MBA', url: 'https://mini-mba.app' },
+    url: `https://mini-mba-seven.vercel.app/${subject}`,
+    provider: { '@type': 'Organization', name: 'Mini MBA', url: 'https://mini-mba-seven.vercel.app' },
     hasCourseInstance: chapters.map(ch => ({
       '@type': 'CourseInstance',
       name: ch.title,
       description: ch.summary,
-      url: `https://mini-mba.app/${subject}/${ch.slug}`,
+      url: `https://mini-mba-seven.vercel.app/${subject}/${ch.slug}`,
     })),
   }
 

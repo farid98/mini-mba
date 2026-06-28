@@ -24,12 +24,12 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Mini MBA',
-    url: 'https://mini-mba.app',
+    url: 'https://mini-mba-seven.vercel.app',
     description: 'A concise MBA curriculum — strategy, finance, marketing, leadership, operations, economics, and entrepreneurship.',
     hasPart: subjects.map(s => ({
       '@type': 'Course',
       name: s.title,
-      url: `https://mini-mba.app/${s.slug}`,
+      url: `https://mini-mba-seven.vercel.app/${s.slug}`,
       description: s.description,
     })),
   }
