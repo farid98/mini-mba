@@ -7,6 +7,7 @@ import ChapterHeader from '@/components/chapter/ChapterHeader'
 import ChapterSidebar from '@/components/chapter/ChapterSidebar'
 import ChapterPagination from '@/components/chapter/ChapterPagination'
 import MarkAsRead from '@/components/chapter/MarkAsRead'
+import ReadingProgress from '@/components/chapter/ReadingProgress'
 import PrerequisiteBanner from '@/components/chapter/PrerequisiteBanner'
 import RelatedLinks from '@/components/chapter/RelatedLinks'
 import type { Metadata } from 'next'
@@ -80,6 +81,7 @@ export default async function ChapterPage({ params }: Props) {
   return (
     <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <ReadingProgress color={subjectMeta.color} />
     <div className="max-w-[1000px] mx-auto px-6 py-10 flex gap-12 items-start">
       <div className="hidden lg:block">
         <ChapterSidebar
