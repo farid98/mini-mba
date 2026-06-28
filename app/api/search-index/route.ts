@@ -7,6 +7,7 @@ export async function GET() {
     return getAllChapters(subject).map(ch => ({
       title: ch.title,
       summary: ch.summary,
+      tags: ch.tags ?? [],
       subject: ch.subject,
       subjectTitle: meta?.title ?? subject,
       subjectColor: meta?.color ?? '#888888',

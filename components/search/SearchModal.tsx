@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 interface SearchEntry {
   title: string
   summary: string
+  tags: string[]
   subject: string
   subjectTitle: string
   subjectColor: string
@@ -49,7 +50,9 @@ export default function SearchModal() {
     ? []
     : index.filter(ch => {
         const q = query.toLowerCase()
-        return ch.title.toLowerCase().includes(q) || ch.summary.toLowerCase().includes(q)
+        return ch.title.toLowerCase().includes(q) ||
+          ch.summary.toLowerCase().includes(q) ||
+          ch.tags.some(t => t.toLowerCase().includes(q))
       }).slice(0, 8)
 
   function go(entry: SearchEntry) {

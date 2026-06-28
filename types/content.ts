@@ -8,6 +8,7 @@ export interface ChapterFrontmatter {
   readTime: number
   prerequisites?: string[]
   related?: string[]
+  tags?: string[]
 }
 
 export interface Chapter extends ChapterFrontmatter {
