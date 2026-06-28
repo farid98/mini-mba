@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ThemeProvider from '@/components/layout/ThemeProvider'
 import FirebaseAnalytics from '@/components/FirebaseAnalytics'
+import SearchModal from '@/components/search/SearchModal'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <SearchModal />
         <FirebaseAnalytics />
         <footer className="border-t border-line mt-8">
           <div className="max-w-[960px] mx-auto px-6 py-6 flex flex-wrap gap-2 items-center justify-between text-[13px] text-fg-subtle">

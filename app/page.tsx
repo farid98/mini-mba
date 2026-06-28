@@ -3,6 +3,7 @@ import { SUBJECTS } from '@/lib/subjects'
 import { getAllChapters } from '@/lib/content'
 import SubjectGrid from '@/components/home/SubjectGrid'
 import ContinueReading from '@/components/home/ContinueReading'
+import SearchTrigger from '@/components/search/SearchTrigger'
 import type { Subject } from '@/types/content'
 
 export default function HomePage() {
@@ -53,6 +54,8 @@ export default function HomePage() {
         </p>
 
         <ContinueReading chapters={allChapters} />
+
+        <SearchTrigger />
 
         {/* Stats strip */}
         <div className="flex gap-10 mt-10 pt-8 border-t border-line flex-wrap">
