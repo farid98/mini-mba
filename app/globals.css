@@ -5,16 +5,17 @@
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
   /* Page surfaces */
+  --color-bg: #fbfaf7;
   --color-page: #ffffff;
-  --color-page-alt: #f7f7f7;
+  --color-page-alt: #f4f2ee;
 
   /* Text hierarchy */
-  --color-fg: #111111;
-  --color-fg-muted: #444444;
-  --color-fg-subtle: #888888;
+  --color-fg: #1a1a1a;
+  --color-fg-muted: #4a4a4a;
+  --color-fg-subtle: #8a8a8a;
 
   /* Borders */
-  --color-line: #e5e5e5;
+  --color-line: #e6e3dd;
 
   /* Brand palette */
   --color-navy: #1a4d8a;
@@ -24,16 +25,17 @@
 }
 
 .dark {
-  --color-page: #141414;
-  --color-page-alt: #1e1e1e;
-  --color-fg: #f0f0f0;
-  --color-fg-muted: #aaaaaa;
-  --color-fg-subtle: #666666;
-  --color-line: #2e2e2e;
+  --color-bg: #111110;
+  --color-page: #1a1917;
+  --color-page-alt: #222120;
+  --color-fg: #f0ede8;
+  --color-fg-muted: #aaa89f;
+  --color-fg-subtle: #6b6860;
+  --color-line: #2e2c28;
 }
 
 body {
-  background-color: var(--color-page);
+  background-color: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-sans);
   font-size: 16px;

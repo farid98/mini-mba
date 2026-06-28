@@ -1,13 +1,9 @@
 import type { Subject } from '@/types/content'
 import SubjectCard from './SubjectCard'
 
-interface SubjectGridProps {
-  subjects: Subject[]
-}
-
-export default function SubjectGrid({ subjects }: SubjectGridProps) {
+export default function SubjectGrid({ subjects }: { subjects: Subject[] }) {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {subjects.map(subject => (
         <SubjectCard key={subject.slug} subject={subject} />
       ))}

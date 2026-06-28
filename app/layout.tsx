@@ -26,6 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ThemeProvider>{children}</ThemeProvider>
         <FirebaseAnalytics />
+        <footer className="border-t border-line mt-8">
+          <div className="max-w-[960px] mx-auto px-6 py-6 flex flex-wrap gap-2 items-center justify-between text-[13px] text-fg-subtle">
+            <span>Built by Farid Ahmad · Gold Medal MBA, LUMS · AI-assisted content</span>
+            <span>© {new Date().getFullYear()} Mini MBA</span>
+          </div>
+        </footer>
       </body>
     </html>
   )
