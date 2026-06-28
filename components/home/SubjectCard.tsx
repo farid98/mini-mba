@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useProgress } from '@/hooks/useProgress'
 import type { Subject } from '@/types/content'
 
 interface SubjectCardProps {
@@ -8,6 +9,12 @@ interface SubjectCardProps {
 }
 
 export default function SubjectCard({ subject }: SubjectCardProps) {
+  const { isCompleted, loaded } = useProgress()
+  const completedCount = loaded
+    ? subject.chapters.filter(ch => isCompleted(`${subject.slug}/${ch.slug}`)).length
+    : 0
+  const pct = subject.chapters.length > 0 ? (completedCount / subject.chapters.length) * 100 : 0
+
   return (
     <Link href={`/${subject.slug}`} className="no-underline">
       <div
@@ -31,6 +38,19 @@ export default function SubjectCard({ subject }: SubjectCardProps) {
         <p className="text-sm text-fg-muted mt-2 mb-0 leading-snug">
           {subject.description}
         </p>
+        {loaded && completedCount > 0 && (
+          <div className="mt-3">
+            <div className="h-1 bg-page-alt rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full transition-[width] duration-500"
+                style={{ width: `${pct}%`, background: subject.color }}
+              />
+            </div>
+            <div className="text-[11px] text-fg-subtle mt-1">
+              {completedCount} / {subject.chapters.length}
+            </div>
+          </div>
+        )}
       </div>
     </Link>
   )

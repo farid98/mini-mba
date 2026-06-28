@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import { SUBJECTS } from '@/lib/subjects'
 import { getAllChapters, getAllSubjectSlugs } from '@/lib/content'
 import Breadcrumb from '@/components/layout/Breadcrumb'
-import ChapterListItem from '@/components/chapter/ChapterListItem'
+import SubjectChapterList from '@/components/subject/SubjectChapterList'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -63,18 +63,12 @@ export default async function SubjectPage({ params }: Props) {
         <p className="text-fg-muted text-base">{meta.description}</p>
       </header>
 
-      <ol className="list-none p-0 m-0">
-        {chapters.map((ch, i) => (
-          <ChapterListItem
-            key={ch.slug}
-            chapter={ch}
-            index={i}
-            subject={subject}
-            subjectColor={meta.color}
-            subjectColorBg={meta.colorBg}
-          />
-        ))}
-      </ol>
+      <SubjectChapterList
+        chapters={chapters}
+        subject={subject}
+        subjectColor={meta.color}
+        subjectColorBg={meta.colorBg}
+      />
     </main>
     </>
   )

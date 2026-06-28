@@ -6,6 +6,7 @@ import Breadcrumb from '@/components/layout/Breadcrumb'
 import ChapterHeader from '@/components/chapter/ChapterHeader'
 import ChapterSidebar from '@/components/chapter/ChapterSidebar'
 import ChapterPagination from '@/components/chapter/ChapterPagination'
+import MarkAsRead from '@/components/chapter/MarkAsRead'
 import PrerequisiteBanner from '@/components/chapter/PrerequisiteBanner'
 import RelatedLinks from '@/components/chapter/RelatedLinks'
 import type { Metadata } from 'next'
@@ -100,6 +101,7 @@ export default async function ChapterPage({ params }: Props) {
         </div>
 
         <RelatedLinks related={related} />
+        <MarkAsRead subject={subject} slug={chapterSlug} />
         <ChapterPagination subject={subject} prev={prev} next={next} />
       </article>
     </div>

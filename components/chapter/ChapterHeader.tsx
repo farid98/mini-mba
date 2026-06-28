@@ -1,4 +1,5 @@
 import type { ChapterFrontmatter } from '@/types/content'
+import ShareButton from './ShareButton'
 
 const difficultyClass = {
   foundational: 'bg-[#edf7f1] text-[#1a6b3a]',
@@ -24,6 +25,7 @@ export default function ChapterHeader({ chapter }: ChapterHeaderProps) {
         <span className="text-sm text-fg-subtle">
           {chapter.readTime} min read
         </span>
+        <ShareButton />
       </div>
 
       {chapter.summary && (

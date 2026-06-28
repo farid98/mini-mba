@@ -15,6 +15,7 @@ interface ChapterListItemProps {
   subject: string
   subjectColor: string
   subjectColorBg: string
+  completed?: boolean
 }
 
 export default function ChapterListItem({
@@ -23,22 +24,23 @@ export default function ChapterListItem({
   subject,
   subjectColor,
   subjectColorBg,
+  completed,
 }: ChapterListItemProps) {
   return (
     <li>
       <Link href={`/${subject}/${chapter.slug}`} className="no-underline block">
         <div
           className="flex gap-4 p-4 rounded-[6px] mb-2 bg-page transition-colors duration-150"
-          style={{ borderLeft: `3px solid ${subjectColor}` }}
+          style={{ borderLeft: `3px solid ${completed ? '#1a6b3a' : subjectColor}` }}
           onMouseEnter={e => {
-            (e.currentTarget as HTMLDivElement).style.background = subjectColorBg
+            (e.currentTarget as HTMLDivElement).style.background = completed ? '#edf7f1' : subjectColorBg
           }}
           onMouseLeave={e => {
             (e.currentTarget as HTMLDivElement).style.background = ''
           }}
         >
-          <span className="text-sm text-fg-subtle w-6 shrink-0 pt-[0.125rem]">
-            {String(index + 1).padStart(2, '0')}
+          <span className={`text-sm w-6 shrink-0 pt-[0.125rem] font-medium ${completed ? 'text-[#1a6b3a]' : 'text-fg-subtle'}`}>
+            {completed ? '✓' : String(index + 1).padStart(2, '0')}
           </span>
 
           <div className="flex-1">
