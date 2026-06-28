@@ -177,3 +177,97 @@ The riskier the future cash flows, the higher the discount rate, and the less th
 - The discount rate has enormous leverage over valuations — a 3-percentage-point change can alter value by 30–50%.
 - Use NPV for all capital allocation decisions; it's the theoretically correct rule because it captures magnitude, timing, and risk simultaneously.
 </Takeaways>
+
+<Discussion>
+1. When the Fed raised rates from 0.25% to 5.25% between 2022 and 2023, long-duration assets like growth stocks and real estate fell far more than short-duration assets like 2-year bonds. Apply the TVM framework to explain *precisely* why duration matters — and what that implies for how you'd construct a portfolio in a rising-rate environment.
+2. NPV is the "theoretically correct" decision rule, yet surveys consistently show that most managers prefer payback period or IRR. What organizational and behavioral factors drive this preference, and when — if ever — are those managers actually right to use the simpler metric?
+3. Alex invested earlier and beat Jamie despite contributing less money. Yet most people dramatically underestimate compounding. Why does the human mind systematically fail to intuit exponential growth, and what are the practical consequences of this bias in corporate capital allocation?
+4. The discount rate encodes risk, time preference, and inflation. If you were setting the hurdle rate for a 10-year infrastructure project in an emerging market with high political risk, what factors would you include in the rate — and how would you prevent the rate from becoming a tool to justify a predetermined decision?
+</Discussion>
+
+<SlideShow>
+
+<Slide title="The Single Most Important Idea in Finance" variant="title">
+
+**A dollar today is worth more than a dollar tomorrow.**
+
+Not because of inflation. Because today's dollar can be *invested* — and that investment compounds.
+
+> At 10% annually for 30 years, $1 becomes $17.45. At 15% annually, it becomes $66.21.
+
+Small differences in rate. Enormous differences in outcome. This is why Warren Buffett calls compounding the eighth wonder of the world — and why starting early matters more than investing more.
+
+</Slide>
+
+<Slide title="Two Sides of the Same Equation">
+
+**Compounding forward — Future Value:**
+
+FV = PV × (1 + r)^n
+
+$1,000 at 8% for 10 years = **$2,159**
+
+**Discounting backward — Present Value:**
+
+PV = FV / (1 + r)^n
+
+$2,159 in 10 years at 8% = **$1,000 today**
+
+These are mirror operations. Compounding asks: "what will this grow to?" Discounting asks: "what is that future amount worth today?" The interest rate (r) and time horizon (n) are the two levers. The discount rate encodes three things: time preference, inflation, and risk.
+
+</Slide>
+
+<Slide title="NPV: The Decision Framework">
+
+A retail chain considers a new store:
+- **Initial investment:** $2,000,000
+- **Annual cash flows:** $400,000 for 7 years
+- **Required return:** 10%
+
+| Year | Cash Flow | PV Factor | Present Value |
+|------|-----------|-----------|---------------|
+| 1–7 | $400,000 each | varies | **$1,947,369 total** |
+
+**NPV = $1,947,369 − $2,000,000 = −$52,631**
+
+Verdict: reject at 10% hurdle. But at $430,000/year (7.5% upside), NPV turns positive. This sensitivity analysis is the work — not finding the "right" number, but understanding how wrong you can be and still have a good decision.
+
+</Slide>
+
+<Slide title="Why Tech Stocks Collapsed in 2022">
+
+When rates are near zero, even cash flows 10–15 years out have significant present value. When the Fed raised rates from 0.25% to 5.25%:
+
+A company projecting **$1B FCF in year 10**:
+- At 2% discount rate: worth **$820M today**
+- At 5% discount rate: worth **$614M today**
+
+That's a 25% cut from one cash flow. Apply that across 20 years of projections for a growth company with no near-term profits — and valuations fell 60–80%.
+
+The lesson: long-duration assets (infrastructure, growth stocks, real estate) are acutely sensitive to discount rates. Short-duration assets are not. Duration is the hidden variable in every valuation.
+
+</Slide>
+
+<Slide title="The Garbage In, Garbage Out Problem" variant="highlight">
+
+NPV is only as good as its inputs. Two sources of systematic error:
+
+**Overoptimistic cash flows:** Managers anchor to desired outcomes. Studies show actual corporate results consistently fall short of projections, with the gap widening as the forecast horizon extends.
+
+**Underestimated discount rates:** Using a company-wide WACC for high-risk projects is a disguised subsidy — it makes risky projects look better than they are.
+
+The fix: build three scenarios (bear, base, bull), weight them by probability, and use higher discount rates for higher-risk cash flows. A $100M project that looks like a sure thing at 8% may correctly be a coin flip at 15%. Precision in the model is worthless without honesty in the assumptions.
+
+</Slide>
+
+<Slide title="Key Takeaways">
+
+- **A dollar today beats a dollar tomorrow** — because it can be invested; this single idea underpins all of finance
+- **Future value compounds, present value discounts** — FV = PV × (1+r)^n; PV = FV / (1+r)^n; the discount rate encodes time preference, inflation, and risk
+- **NPV is the correct decision rule** — it captures magnitude, timing, and risk simultaneously; accept positive NPV, reject negative NPV
+- **The discount rate has enormous leverage** — a 5-percentage-point shift can cut valuations by 30–50%; rising interest rates crush long-duration assets precisely this way
+- **Compounding rewards time above all** — starting earlier dominates investing more; the exponential nature of growth is systematically underestimated
+
+</Slide>
+
+</SlideShow>

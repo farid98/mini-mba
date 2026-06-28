@@ -3,10 +3,10 @@
 import Link from 'next/link'
 import type { ChapterFrontmatter } from '@/types/content'
 
-const difficultyStyle = {
-  foundational: { bg: '#edf7f1', color: '#1a6b3a' },
-  intermediate: { bg: '#fffbeb', color: '#92400e' },
-  advanced: { bg: '#fef2f2', color: '#991b1b' },
+const difficultyClass = {
+  foundational: 'bg-[#edf7f1] text-[#1a6b3a]',
+  intermediate: 'bg-amber-50 text-amber-800',
+  advanced:     'bg-red-50 text-red-800',
 }
 
 interface ChapterListItemProps {
@@ -24,101 +24,50 @@ export default function ChapterListItem({
   subjectColor,
   subjectColorBg,
 }: ChapterListItemProps) {
-  const d = difficultyStyle[chapter.difficulty]
-
   return (
     <li>
-      <Link href={`/${subject}/${chapter.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
+      <Link href={`/${subject}/${chapter.slug}`} className="no-underline block">
         <div
-          style={{
-            display: 'flex',
-            gap: '1rem',
-            padding: '1rem',
-            borderRadius: '6px',
-            borderLeft: `3px solid ${subjectColor}`,
-            marginBottom: '0.5rem',
-            background: 'var(--bg-primary)',
-            transition: 'background 0.15s',
-          }}
+          className="flex gap-4 p-4 rounded-[6px] mb-2 bg-page transition-colors duration-150"
+          style={{ borderLeft: `3px solid ${subjectColor}` }}
           onMouseEnter={e => {
             (e.currentTarget as HTMLDivElement).style.background = subjectColorBg
           }}
           onMouseLeave={e => {
-            (e.currentTarget as HTMLDivElement).style.background = 'var(--bg-primary)'
+            (e.currentTarget as HTMLDivElement).style.background = ''
           }}
         >
-          <span
-            style={{
-              fontSize: '0.875rem',
-              color: 'var(--text-tertiary)',
-              width: '1.5rem',
-              flexShrink: 0,
-              paddingTop: '0.125rem',
-            }}
-          >
+          <span className="text-sm text-fg-subtle w-6 shrink-0 pt-[0.125rem]">
             {String(index + 1).padStart(2, '0')}
           </span>
-          <div style={{ flex: 1 }}>
-            {/* Pill above title — mobile only */}
-            <div className="sm:hidden" style={{ marginBottom: '0.375rem' }}>
-              <span
-                style={{
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  textTransform: 'uppercase',
-                  padding: '0.125rem 0.5rem',
-                  borderRadius: '999px',
-                  background: d.bg,
-                  color: d.color,
-                  whiteSpace: 'nowrap',
-                }}
-              >
+
+          <div className="flex-1">
+            {/* Difficulty pill — mobile only */}
+            <div className="sm:hidden mb-[0.375rem]">
+              <span className={`text-[0.6875rem] font-semibold uppercase px-2 py-[0.125rem] rounded-full whitespace-nowrap ${difficultyClass[chapter.difficulty]}`}>
                 {chapter.difficulty}
               </span>
             </div>
-            <div
-              style={{
-                fontWeight: 600,
-                fontSize: '0.9375rem',
-                color: 'var(--text-primary)',
-                marginBottom: '0.25rem',
-              }}
-            >
+
+            <div className="font-semibold text-[0.9375rem] text-fg mb-1">
               {chapter.title}
             </div>
-            <div style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            <div className="text-sm text-fg-muted leading-snug">
               {chapter.summary}
             </div>
-            {/* Read time below summary — mobile only */}
-            <div className="sm:hidden" style={{ marginTop: '0.375rem', fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
+
+            {/* Read time — mobile only */}
+            <div className="sm:hidden mt-[0.375rem] text-xs text-fg-subtle">
               {chapter.readTime} min
             </div>
           </div>
-          {/* Right meta column — desktop only */}
-          <div
-            className="hidden sm:flex"
-            style={{
-              flexDirection: 'column',
-              alignItems: 'flex-end',
-              gap: '0.25rem',
-              flexShrink: 0,
-            }}
-          >
-            <span
-              style={{
-                fontSize: '0.6875rem',
-                fontWeight: 600,
-                textTransform: 'uppercase',
-                padding: '0.125rem 0.5rem',
-                borderRadius: '999px',
-                background: d.bg,
-                color: d.color,
-                whiteSpace: 'nowrap',
-              }}
-            >
+
+          {/* Right meta — desktop only */}
+          <div className="hidden sm:flex flex-col items-end gap-1 shrink-0">
+            <span className={`text-[0.6875rem] font-semibold uppercase px-2 py-[0.125rem] rounded-full whitespace-nowrap ${difficultyClass[chapter.difficulty]}`}>
               {chapter.difficulty}
             </span>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', whiteSpace: 'nowrap' }}>
+            <span className="text-xs text-fg-subtle whitespace-nowrap">
               {chapter.readTime} min
             </span>
           </div>

@@ -5,37 +5,14 @@ interface ExampleProps {
 
 export default function Example({ title, children }: ExampleProps) {
   return (
-    <div
-      style={{
-        border: '1px solid var(--border-color)',
-        borderRadius: '8px',
-        padding: '1.25rem',
-        margin: '1.5rem 0',
-      }}
-    >
-      <div
-        style={{
-          fontSize: '0.75rem',
-          fontWeight: 600,
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-          color: 'var(--text-tertiary)',
-          marginBottom: '0.5rem',
-        }}
-      >
+    <div className="border border-line rounded-lg p-5 my-6">
+      <div className="text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-fg-subtle mb-2">
         Case Study
       </div>
-      <div
-        style={{
-          fontWeight: 600,
-          color: 'var(--text-primary)',
-          marginBottom: '0.75rem',
-          fontSize: '0.9375rem',
-        }}
-      >
+      <div className="font-semibold text-fg mb-3 text-[0.9375rem]">
         {title}
       </div>
-      <div style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem' }}>{children}</div>
+      <div className="text-fg-muted text-[0.9375rem]">{children}</div>
     </div>
   )
 }

@@ -37,37 +37,17 @@ export default function SlideShow({ children }: { children: React.ReactNode }) {
         tabIndex={0}
         onClick={() => { setIndex(0); setOpen(true) }}
         onKeyDown={e => { if (e.key === 'Enter') { setIndex(0); setOpen(true) } }}
-        style={{
-          margin: '2.5rem 0',
-          padding: '1.25rem 1.5rem',
-          border: '1px solid var(--border-color)',
-          borderRadius: '8px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          cursor: 'pointer',
-          background: 'var(--bg-secondary)',
-          userSelect: 'none',
-        }}
+        className="my-10 px-6 py-5 border border-line rounded-lg flex items-center justify-between cursor-pointer bg-page-alt select-none"
       >
         <div>
-          <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 3, fontSize: 15 }}>
+          <div className="font-semibold text-fg mb-[3px] text-[15px]">
             Chapter Slides
           </div>
-          <div style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>
+          <div className="text-[13px] text-fg-subtle">
             {slides.length} slides · arrow keys to navigate · Esc to exit
           </div>
         </div>
-        <div style={{
-          background: '#1a4d8a',
-          color: 'white',
-          padding: '0.45rem 1.1rem',
-          borderRadius: '6px',
-          fontWeight: 500,
-          fontSize: 13,
-          flexShrink: 0,
-          marginLeft: '1rem',
-        }}>
+        <div className="bg-navy text-white py-[0.45rem] px-[1.1rem] rounded-[6px] font-medium text-[13px] shrink-0 ml-4">
           ▶ Present
         </div>
       </div>
@@ -77,105 +57,64 @@ export default function SlideShow({ children }: { children: React.ReactNode }) {
   const progress = ((index + 1) / slides.length) * 100
 
   return (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      zIndex: 9999,
-      background: '#ffffff',
-      display: 'flex',
-      flexDirection: 'column',
-    }}>
-      <div style={{ height: 3, background: '#e5e5e5', flexShrink: 0 }}>
-        <div style={{
-          height: '100%',
-          background: '#1a4d8a',
-          width: `${progress}%`,
-          transition: 'width 0.2s ease',
-        }} />
+    <div className="fixed inset-0 z-[9999] bg-white flex flex-col">
+      {/* Progress bar */}
+      <div className="h-[3px] bg-line shrink-0">
+        <div
+          className="h-full bg-navy transition-[width] duration-200 ease-in-out"
+          style={{ width: `${progress}%` }}
+        />
       </div>
 
-      <div style={{
-        flex: 1,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '3rem 5rem',
-        overflow: 'auto',
-      }}>
-        <div style={{ width: '100%', maxWidth: 820 }}>
+      {/* Slide content */}
+      <div className="flex-1 flex items-center justify-center px-20 py-12 overflow-auto">
+        <div className="w-full max-w-[820px]">
           {slides[index]}
         </div>
       </div>
 
-      <div style={{
-        padding: '0.875rem 2rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        borderTop: '1px solid #e5e5e5',
-        flexShrink: 0,
-      }}>
+      {/* Footer */}
+      <div className="px-8 py-[0.875rem] flex items-center justify-between border-t border-line shrink-0">
         <button
           onClick={close}
-          style={{ background: 'none', border: 'none', color: '#888888', cursor: 'pointer', fontSize: 13, padding: '0.25rem 0' }}
+          className="bg-transparent border-none text-fg-subtle cursor-pointer text-[13px] py-1 px-0 hover:text-fg-muted"
         >
           ✕ Exit
         </button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        {/* Bullet dots */}
+        <div className="flex items-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
+              className="h-[6px] rounded-[3px] border-none cursor-pointer p-0 transition-[width,background-color] duration-200 ease-in-out"
               style={{
                 width: i === index ? 20 : 6,
-                height: 6,
-                borderRadius: 3,
-                border: 'none',
                 background: i === index ? '#1a4d8a' : '#d0d0d0',
-                cursor: 'pointer',
-                padding: 0,
-                transition: 'width 0.2s ease, background 0.2s ease',
               }}
             />
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        {/* Prev / counter / next */}
+        <div className="flex items-center gap-3">
           <button
             onClick={prev}
             disabled={index === 0}
-            style={{
-              background: 'none',
-              border: '1px solid #e5e5e5',
-              color: index === 0 ? '#cccccc' : '#444444',
-              cursor: index === 0 ? 'default' : 'pointer',
-              padding: '0.35rem 0.9rem',
-              borderRadius: 4,
-              fontSize: 15,
-              lineHeight: 1,
-            }}
+            className="bg-transparent border border-line text-[15px] py-[0.35rem] px-[0.9rem] rounded cursor-pointer leading-none disabled:text-[#cccccc] disabled:cursor-default text-fg-muted"
           >←</button>
-          <span style={{ color: '#888888', fontSize: 12, minWidth: 55, textAlign: 'center' }}>
+          <span className="text-fg-subtle text-[12px] min-w-[55px] text-center">
             {index + 1} / {slides.length}
           </span>
           <button
             onClick={next}
             disabled={index === slides.length - 1}
-            style={{
-              background: 'none',
-              border: '1px solid #e5e5e5',
-              color: index === slides.length - 1 ? '#cccccc' : '#444444',
-              cursor: index === slides.length - 1 ? 'default' : 'pointer',
-              padding: '0.35rem 0.9rem',
-              borderRadius: 4,
-              fontSize: 15,
-              lineHeight: 1,
-            }}
+            className="bg-transparent border border-line text-[15px] py-[0.35rem] px-[0.9rem] rounded cursor-pointer leading-none disabled:text-[#cccccc] disabled:cursor-default text-fg-muted"
           >→</button>
         </div>
 
-        <div style={{ color: '#cccccc', fontSize: 11, minWidth: 70, textAlign: 'right' }}>← → space</div>
+        <div className="text-[#cccccc] text-[11px] min-w-[70px] text-right">← → space</div>
       </div>
     </div>
   )

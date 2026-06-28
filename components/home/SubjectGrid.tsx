@@ -7,13 +7,7 @@ interface SubjectGridProps {
 
 export default function SubjectGrid({ subjects }: SubjectGridProps) {
   return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-        gap: '1rem',
-      }}
-    >
+    <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4">
       {subjects.map(subject => (
         <SubjectCard key={subject.slug} subject={subject} />
       ))}

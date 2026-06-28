@@ -17,7 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { subject } = await params
   const meta = SUBJECTS.find(s => s.slug === subject)
   if (!meta) return {}
-  return { title: `${meta.title} — Mini MBA` }
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: `/${subject}`,
+    },
+  }
 }
 
 export default async function SubjectPage({ params }: Props) {
@@ -27,25 +35,35 @@ export default async function SubjectPage({ params }: Props) {
 
   const chapters = getAllChapters(subject)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: meta.title,
+    description: meta.description,
+    url: `https://mini-mba.app/${subject}`,
+    provider: { '@type': 'Organization', name: 'Mini MBA', url: 'https://mini-mba.app' },
+    hasCourseInstance: chapters.map(ch => ({
+      '@type': 'CourseInstance',
+      name: ch.title,
+      description: ch.summary,
+      url: `https://mini-mba.app/${subject}/${ch.slug}`,
+    })),
+  }
+
   return (
-    <main style={{ maxWidth: '760px', margin: '0 auto', padding: '2.5rem 1.5rem' }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <main className="max-w-[760px] mx-auto px-6 py-10">
       <Breadcrumb subject={subject} />
 
-      <header style={{ marginBottom: '2rem' }}>
-        <h1
-          style={{
-            fontSize: '1.75rem',
-            fontWeight: 700,
-            color: 'var(--text-primary)',
-            marginBottom: '0.5rem',
-          }}
-        >
+      <header className="mb-8">
+        <h1 className="text-[1.75rem] font-bold text-fg mb-2">
           {meta.title}
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>{meta.description}</p>
+        <p className="text-fg-muted text-base">{meta.description}</p>
       </header>
 
-      <ol style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+      <ol className="list-none p-0 m-0">
         {chapters.map((ch, i) => (
           <ChapterListItem
             key={ch.slug}
@@ -58,5 +76,6 @@ export default async function SubjectPage({ params }: Props) {
         ))}
       </ol>
     </main>
+    </>
   )
 }

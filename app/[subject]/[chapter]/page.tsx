@@ -24,7 +24,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { subject, chapter } = await params
   const ch = getChapter(subject, chapter)
   if (!ch) return {}
-  return { title: `${ch.title} — Mini MBA` }
+  return {
+    title: ch.title,
+    description: ch.summary,
+    openGraph: {
+      title: ch.title,
+      description: ch.summary,
+      url: `/${subject}/${chapter}`,
+      type: 'article',
+    },
+  }
 }
 
 export default async function ChapterPage({ params }: Props) {
@@ -52,18 +61,25 @@ export default async function ChapterPage({ params }: Props) {
     () => import(`@/content/${subject}/${String(chapter.order).padStart(2, '0')}-${chapterSlug}.mdx`)
   )
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: chapter.title,
+    description: chapter.summary,
+    url: `https://mini-mba.app/${subject}/${chapterSlug}`,
+    isPartOf: {
+      '@type': 'Course',
+      name: subjectMeta.title,
+      url: `https://mini-mba.app/${subject}`,
+    },
+    educationalLevel: chapter.difficulty,
+    timeRequired: `PT${chapter.readTime}M`,
+  }
+
   return (
-    <div
-      style={{
-        maxWidth: '1000px',
-        margin: '0 auto',
-        padding: '2.5rem 1.5rem',
-        display: 'flex',
-        gap: '3rem',
-        alignItems: 'flex-start',
-      }}
-    >
-      {/* Sidebar — hidden on mobile via inline style (no Tailwind needed) */}
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <div className="max-w-[1000px] mx-auto px-6 py-10 flex gap-12 items-start">
       <div className="hidden lg:block">
         <ChapterSidebar
           subject={subject}
@@ -74,10 +90,10 @@ export default async function ChapterPage({ params }: Props) {
         />
       </div>
 
-      <article style={{ flex: 1, minWidth: 0, maxWidth: 'var(--reading-width)' }}>
+      <article className="flex-1 min-w-0 max-w-[720px]">
         <Breadcrumb subject={subject} chapter={chapter.title} />
         <PrerequisiteBanner prerequisites={prerequisites} />
-        <ChapterHeader chapter={chapter} subjectColor={subjectMeta.color} />
+        <ChapterHeader chapter={chapter} />
 
         <div className="prose">
           <MDXContent />
@@ -87,5 +103,6 @@ export default async function ChapterPage({ params }: Props) {
         <ChapterPagination subject={subject} prev={prev} next={next} />
       </article>
     </div>
+    </>
   )
 }

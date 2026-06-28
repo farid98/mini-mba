@@ -121,3 +121,91 @@ The best capital allocators — Berkshire Hathaway, Danaher, Constellation Softw
 - Under capital rationing, rank projects by Profitability Index (NPV/Investment) to maximize value created per dollar
 - The binding constraint in most organizations isn't analytical tools but organizational dynamics: politics, short-termism, and risk aversion
 </Takeaways>
+
+<Discussion>
+1. A division manager proposes a $50M plant expansion with an IRR of 22% — well above the company's 12% hurdle rate. You know this manager's last three projects were also projected at 20%+ IRR but delivered 8–11% actual returns. What does this tell you about how to use IRR in organizational settings — and what process changes would improve the quality of capital allocation decisions?
+2. Real options analysis values the ability to expand, delay, or abandon an investment. But in practice, most companies don't formally model real options — they either commit fully or don't invest. What organizational and behavioral factors make real options logic hard to implement, and when does the lack of formal real options analysis lead to systematically bad decisions?
+3. The Profitability Index (NPV/Investment) is the right metric under capital rationing — yet most companies use ROI or EBITDA thresholds. Under what conditions does the choice of ranking metric actually change which projects get funded — and what kinds of projects get systematically under-funded as a result?
+4. Berkshire Hathaway, Danaher, and Constellation Software are consistently praised as exceptional capital allocators. What specific organizational features (governance, incentive design, decision process) explain their track record — and why are these features so rare among large public companies?
+</Discussion>
+
+<SlideShow>
+
+<Slide title="Capital Allocation: The Most Consequential Decision in Management" variant="title">
+
+Every year, large corporations collectively allocate **trillions of dollars** across thousands of investment opportunities.
+
+The quality of those decisions — done well or done poorly — is the **single largest determinant of long-run shareholder value.**
+
+> Yet most capital budgeting processes are driven by internal politics, last year's budget, and metrics that give the wrong answer.
+
+The tools exist. The problem is organizational.
+
+</Slide>
+
+<Slide title="NPV vs. IRR: Which to Use and Why">
+
+**NPV (Net Present Value):** The theoretically correct method. Measures value creation in today's dollars. Accept if NPV > 0; reject if NPV < 0.
+
+NPV = Σ CFₜ / (1+r)ᵗ − Initial Investment
+
+**IRR (Internal Rate of Return):** The discount rate that makes NPV = 0. Widely used, but has three serious problems:
+
+1. **Scale problem:** A $1K investment at 50% IRR creates $500 in value. A $1M investment at 20% IRR (above a 10% hurdle) creates $100K. IRR maximization leads to picking small projects over large ones.
+2. **Reinvestment assumption:** IRR assumes intermediate cash flows are reinvested at the IRR — unrealistic at high rates.
+3. **Multiple IRRs:** Unconventional cash flow patterns can yield multiple mathematically valid answers.
+
+**The rule:** Use NPV as the primary decision metric. Use IRR as supplementary — it tells you your margin of error on the discount rate.
+
+</Slide>
+
+<Slide title="Real Options: The Value of Flexibility">
+
+Standard NPV treats every investment as now-or-never. But most real decisions are *staged* — the right but not the obligation to proceed.
+
+**Three option types:**
+
+- **Option to expand:** A successful pilot gives you the option to scale. The pilot's value includes not just direct returns but the option value it unlocks.
+- **Option to delay:** Waiting to resolve uncertainty can be worth more than acting immediately — especially when information will arrive and commitment costs are high.
+- **Option to abandon:** The ability to exit early creates value relative to a locked-in commitment.
+
+Intel's RISC research in the 1980s had marginal standalone NPV but enormous option value — it gave Intel a credible response capability if RISC threatened x86's dominance. The research investment was justified by the option, not the base case.
+
+</Slide>
+
+<Slide title="The Payback Trap and Capital Rationing">
+
+**Payback Period:** How long to recover the initial investment. Intuitive, widely used, deeply flawed — it ignores all cash flows after payback and doesn't discount.
+
+A project with 3-year payback and $0 afterward is rated the same as a project with 3-year payback and 20 years of additional cash flows. Payback systematically biases against long-duration, high-value investments.
+
+Use it only as a *liquidity screen* alongside NPV — not as a primary decision criterion.
+
+**Under capital rationing:** Use the **Profitability Index = NPV / Initial Investment**. This ranks projects by value created per dollar invested — the correct ranking when capital is constrained. The result often differs from IRR ranking, and the PI portfolio creates more total NPV from the same budget.
+
+</Slide>
+
+<Slide title="Why Good Frameworks Produce Bad Decisions" variant="highlight">
+
+The tools are the easy part. The organizational dynamics are harder:
+
+- **Budget anchoring:** This year's allocation is last year's allocation ± a small adjustment, regardless of relative merits
+- **Empire building:** Division heads fight for budget to grow their sphere, not to maximize return on invested capital
+- **Risk aversion in the middle:** Managers who don't fully share in upside but bear full career risk from failure systematically avoid high-variance, high-expected-value projects
+- **Short-termism:** Cutting R&D or brand investment saves earnings this quarter; the cost shows up in years 3–7, after the manager has moved on
+
+The best capital allocators — Berkshire, Danaher, Constellation — solve this by centralizing capital allocation authority at the top and maintaining genuinely long time horizons for evaluation.
+
+</Slide>
+
+<Slide title="Key Takeaways">
+
+- **NPV is the gold standard** — it directly measures value creation in today's dollars; accept positive NPV, reject negative NPV; use IRR as a supplement, not a replacement
+- **IRR has serious flaws** — scale blindness, reinvestment rate assumptions, and multiple solutions; always cross-check with NPV before deciding
+- **Real options capture the value of flexibility** — staged investments with decision points are worth more than static NPV implies; model the option to expand, delay, or abandon
+- **Payback period is a liquidity screen, not a decision rule** — it systematically undervalues long-duration projects; use it alongside NPV, never instead of it
+- **Under capital rationing, use Profitability Index** — NPV per dollar invested ranks projects correctly when capital is constrained
+
+</Slide>
+
+</SlideShow>

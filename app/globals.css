@@ -3,34 +3,52 @@
 @theme {
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+  /* Page surfaces */
+  --color-page: #ffffff;
+  --color-page-alt: #f7f7f7;
+
+  /* Text hierarchy */
+  --color-fg: #111111;
+  --color-fg-muted: #444444;
+  --color-fg-subtle: #888888;
+
+  /* Borders */
+  --color-line: #e5e5e5;
+
+  /* Brand palette */
+  --color-navy: #1a4d8a;
+  --color-navy-light: #eef3fb;
+  --color-teal: #1a6b6b;
+  --color-teal-light: #f0f7f4;
 }
 
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f7f7f7;
-  --text-primary: #111111;
-  --text-secondary: #444444;
-  --text-tertiary: #888888;
-  --border-color: #e5e5e5;
-  --reading-width: 720px;
+.dark {
+  --color-page: #141414;
+  --color-page-alt: #1e1e1e;
+  --color-fg: #f0f0f0;
+  --color-fg-muted: #aaaaaa;
+  --color-fg-subtle: #666666;
+  --color-line: #2e2e2e;
 }
-
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--color-page);
+  color: var(--color-fg);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Prose ─────────────────────────────────────────────────── */
+
 .prose h2 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: var(--text-primary);
+  color: var(--color-fg);
 }
 
 .prose h3 {
@@ -38,19 +56,19 @@ body {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: var(--color-fg);
 }
 
 .prose p {
   margin-bottom: 1rem;
-  color: var(--text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .prose ul,
 .prose ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .prose li {
@@ -58,29 +76,29 @@ body {
 }
 
 .prose strong {
-  color: var(--text-primary);
+  color: var(--color-fg);
   font-weight: 600;
 }
 
 .prose blockquote {
-  border-left: 3px solid var(--border-color);
+  border-left: 3px solid var(--color-line);
   padding-left: 1rem;
   margin: 1.5rem 0;
-  color: var(--text-tertiary);
+  color: var(--color-fg-subtle);
   font-style: italic;
 }
 
 .prose code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background: var(--bg-secondary);
+  background: var(--color-page-alt);
   padding: 0.125rem 0.375rem;
   border-radius: 3px;
-  color: var(--text-primary);
+  color: var(--color-fg);
 }
 
 .prose hr {
-  border-color: var(--border-color);
+  border-color: var(--color-line);
   margin: 2rem 0;
 }
 
@@ -97,23 +115,23 @@ body {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-tertiary);
-  border-bottom: 2px solid var(--border-color);
+  color: var(--color-fg-subtle);
+  border-bottom: 2px solid var(--color-line);
   padding: 0.5rem 0.75rem;
   white-space: nowrap;
 }
 
 .prose tbody td {
   padding: 0.5rem 0.75rem;
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border-color);
+  color: var(--color-fg-muted);
+  border-bottom: 1px solid var(--color-line);
   vertical-align: top;
 }
 
 .prose tbody tr:last-child td {
   border-bottom: none;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-fg);
 }
 
 /* Right-align numeric columns (all but first) */
@@ -121,6 +139,8 @@ body {
 .prose tbody td:not(:first-child) {
   text-align: right;
 }
+
+/* ── Takeaways ──────────────────────────────────────────────── */
 
 .takeaways-body ul {
   list-style: none;
@@ -133,7 +153,7 @@ body {
   padding-left: 1.25rem;
   margin-bottom: 0.5rem;
   font-size: 0.9375rem;
-  color: var(--text-secondary);
+  color: var(--color-fg-muted);
   line-height: 1.65;
 }
 
@@ -152,31 +172,25 @@ body {
   background: #1a6b6b;
 }
 
-/* Slide content — rendered on white background inside SlideShow */
-.slide-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #111111;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.2;
-}
+/* ── Slide content — always on white bg inside SlideShow ────── */
+/* Colours are driven by CSS custom properties set in Slide.tsx (bodyVars). */
 
 .slide-body {
   font-size: 1.15rem;
   line-height: 1.75;
-  color: #444444;
+  color: var(--slide-text, #444444);
 }
 
 .slide-body p {
   margin-bottom: 1rem;
-  color: #444444;
+  color: var(--slide-text, #444444);
 }
 
 .slide-body ul,
 .slide-body ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
-  color: #444444;
+  color: var(--slide-text, #444444);
   list-style: revert;
 }
 
@@ -185,67 +199,22 @@ body {
 }
 
 .slide-body strong {
-  color: #111111;
+  color: var(--slide-strong, #111111);
   font-weight: 600;
 }
 
 .slide-body em {
-  color: #666666;
+  color: var(--slide-em, #666666);
   font-style: italic;
 }
 
 .slide-body blockquote {
-  border-left: 3px solid #1a4d8a;
+  border-left: 3px solid var(--slide-quote-border, #1a4d8a);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
-  color: #444444;
+  color: var(--slide-text, #444444);
   font-style: italic;
   font-size: 1.25rem;
-}
-
-/* Slide variant overrides — dark and title variants need light text */
-.slide-body--title p,
-.slide-body--title ul,
-.slide-body--title ol,
-.slide-body--title li,
-.slide-body--dark p,
-.slide-body--dark ul,
-.slide-body--dark ol,
-.slide-body--dark li {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.slide-body--title strong,
-.slide-body--dark strong {
-  color: #ffffff;
-}
-
-.slide-body--title blockquote,
-.slide-body--dark blockquote {
-  border-left-color: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* Discussion questions — teacher-only, gated by auth */
-.discussion-body {
-  font-size: 0.9375rem;
-  color: #444444;
-  line-height: 1.7;
-}
-
-.discussion-body ol {
-  padding-left: 1.25rem;
-  margin: 0;
-  list-style: decimal;
-}
-
-.discussion-body li {
-  margin-bottom: 0.6rem;
-  color: #444444;
-}
-
-.discussion-body li:last-child {
-  margin-bottom: 0;
 }
 
 .slide-body table {
@@ -270,4 +239,27 @@ body {
   padding: 0.5rem 0.75rem;
   color: #444444;
   border-bottom: 1px solid #e5e5e5;
+}
+
+/* ── Discussion questions — teacher-only, gated by auth ─────── */
+
+.discussion-body {
+  font-size: 0.9375rem;
+  color: var(--color-fg-muted);
+  line-height: 1.7;
+}
+
+.discussion-body ol {
+  padding-left: 1.25rem;
+  margin: 0;
+  list-style: decimal;
+}
+
+.discussion-body li {
+  margin-bottom: 0.6rem;
+  color: var(--color-fg-muted);
+}
+
+.discussion-body li:last-child {
+  margin-bottom: 0;
 }

@@ -13,11 +13,9 @@ function LoginForm() {
 
   if (unauthorized) {
     return (
-      <div style={{ maxWidth: 400, margin: '6rem auto', padding: '0 1.5rem' }}>
-        <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>
-          Access denied
-        </h1>
-        <p style={{ fontSize: 14, color: 'var(--text-tertiary)' }}>
+      <div className="max-w-[400px] mx-auto mt-24 px-6">
+        <h1 className="text-[1.25rem] font-bold text-fg mb-1">Access denied</h1>
+        <p className="text-[14px] text-fg-subtle">
           Your account does not have permission to access this page.
         </p>
       </div>
@@ -51,91 +49,52 @@ function LoginForm() {
   }
 
   return (
-    <div style={{ maxWidth: 400, margin: '6rem auto', padding: '0 1.5rem' }}>
-      <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>
-        Sign in
-      </h1>
-      <p style={{ fontSize: 14, color: 'var(--text-tertiary)', marginBottom: '2rem' }}>
+    <div className="max-w-[400px] mx-auto mt-24 px-6">
+      <h1 className="text-[1.25rem] font-bold text-fg mb-1">Sign in</h1>
+      <p className="text-[14px] text-fg-subtle mb-8">
         Sign in to access your settings.
       </p>
 
       <button
         onClick={signInWithGoogle}
-        style={{
-          width: '100%',
-          padding: '0.6rem 1rem',
-          background: 'var(--bg-primary)',
-          border: '1px solid var(--border-color)',
-          borderRadius: 6,
-          fontSize: 14,
-          fontWeight: 500,
-          color: 'var(--text-primary)',
-          cursor: 'pointer',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '0.6rem',
-          marginBottom: '1.5rem',
-        }}
+        className="w-full py-[0.6rem] px-4 bg-page border border-line rounded-[6px] text-[14px] font-medium text-fg cursor-pointer flex items-center justify-center gap-[0.6rem] mb-6"
       >
         <GoogleIcon />
         Continue with Google
       </button>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-        <div style={{ flex: 1, height: 1, background: 'var(--border-color)' }} />
-        <span style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>or</span>
-        <div style={{ flex: 1, height: 1, background: 'var(--border-color)' }} />
+      <div className="flex items-center gap-3 mb-6">
+        <div className="flex-1 h-px bg-line" />
+        <span className="text-[12px] text-fg-subtle">or</span>
+        <div className="flex-1 h-px bg-line" />
       </div>
 
       {sent ? (
-        <div style={{
-          padding: '1rem 1.25rem',
-          background: 'var(--bg-secondary)',
-          border: '1px solid var(--border-color)',
-          borderRadius: 8,
-          fontSize: 14,
-          color: 'var(--text-secondary)',
-        }}>
-          Link sent to <strong style={{ color: 'var(--text-primary)' }}>{email}</strong>.
+        <div className="px-5 py-4 bg-page-alt border border-line rounded-lg text-[14px] text-fg-muted">
+          Link sent to <strong className="text-fg">{email}</strong>.
           Check your inbox and click it to sign in.
         </div>
       ) : (
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-            style={{
-              padding: '0.6rem 0.875rem',
-              border: '1px solid var(--border-color)',
-              borderRadius: 6,
-              fontSize: 14,
-              color: 'var(--text-primary)',
-              background: 'var(--bg-primary)',
-              outline: 'none',
-              width: '100%',
-              boxSizing: 'border-box',
-            }}
+            className="px-[0.875rem] py-[0.6rem] border border-line rounded-[6px] text-[14px] text-fg bg-page outline-none w-full box-border"
           />
           {error && (
-            <p style={{ fontSize: 13, color: '#dc2626', margin: 0 }}>{error}</p>
+            <p className="text-[13px] text-red-600 m-0">{error}</p>
           )}
           <button
             type="submit"
             disabled={loading}
-            style={{
-              padding: '0.6rem 1rem',
-              background: loading ? 'var(--bg-secondary)' : '#1a4d8a',
-              color: loading ? 'var(--text-tertiary)' : 'white',
-              border: 'none',
-              borderRadius: 6,
-              fontSize: 14,
-              fontWeight: 500,
-              cursor: loading ? 'default' : 'pointer',
-            }}
+            className={`py-[0.6rem] px-4 border-none rounded-[6px] text-[14px] font-medium cursor-pointer ${
+              loading
+                ? 'bg-page-alt text-fg-subtle cursor-default'
+                : 'bg-navy text-white'
+            }`}
           >
             {loading ? 'Sending…' : 'Send magic link'}
           </button>

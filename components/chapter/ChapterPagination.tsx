@@ -11,28 +11,19 @@ export default function ChapterPagination({ subject, prev, next }: ChapterPagina
   if (!prev && !next) return null
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        paddingTop: '2rem',
-        marginTop: '2rem',
-        borderTop: '1px solid var(--border-color)',
-        gap: '1rem',
-      }}
-    >
+    <div className="flex justify-between pt-8 mt-8 border-t border-line gap-4">
       {prev ? (
-        <Link href={`/${subject}/${prev.slug}`} style={{ textDecoration: 'none', flex: 1 }}>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>← Previous</div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', fontWeight: 500 }}>{prev.title}</div>
+        <Link href={`/${subject}/${prev.slug}`} className="no-underline flex-1">
+          <div className="text-xs text-fg-subtle mb-1">← Previous</div>
+          <div className="text-sm text-fg font-medium">{prev.title}</div>
         </Link>
       ) : (
         <div />
       )}
       {next ? (
-        <Link href={`/${subject}/${next.slug}`} style={{ textDecoration: 'none', flex: 1, textAlign: 'right' }}>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginBottom: '0.25rem' }}>Next →</div>
-          <div style={{ fontSize: '0.875rem', color: 'var(--text-primary)', fontWeight: 500 }}>{next.title}</div>
+        <Link href={`/${subject}/${next.slug}`} className="no-underline flex-1 text-right">
+          <div className="text-xs text-fg-subtle mb-1">Next →</div>
+          <div className="text-sm text-fg font-medium">{next.title}</div>
         </Link>
       ) : (
         <div />

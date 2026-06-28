@@ -1,63 +1,33 @@
 import type { ChapterFrontmatter } from '@/types/content'
 
-const difficultyStyle = {
-  foundational: { bg: '#edf7f1', color: '#1a6b3a' },
-  intermediate: { bg: '#fffbeb', color: '#92400e' },
-  advanced: { bg: '#fef2f2', color: '#991b1b' },
+const difficultyClass = {
+  foundational: 'bg-[#edf7f1] text-[#1a6b3a]',
+  intermediate: 'bg-amber-50 text-amber-800',
+  advanced:     'bg-red-50 text-red-800',
 }
 
 interface ChapterHeaderProps {
   chapter: ChapterFrontmatter
-  subjectColor: string
 }
 
-export default function ChapterHeader({ chapter, subjectColor }: ChapterHeaderProps) {
-  const d = difficultyStyle[chapter.difficulty]
-
+export default function ChapterHeader({ chapter }: ChapterHeaderProps) {
   return (
-    <header style={{ marginBottom: '2rem', paddingBottom: '1.5rem', borderBottom: '1px solid var(--border-color)' }}>
-      <h1
-        style={{
-          fontSize: '1.75rem',
-          fontWeight: 700,
-          lineHeight: 1.25,
-          color: 'var(--text-primary)',
-          margin: '0 0 0.75rem',
-        }}
-      >
+    <header className="mb-8 pb-6 border-b border-line">
+      <h1 className="text-[1.75rem] font-bold leading-tight text-fg m-0 mb-3">
         {chapter.title}
       </h1>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-        <span
-          style={{
-            fontSize: '0.6875rem',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-            padding: '0.125rem 0.5rem',
-            borderRadius: '999px',
-            background: d.bg,
-            color: d.color,
-          }}
-        >
+      <div className="flex items-center gap-3 flex-wrap">
+        <span className={`text-[0.6875rem] font-semibold uppercase tracking-[0.06em] px-2 py-[0.125rem] rounded-full ${difficultyClass[chapter.difficulty]}`}>
           {chapter.difficulty}
         </span>
-
-        <span style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)' }}>
+        <span className="text-sm text-fg-subtle">
           {chapter.readTime} min read
         </span>
       </div>
 
       {chapter.summary && (
-        <p
-          style={{
-            marginTop: '0.75rem',
-            fontSize: '1rem',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.6,
-          }}
-        >
+        <p className="mt-3 text-base text-fg-muted leading-relaxed">
           {chapter.summary}
         </p>
       )}

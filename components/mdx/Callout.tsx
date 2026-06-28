@@ -4,36 +4,14 @@ interface CalloutProps {
 }
 
 const styles = {
-  insight: {
-    background: '#eef3fb',
-    borderColor: '#1a4d8a',
-    icon: '💡',
-  },
-  warning: {
-    background: '#fffbeb',
-    borderColor: '#d97706',
-    icon: '⚠️',
-  },
-  definition: {
-    background: 'var(--bg-secondary)',
-    borderColor: 'var(--border-color)',
-    icon: '📖',
-  },
+  insight:    'bg-navy-light border-l-[3px] border-navy',
+  warning:    'bg-amber-50 border-l-[3px] border-amber-500',
+  definition: 'bg-page-alt border-l-[3px] border-line',
 }
 
 export default function Callout({ type, children }: CalloutProps) {
-  const s = styles[type]
   return (
-    <aside
-      style={{
-        background: s.background,
-        borderLeft: `3px solid ${s.borderColor}`,
-        borderRadius: '0 6px 6px 0',
-        padding: '1rem 1.25rem',
-        margin: '1.5rem 0',
-        fontSize: '0.9375rem',
-      }}
-    >
+    <aside className={`${styles[type]} rounded-r-[6px] px-5 py-4 my-6 text-[0.9375rem]`}>
       {children}
     </aside>
   )

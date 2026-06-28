@@ -52,37 +52,29 @@ export default function SettingsPage() {
   }
 
   return (
-    <div style={{ maxWidth: 480, margin: '5rem auto', padding: '0 1.5rem' }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.25rem' }}>
-        <h1 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
-          Settings
-        </h1>
+    <div className="max-w-[480px] mx-auto mt-20 px-6">
+      <div className="flex items-baseline justify-between mb-1">
+        <h1 className="text-[1.25rem] font-bold text-fg m-0">Settings</h1>
         {user && (
           <button
             onClick={signOut}
-            style={{ background: 'none', border: 'none', fontSize: 13, color: 'var(--text-tertiary)', cursor: 'pointer', padding: 0 }}
+            className="bg-transparent border-none text-[13px] text-fg-subtle cursor-pointer p-0 hover:text-fg-muted"
           >
             Sign out
           </button>
         )}
       </div>
-      <p style={{ fontSize: 14, color: 'var(--text-tertiary)', marginBottom: '2.5rem' }}>
+      <p className="text-[14px] text-fg-subtle mb-10">
         {user ? user.email : ''}
       </p>
 
-      <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden' }}>
-        <div style={{
-          padding: '1rem 1.25rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '2rem',
-        }}>
+      <div className="border border-line rounded-lg overflow-hidden">
+        <div className="px-5 py-4 flex items-center justify-between gap-8">
           <div>
-            <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--text-primary)', marginBottom: 2 }}>
+            <div className="font-semibold text-[14px] text-fg mb-[2px]">
               Chapter slides
             </div>
-            <div style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>
+            <div className="text-[13px] text-fg-subtle">
               Show a "Present" button at the bottom of each chapter
             </div>
           </div>
@@ -92,33 +84,16 @@ export default function SettingsPage() {
               onClick={toggle}
               role="switch"
               aria-checked={showSlides}
-              style={{
-                flexShrink: 0,
-                width: 44,
-                height: 24,
-                borderRadius: 12,
-                border: 'none',
-                background: showSlides ? '#1a4d8a' : '#d0d0d0',
-                cursor: 'pointer',
-                position: 'relative',
-                transition: 'background 0.15s ease',
-                padding: 0,
-              }}
+              className="shrink-0 w-11 h-6 rounded-xl border-none cursor-pointer relative p-0 transition-colors duration-150"
+              style={{ background: showSlides ? '#1a4d8a' : '#d0d0d0' }}
             >
-              <span style={{
-                position: 'absolute',
-                top: 2,
-                left: showSlides ? 22 : 2,
-                width: 20,
-                height: 20,
-                borderRadius: '50%',
-                background: '#ffffff',
-                transition: 'left 0.15s ease',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.2)',
-              }} />
+              <span
+                className="absolute top-[2px] w-5 h-5 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-[left] duration-150"
+                style={{ left: showSlides ? 22 : 2 }}
+              />
             </button>
           ) : (
-            <div style={{ width: 44, height: 24, borderRadius: 12, background: 'var(--bg-secondary)' }} />
+            <div className="w-11 h-6 rounded-xl bg-page-alt" />
           )}
         </div>
       </div>

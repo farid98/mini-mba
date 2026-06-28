@@ -1,6 +1,6 @@
 export default function PageShell({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ maxWidth: 'var(--reading-width)', margin: '0 auto', padding: '0 1.5rem' }}>
+    <div className="max-w-[720px] mx-auto px-6">
       {children}
     </div>
   )

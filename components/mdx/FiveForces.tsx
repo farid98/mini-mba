@@ -12,79 +12,57 @@ interface FiveForcesProps {
 }
 
 const R = {
-  low:    { bg: '#edf7f1', text: '#1a6b3a', border: '#1a6b3a', label: 'Low' },
-  medium: { bg: '#fffbeb', text: '#92400e', border: '#d97706', label: 'Medium' },
-  high:   { bg: '#fef2f2', text: '#991b1b', border: '#dc2626', label: 'High' },
+  low:    { badge: 'bg-[#edf7f1] text-[#1a6b3a]', border: '#1a6b3a', label: 'Low' },
+  medium: { badge: 'bg-amber-50 text-amber-800',   border: '#d97706', label: 'Medium' },
+  high:   { badge: 'bg-red-50 text-red-800',        border: '#dc2626', label: 'High' },
 }
 
-const AC = '#b8b8b8' // arrow color
+const AC = '#b8b8b8'
 
 function Badge({ rating }: { rating: keyof typeof R }) {
   const c = R[rating]
   return (
-    <span style={{
-      display: 'inline-block',
-      fontSize: '0.625rem',
-      fontWeight: 700,
-      textTransform: 'uppercase' as const,
-      letterSpacing: '0.07em',
-      padding: '0.125rem 0.4rem',
-      borderRadius: '3px',
-      background: c.bg,
-      color: c.text,
-    }}>
+    <span className={`inline-block text-[0.625rem] font-bold uppercase tracking-[0.07em] px-[0.4rem] py-[0.125rem] rounded-[3px] ${c.badge}`}>
       {c.label}
     </span>
   )
 }
 
-// Outer force card — colored left border indicates rating intensity
 function ForceCard({ label, rating, summary }: { label: string } & ForceProps) {
   const c = R[rating]
   return (
-    <div style={{
-      background: '#fff',
-      border: '1px solid #e5e5e5',
-      borderLeft: `4px solid ${c.border}`,
-      borderRadius: '5px',
-      padding: '0.75rem 0.875rem',
-      height: '100%',
-      boxSizing: 'border-box' as const,
-    }}>
+    <div
+      className="bg-white border border-line rounded-[5px] px-[0.875rem] py-3 h-full box-border"
+      style={{ borderLeft: `4px solid ${c.border}` }}
+    >
       <Badge rating={rating} />
-      <div style={{ fontWeight: 600, fontSize: '0.8125rem', color: '#111', lineHeight: 1.35, margin: '0.35rem 0 0.375rem' }}>
+      <div className="font-semibold text-[0.8125rem] text-fg leading-[1.35] mt-[0.35rem] mb-[0.375rem]">
         {label}
       </div>
-      <p style={{ fontSize: '0.75rem', color: '#555', margin: 0, lineHeight: 1.5 }}>{summary}</p>
+      <p className="text-[0.75rem] text-[#555] m-0 leading-relaxed">{summary}</p>
     </div>
   )
 }
 
-// Center rivalry card — full border, slightly different background to anchor the diagram
 function RivalryCard({ rating, summary }: ForceProps) {
   const c = R[rating]
   return (
-    <div style={{
-      background: '#f9f9f9',
-      border: `2px solid ${c.border}`,
-      borderRadius: '7px',
-      padding: '0.875rem',
-      height: '100%',
-      boxSizing: 'border-box' as const,
-    }}>
-      <div style={{ fontSize: '0.6rem', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#999', marginBottom: '0.375rem' }}>
+    <div
+      className="bg-[#f9f9f9] rounded-[7px] p-[0.875rem] h-full box-border"
+      style={{ border: `2px solid ${c.border}` }}
+    >
+      <div className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#999] mb-[0.375rem]">
         Industry Rivalry
       </div>
       <Badge rating={rating} />
-      <p style={{ fontSize: '0.75rem', color: '#555', margin: '0.375rem 0 0', lineHeight: 1.5 }}>{summary}</p>
+      <p className="text-[0.75rem] text-[#555] mt-[0.375rem] mb-0 leading-relaxed">{summary}</p>
     </div>
   )
 }
 
-// Bidirectional horizontal arrow
 function ArrowH() {
   return (
-    <svg width="44" height="20" viewBox="0 0 44 20" style={{ display: 'block' }}>
+    <svg width="44" height="20" viewBox="0 0 44 20" className="block">
       <polygon points="0,10 9,4 9,16" fill={AC} />
       <rect x="9" y="9" width="26" height="2" fill={AC} />
       <polygon points="44,10 35,4 35,16" fill={AC} />
@@ -92,10 +70,9 @@ function ArrowH() {
   )
 }
 
-// Bidirectional vertical arrow
 function ArrowV() {
   return (
-    <svg width="20" height="36" viewBox="0 0 20 36" style={{ display: 'block' }}>
+    <svg width="20" height="36" viewBox="0 0 20 36" className="block">
       <polygon points="10,0 4,9 16,9" fill={AC} />
       <rect x="9" y="9" width="2" height="18" fill={AC} />
       <polygon points="10,36 4,27 16,27" fill={AC} />
@@ -103,63 +80,40 @@ function ArrowV() {
   )
 }
 
-export default function FiveForces({
-  threat_of_entry,
-  supplier_power,
-  buyer_power,
-  substitutes,
-  rivalry,
-}: FiveForcesProps) {
+export default function FiveForces({ threat_of_entry, supplier_power, buyer_power, substitutes, rivalry }: FiveForcesProps) {
   return (
-    <div style={{ margin: '2rem 0', overflowX: 'auto' }}>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 44px 1fr 44px 1fr',
-        gridTemplateRows: 'auto 36px auto 36px auto',
-        minWidth: '560px',
-        gap: 0,
-      }}>
+    <div className="my-8 overflow-x-auto">
+      <div className="grid grid-cols-[1fr_44px_1fr_44px_1fr] grid-rows-[auto_36px_auto_36px_auto] min-w-[560px] gap-0">
 
-        {/* Row 1 — Threat of New Entry (center column) */}
-        <div style={{ gridColumn: 3, gridRow: 1 }}>
+        <div className="col-start-3 row-start-1">
           <ForceCard label="Threat of New Entry" {...threat_of_entry} />
         </div>
 
-        {/* Row 2 — vertical arrow (center column) */}
-        <div style={{ gridColumn: 3, gridRow: 2, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="col-start-3 row-start-2 flex items-center justify-center">
           <ArrowV />
         </div>
 
-        {/* Row 3 — Suppliers / Rivalry / Buyers */}
-        <div style={{ gridColumn: 1, gridRow: 3, display: 'flex' }}>
-          <div style={{ flex: 1 }}>
-            <ForceCard label="Bargaining Power of Suppliers" {...supplier_power} />
-          </div>
+        <div className="col-start-1 row-start-3 flex">
+          <div className="flex-1"><ForceCard label="Bargaining Power of Suppliers" {...supplier_power} /></div>
         </div>
-        <div style={{ gridColumn: 2, gridRow: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="col-start-2 row-start-3 flex items-center justify-center">
           <ArrowH />
         </div>
-        <div style={{ gridColumn: 3, gridRow: 3, display: 'flex' }}>
-          <div style={{ flex: 1 }}>
-            <RivalryCard {...rivalry} />
-          </div>
+        <div className="col-start-3 row-start-3 flex">
+          <div className="flex-1"><RivalryCard {...rivalry} /></div>
         </div>
-        <div style={{ gridColumn: 4, gridRow: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="col-start-4 row-start-3 flex items-center justify-center">
           <ArrowH />
         </div>
-        <div style={{ gridColumn: 5, gridRow: 3, display: 'flex' }}>
-          <div style={{ flex: 1 }}>
-            <ForceCard label="Bargaining Power of Buyers" {...buyer_power} />
-          </div>
+        <div className="col-start-5 row-start-3 flex">
+          <div className="flex-1"><ForceCard label="Bargaining Power of Buyers" {...buyer_power} /></div>
         </div>
 
-        {/* Row 4 — vertical arrow (center column) */}
-        <div style={{ gridColumn: 3, gridRow: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="col-start-3 row-start-4 flex items-center justify-center">
           <ArrowV />
         </div>
 
-        {/* Row 5 — Threat of Substitutes (center column) */}
-        <div style={{ gridColumn: 3, gridRow: 5 }}>
+        <div className="col-start-3 row-start-5">
           <ForceCard label="Threat of Substitutes" {...substitutes} />
         </div>
 

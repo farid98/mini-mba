@@ -9,25 +9,12 @@ export default function PrerequisiteBanner({ prerequisites }: PrerequisiteBanner
   if (prerequisites.length === 0) return null
 
   return (
-    <div
-      style={{
-        background: '#fffbeb',
-        border: '1px solid #d97706',
-        borderRadius: '6px',
-        padding: '0.75rem 1rem',
-        marginBottom: '1.5rem',
-        fontSize: '0.875rem',
-        color: '#92400e',
-      }}
-    >
+    <div className="bg-amber-50 border border-amber-500 rounded-[6px] px-4 py-3 mb-6 text-sm text-amber-800">
       <strong>Read first:</strong>{' '}
       {prerequisites.map((p, i) => (
         <span key={p.slug}>
           {i > 0 && ', '}
-          <Link
-            href={`/${p.subject}/${p.slug}`}
-            style={{ color: '#92400e', fontWeight: 600 }}
-          >
+          <Link href={`/${p.subject}/${p.slug}`} className="text-amber-800 font-semibold">
             {p.title}
           </Link>
         </span>

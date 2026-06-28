@@ -144,3 +144,91 @@ Healthcare has been transformed by process thinking. The application of flow ana
 - Map the current state before designing improvements — follow an actual unit through the process.
 - Process thinking applies equally to manufacturing, services, software, and healthcare.
 </Takeaways>
+
+<Discussion>
+1. Your hospital's emergency department has an average wait time of 4 hours despite having capacity that, on paper, should handle patient volume. Using Little's Law and bottleneck thinking, how would you diagnose and attack the problem?
+2. A software engineering manager argues that WIP limits "slow the team down" because developers sit idle waiting for reviews. How would you respond, and what does queuing theory say about the real cost of removing WIP limits?
+3. Variability forces a choice between inventory buffers, capacity buffers, and time buffers — but each comes with a different cost and a different customer experience. Walk through a specific service business (a restaurant, a clinic, an airline) and argue for which buffer type is most appropriate and why.
+4. Process mapping consistently reveals that value-adding time is less than 10% of total flow time. If that's true across almost every industry, why haven't most organizations already fixed it — and what organizational dynamics preserve the waste?
+</Discussion>
+
+<SlideShow>
+
+<Slide title="Your Organization Is a Process — Whether You See It or Not" variant="title">
+
+Every day, customers wait longer than they should. Work piles up in queues nobody owns. Smart people are busy — but the system is broken.
+
+> The problem is almost never the people. It's the process.
+
+Operations management starts with one deceptively simple claim: **every organization is a network of processes**, and the key to improving performance is making those processes visible, measurable, and improvable.
+
+Once you can read a process, you can read any organization — hospital, bank, software team, or factory floor.
+
+</Slide>
+
+<Slide title="The Core Process Metrics">
+
+- **Throughput** — the rate of output (120 orders/day, 8 patients/hour). This is the heartbeat of an operation and determines revenue capacity.
+- **Flow time** — total time from input to output, including all waiting. What customers experience as speed.
+- **Work-in-process (WIP)** — units currently inside the process: tickets in queue, orders being picked, patients in the building.
+- **Capacity** — maximum sustainable throughput, set by the bottleneck, not the average.
+
+These four metrics are not independent. They are linked by a single equation — Little's Law — that lets you calculate the one you can't measure from the two you can.
+
+</Slide>
+
+<Slide title="Little's Law: WIP = Throughput × Flow Time">
+
+John Little proved in 1961 that for any stable process: **WIP = Throughput × Flow Time**.
+
+**Practical example**: Your support team resolves 50 tickets per day. There are always about 200 tickets in the queue. Average ticket age = 200 ÷ 50 = **4 days** — no timestamps required.
+
+**The two levers to cut lead time**:
+1. Increase throughput (hire more, buy more machines) — the instinctive move
+2. Reduce WIP (limit how much you start) — counterintuitive but often more powerful
+
+This is the mathematical foundation behind kanban WIP limits in software development and just-in-time inventory in manufacturing. The equation doesn't lie.
+
+</Slide>
+
+<Slide title="Bottlenecks: The Theory of Constraints in Practice">
+
+**The bottleneck sets system throughput** — period. A drive-through has three steps: order-taking (30 sec), food prep (90 sec), payment (20 sec). Maximum output = 40 customers/hour, set entirely by food prep. Speeding up the other two steps adds zero capacity.
+
+Eli Goldratt's five-step improvement cycle:
+1. **Identify** the bottleneck
+2. **Exploit** it — squeeze every unit of capacity from it as-is
+3. **Subordinate** everything else to keeping the bottleneck fed
+4. **Elevate** its capacity when exploitation is maxed out
+5. **Repeat** — the constraint will move
+
+The discipline is subordination: don't optimize non-bottleneck steps at the bottleneck's expense. A beautifully efficient packaging station upstream of a constrained inspection step just builds WIP — it doesn't add output.
+
+</Slide>
+
+<Slide title="The Variability Trap" variant="highlight">
+
+Here's what pure capacity analysis misses: **even at 80% average utilization, queues can be substantial — at 95%, they explode.**
+
+Variability is the hidden enemy. When service times vary, machines break, or demand fluctuates, queues build up even when average capacity exceeds average demand. This means building buffer into your system is not slack — it's an engineering requirement.
+
+The three buffer types:
+- **Inventory buffer** — stockpile inputs or outputs (works for goods, not services)
+- **Capacity buffer** — keep reserve capacity idle (cross-trained staff, standby machines)
+- **Time buffer** — ask customers to wait (sometimes acceptable, sometimes fatal)
+
+Choosing the right buffer is one of the most consequential operations design decisions a manager makes.
+
+</Slide>
+
+<Slide title="Key Takeaways">
+
+- **Every organization is a process network** — throughput, flow time, WIP, and capacity are the four metrics that describe any process, in any industry
+- **Little's Law is the master equation** — WIP = Throughput × Flow Time; use it to find hidden lead time and identify the fastest improvement path
+- **The bottleneck controls everything** — optimizing non-bottleneck steps doesn't increase output; only elevating the bottleneck does
+- **Variability demands buffers** — high-utilization systems without buffer capacity produce unpredictable, long queues; the choice of buffer type is a strategic decision
+- **Map what is, not what should be** — value-adding time is almost always under 10% of total flow time; the improvement potential is invisible until the process is made visible
+
+</Slide>
+
+</SlideShow>
