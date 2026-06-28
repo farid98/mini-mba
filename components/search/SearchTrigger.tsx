@@ -15,7 +15,7 @@ export default function SearchTrigger() {
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
       <span>Search chapters…</span>
-      <kbd className="ml-auto text-[11px] border border-line rounded px-1.5 py-0.5 font-sans text-fg-subtle">⌘K</kbd>
+      <kbd className="ml-auto hidden sm:inline text-[11px] border border-line rounded px-1.5 py-0.5 font-sans text-fg-subtle">⌘K</kbd>
     </button>
   )
 }

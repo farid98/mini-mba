@@ -39,16 +39,16 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <div className="max-w-[960px] mx-auto px-6 pt-16 pb-12">
-        <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-fg-subtle mb-5">
+      <div className="max-w-[960px] mx-auto px-6 pt-8 sm:pt-16 pb-6 sm:pb-12">
+        <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-fg-subtle mb-3 sm:mb-5">
           Free · Self-paced · No sign-up required
         </div>
 
-        <h1 className="text-[2.5rem] sm:text-[3rem] font-bold leading-[1.08] tracking-[-0.02em] text-fg mb-5 max-w-[18ch]">
+        <h1 className="text-[2rem] sm:text-[3rem] font-bold leading-[1.08] tracking-[-0.02em] text-fg mb-3 sm:mb-5 max-w-[18ch]">
           The MBA core, distilled to what actually matters.
         </h1>
 
-        <p className="text-lg text-fg-muted leading-relaxed max-w-[52ch] mb-0">
+        <p className="text-base sm:text-lg text-fg-muted leading-relaxed max-w-[52ch] mb-0">
           {subjects.length} disciplines. {totalChapters} chapters. The frameworks taught at top
           business schools — explained clearly enough to use, not just recognise.
         </p>
@@ -58,30 +58,30 @@ export default function HomePage() {
         <SearchTrigger />
 
         {/* Stats strip */}
-        <div className="flex gap-10 mt-10 pt-8 border-t border-line flex-wrap">
+        <div className="grid grid-cols-4 gap-3 sm:gap-10 mt-6 sm:mt-10 pt-5 sm:pt-8 border-t border-line">
           {[
             { n: subjects.length, l: 'Disciplines' },
             { n: totalChapters,   l: 'Chapters' },
-            { n: `~${totalHrs} hrs`, l: 'To complete' },
+            { n: `~${totalHrs}h`, l: 'To complete' },
             { n: '$0',            l: 'Cost' },
           ].map(({ n, l }) => (
             <div key={l}>
-              <div className="text-[1.75rem] font-bold tracking-[-0.01em] text-fg leading-none">{n}</div>
-              <div className="text-[11px] font-semibold tracking-[0.08em] uppercase text-fg-subtle mt-1">{l}</div>
+              <div className="text-[1.25rem] sm:text-[1.75rem] font-bold tracking-[-0.01em] text-fg leading-none">{n}</div>
+              <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.06em] uppercase text-fg-subtle mt-1">{l}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* ── Curriculum ─────────────────────────────────────────── */}
-      <div className="max-w-[960px] mx-auto px-6 py-14">
-        <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-fg-subtle mb-3">
+      <div className="max-w-[960px] mx-auto px-6 pt-4 sm:pt-10 pb-10 sm:pb-14">
+        <div className="text-[11px] font-semibold tracking-[0.12em] uppercase text-fg-subtle mb-2 sm:mb-3">
           The curriculum
         </div>
-        <h2 className="text-[1.75rem] font-bold tracking-[-0.015em] text-fg mb-3">
+        <h2 className="text-[1.4rem] sm:text-[1.75rem] font-bold tracking-[-0.015em] text-fg mb-2 sm:mb-3">
           Seven disciplines that compound on each other.
         </h2>
-        <p className="text-base text-fg-muted mb-10 max-w-[56ch]">
+        <p className="text-sm sm:text-base text-fg-muted mb-6 sm:mb-10 max-w-[56ch]">
           Start anywhere, or follow them in order. Strategy tells you where to compete;
           finance tells you whether it's worth it; the rest tell you how to pull it off.
         </p>

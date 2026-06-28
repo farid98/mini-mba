@@ -90,7 +90,7 @@ export default function SearchModal() {
             placeholder="Search chapters…"
             className="flex-1 outline-none bg-transparent text-fg text-[15px] placeholder:text-fg-subtle"
           />
-          <kbd className="text-[11px] text-fg-subtle border border-line rounded px-1.5 py-0.5 font-sans">Esc</kbd>
+          <kbd className="hidden sm:inline text-[11px] text-fg-subtle border border-line rounded px-1.5 py-0.5 font-sans">Esc</kbd>
         </div>
 
         {/* Results */}
@@ -129,7 +129,7 @@ export default function SearchModal() {
         )}
 
         {/* Footer hint */}
-        <div className="px-4 py-2 border-t border-line flex gap-4 text-[11px] text-fg-subtle">
+        <div className="hidden sm:flex px-4 py-2 border-t border-line gap-4 text-[11px] text-fg-subtle">
           <span><kbd className="border border-line rounded px-1 font-sans">↑↓</kbd> navigate</span>
           <span><kbd className="border border-line rounded px-1 font-sans">↵</kbd> open</span>
           <span><kbd className="border border-line rounded px-1 font-sans">Esc</kbd> close</span>

@@ -1,7 +1,8 @@
 'use client'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { initializeApp, getApps } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
+import { getAnalytics, logEvent } from 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAEFTi3s1-woTd75NhRgX8SV9g1m-M0wfw',
@@ -14,10 +15,16 @@ const firebaseConfig = {
 }
 
 export default function FirebaseAnalytics() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
-    getAnalytics(app)
-  }, [])
+    const analytics = getAnalytics(app)
+    logEvent(analytics, 'page_view', {
+      page_path: pathname,
+      page_title: document.title,
+    })
+  }, [pathname])
 
   return null
 }
