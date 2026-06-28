@@ -1,0 +1,254 @@
+---
+slug: market-research
+title: "Market Research: How to Know What Customers Actually Want"
+subject: marketing
+order: 7
+summary: "Good decisions start with good questions. Market research is the discipline of reducing uncertainty before you commit resources — here is how to do it without fooling yourself."
+difficulty: foundational
+readTime: 11
+prerequisites:
+  - marketing/segmentation-targeting-positioning
+related:
+  - entrepreneurship/lean-startup
+  - marketing/growth
+---
+
+<Takeaways>
+- Start with the decision, not the data. Every research project should begin with: what will we do differently depending on what we find?
+- Primary research (you collect it) is expensive and slow but specific to your question. Secondary research (someone else collected it) is cheap and fast but may not fit your context.
+- Qualitative research reveals the why and the words customers use. Quantitative research measures how many and how much. Both are needed — neither alone is sufficient.
+- The biggest risk in market research is confirmation bias: designing studies that validate what you already believe rather than genuinely testing it.
+- Jobs-to-be-done reframes research from "who are my customers?" to "what problem are they hiring this product to solve?" — a much more actionable question.
+- Survey responses measure stated preference. Behavioural data measures revealed preference. When they conflict, trust the behaviour.
+</Takeaways>
+
+Most market research is done backwards. A team decides what they want to build, then designs a survey that confirms it's a good idea, then presents the results as evidence. This is not research. It is expensive reassurance.
+
+Real market research starts with a decision you need to make and works backwards to the minimum information required to make it confidently. That discipline — decision first, data second — is what separates research that changes behaviour from research that fills slide decks.
+
+## Start With the Decision
+
+Before collecting a single data point, write down the decision your research will inform. Not "we want to understand our customers" — that is a project description, not a decision. A decision looks like this:
+
+- Should we launch in the SMB segment or the enterprise segment first?
+- Should the product be priced at £29/month or £49/month?
+- Should we build the integration with Salesforce or the integration with HubSpot?
+
+Once the decision is explicit, the research almost designs itself. You know exactly what you need to find out, you know what evidence would change your mind, and you know when you have enough information to stop.
+
+<Callout type="insight">
+**The "so what" test.** For any research question you're considering, ask: if the answer came back strongly one way, what would we do? If the answer is "probably nothing different," drop the question. You don't need that data.
+</Callout>
+
+## Primary vs Secondary Research
+
+**Secondary research** uses data someone else collected — industry reports, academic studies, government statistics, competitor filings, review site aggregates. It is fast, cheap, and often sufficient for understanding market size, growth rates, and broad trends. Start here before spending anything on primary research.
+
+**Primary research** is data you collect yourself — interviews, surveys, usability tests, experiments. It is slow and expensive but directly answers your specific question about your specific customers. You commission primary research when secondary data doesn't exist, doesn't fit your context, or isn't granular enough to be actionable.
+
+<Diagram>
+graph TD
+    A[Research Question] --> B[Secondary data exists?]
+    B -->|Yes| C[Desk Research]
+    B -->|No| D[Primary Research]
+    C --> E[Specific enough to decide?]
+    E -->|Yes| F[Decision]
+    E -->|No| D
+    D --> F
+    classDef decision fill:#eef3fb,stroke:#1a4d8a,color:#111
+    classDef action fill:#edf7f1,stroke:#1a6b3a,color:#111
+    class B,E decision
+    class C,D,F action
+</Diagram>
+
+## Qualitative vs Quantitative
+
+These are not competing approaches — they answer different questions and are most powerful when combined.
+
+**Qualitative research** (interviews, focus groups, ethnographic observation) is exploratory. It tells you *why* people behave the way they do, what language they use to describe their problems, and what tradeoffs they care about. You can't generalise from 10 interviews, but you can discover hypotheses you didn't know to test.
+
+**Quantitative research** (surveys, analytics, A/B tests) is confirmatory. It tells you *how many* people hold a given view or exhibit a given behaviour, with statistical confidence. It validates or refutes hypotheses generated from qualitative work.
+
+The classic mistake is running quantitative research before you understand the question well enough to write good survey items. A survey is only as good as the hypotheses embedded in its questions — if those hypotheses are wrong, the data is misleading regardless of sample size.
+
+<Example title="Intercom's Customer Interview Process">
+Intercom, the customer messaging platform, runs structured customer interviews before every major product decision. Their process: identify the job the customer is trying to do, ask about the last time they tried to do it, listen for the obstacles and workarounds they describe. They explicitly do not ask customers what features they want — "customers don't know what they want" is a cliché, but "customers know exactly what problem they have" is true. The interview surfaces the problem; the product team generates the solution.
+</Example>
+
+## Jobs to Be Done
+
+The most useful reframe in customer research comes from Clayton Christensen's **Jobs to Be Done** (JTBD) framework. Instead of asking "who is my customer?" (demographic segmentation), ask "what job is the customer hiring this product to do?"
+
+A milkshake is hired to make a commute less boring. A drill is hired to hang a picture. A business school is hired to get access to a network, not to deliver education. The job reveals the real competition (the milkshake competes with bananas and bagels, not other milkshakes) and the real value proposition.
+
+JTBD research focuses interviews on three moments:
+1. **The trigger** — what happened that made you start looking for a solution?
+2. **The switch** — why did you choose this over what you were doing before?
+3. **The anxiety** — what nearly stopped you from switching?
+
+These three questions generate more actionable insight than any satisfaction survey.
+
+## Survey Design Principles
+
+When you do need a survey, four principles reduce the risk of garbage data:
+
+**One question per question.** "How satisfied are you with our product's speed and reliability?" is two questions. Respondents who like speed but hate reliability have no good answer. Separate every compound question.
+
+**Avoid leading questions.** "How much do you enjoy our new dashboard?" presupposes enjoyment. "How would you describe your experience with the new dashboard?" does not.
+
+**Use behavioural anchors, not attitude scales.** "How likely are you to recommend us?" (1–10) is fine for tracking NPS trends. But "In the last 3 months, how many times have you recommended us to someone?" gives you revealed behaviour, which is more reliable than stated intention.
+
+**Test for price with Van Westendorp, not direct questions.** Asking "how much would you pay for this?" produces anchored, socially acceptable answers. One approach is the Van Westendorp Price Sensitivity Meter, which asks four questions about acceptable and unacceptable price points, triangulating a realistic acceptable range.
+
+The four questions map directly to price boundaries:
+
+| Question | What you ask | Output |
+|---|---|---|
+| Too cheap | "At what price does quality seem doubtful?" | Lower rejection threshold |
+| Bargain | "At what price does it start to feel like a deal?" | Acceptable floor (PMC) |
+| Expensive | "At what price does it start to feel expensive, but you'd still buy?" | Acceptable ceiling (PME) |
+| Too expensive | "At what price would you not buy under any circumstances?" | Upper rejection threshold |
+
+Plotting cumulative response curves for all four questions reveals the **acceptable price range** (PMC to PME) and the **optimal price point** (OPP) — where equal proportions say the price is too cheap versus too expensive. This gives you a defensible price range grounded in actual customer psychology, not guesswork.
+
+<Callout type="warning">
+**Stated vs revealed preference.** People consistently say they will pay more for sustainable products, switch to healthier food, and exercise more. Behavioural data consistently shows they don't. When you need to know what customers *will* do — not what they *wish* they would do — run a test rather than a survey.
+</Callout>
+
+## Competitive Research
+
+Understanding competitors is a subset of market research that is systematically underinvested. Most teams do a feature comparison matrix and stop. More useful sources:
+
+- **Review sites** (G2, Trustpilot, App Store): read the 3-star reviews, not the 5-star ones. The 3-star reviews name specific frustrations from people who still like the product — these are unmet needs waiting to be solved.
+- **Job postings**: a competitor hiring heavily for sales engineers in a new vertical signals where they're expanding. A sudden drop in hiring signals resource constraints.
+- **Pricing page changes**: public SaaS pricing is tracked by tools like PricingSaaS. Moves signal strategy shifts.
+- **Churned customer interviews**: if you can talk to customers who left a competitor to come to you, or who left you for a competitor, these conversations are the highest signal research you can do.
+
+<Matrix2x2
+  xAxis={{ label: "Research Cost", low: "Low Cost", high: "High Cost" }}
+  yAxis={{ label: "Specificity to Your Question", low: "Generic", high: "Specific" }}
+  quadrants={[
+    { label: "Start Here", position: "top-left", description: "Secondary research you curate specifically for your question — competitor filings, vertical reports, review site mining. High value, low cost." },
+    { label: "Worth It", position: "top-right", description: "Primary qualitative research — customer interviews, usability tests. Expensive but directly answers your specific question." },
+    { label: "Background Only", position: "bottom-left", description: "Generic secondary research — broad market reports, demographic studies. Useful for context and market sizing, not for product decisions." },
+    { label: "Avoid", position: "bottom-right", description: "Large quantitative surveys on poorly-formed hypotheses. High cost, low specificity. Usually confirms whatever the sponsor wanted to find." }
+  ]}
+/>
+
+## Common Traps
+
+**Confirmation bias** is the dominant failure mode. Researchers design studies that will validate their hypothesis, interpret ambiguous findings favourably, and dismiss contradicting evidence. The antidote is to write down before the research what result would cause you to kill the project — and then actually kill it if that result comes back.
+
+**Customer proximity bias** affects founders and product managers who talk to the same ten customers repeatedly. These customers are articulate, engaged, and atypical. Their feedback is valuable but systematically unrepresentative of the median customer.
+
+**Analysis paralysis** is the opposite problem: commissioning more research to delay a decision. Research reduces uncertainty; it does not eliminate it. At some point you have enough information to make a good decision and additional research is just procrastination with data.
+
+<Discussion>
+1. A founder has run 20 customer interviews and all respondents say they would pay £50/month for the product. The founder is about to launch at £50/month. What questions would you ask before accepting this pricing research at face value?
+2. You have budget for either 50 customer interviews or a 2,000-person online survey. The decision is whether to enter a new geographic market. Which do you choose, and why?
+3. A product team finds that 80% of survey respondents say feature X is "very important," but usage data shows only 12% of users have ever used it. How do you reconcile this, and what does it mean for the product roadmap?
+4. Describe a situation where following customer research would have been the wrong decision. What does this suggest about the limits of market research?
+5. You are reviewing a competitor's 3-star reviews on G2 and notice a recurring complaint about onboarding complexity. Walk through how you would turn this observation into a product decision.
+</Discussion>
+
+<SlideShow>
+
+<Slide title="Market Research: The Core Principle">
+
+## Start With the Decision
+
+Every research project begins with one question:
+
+**What will we do differently depending on what we find?**
+
+If the answer is "nothing" — you don't need the research.
+
+*Research reduces uncertainty. It does not replace judgment.*
+
+</Slide>
+
+<Slide title="Two Types of Research">
+
+## Primary vs Secondary
+
+| | Secondary | Primary |
+|---|---|---|
+| **Source** | Reports, filings, reviews | Interviews, surveys, tests |
+| **Cost** | Low | High |
+| **Speed** | Fast | Slow |
+| **Fit** | Generic | Specific |
+
+**Rule:** Start secondary. Go primary only when secondary data doesn't answer your specific question.
+
+</Slide>
+
+<Slide title="Qual vs Quant">
+
+## What Each Type Answers
+
+**Qualitative** — *Why?*
+- Interviews, focus groups, observation
+- Generates hypotheses
+- Can't generalise — but reveals what to test
+
+**Quantitative** — *How many? How much?*
+- Surveys, analytics, A/B tests
+- Validates or refutes hypotheses
+- Only as good as the hypotheses it tests
+
+**The mistake:** running quant before you understand the question well enough to write good survey items.
+
+</Slide>
+
+<Slide title="Jobs to Be Done">
+
+## The Right Research Question
+
+❌ "Who is my customer?"
+
+✅ "What job is the customer hiring this product to do?"
+
+**Three interview questions:**
+1. What triggered you to start looking for a solution?
+2. Why did you choose this over what you were doing before?
+3. What nearly stopped you from switching?
+
+*The job reveals the real competition — and the real value proposition.*
+
+</Slide>
+
+<Slide title="Stated vs Revealed Preference">
+
+## Trust Behaviour Over Words
+
+People say they will:
+- Pay more for sustainable products ❌
+- Eat healthier ❌
+- Exercise more ❌
+
+**Behavioural data shows they don't.**
+
+> When you need to know what customers *will* do — run a test, not a survey.
+
+*Revealed preference > stated preference. Always.*
+
+</Slide>
+
+<Slide title="Key Takeaways">
+
+- **Decision first, data second** — if you can't name the decision, cancel the research
+- **Secondary before primary** — cheap and fast before expensive and slow
+- **Qualitative generates hypotheses; quantitative tests them** — both are needed
+- **Jobs to be done** — research the problem, not the feature request
+- **Stated ≠ revealed** — trust what customers do, not what they say they'll do
+- **Confirmation bias kills research** — write down what result would stop the project before you start
+
+</Slide>
+
+</SlideShow>
+
+<UsefulLinks
+  links={[
+    { title: "Van Westendorp Pricing Sensitivity Meter", href: "https://sawtoothsoftware.com/resources/blog/posts/van-westendorp-pricing-sensitivity-meter", description: "A detailed walkthrough of the PSM methodology from Sawtooth Software, including how to plot the four curves and interpret the output." }
+  ]}
+/>

@@ -8,6 +8,7 @@ import Takeaways from '@/components/mdx/Takeaways'
 import Slide from '@/components/mdx/Slide'
 import SlideShow from '@/components/mdx/SlideShow'
 import Discussion from '@/components/mdx/Discussion'
+import UsefulLinks from '@/components/mdx/UsefulLinks'
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -21,5 +22,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Slide,
     SlideShow,
     Discussion,
+    UsefulLinks,
   }
 }
