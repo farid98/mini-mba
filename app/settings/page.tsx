@@ -5,8 +5,6 @@ import type { User } from '@supabase/supabase-js'
 
 export default function SettingsPage() {
   const [user, setUser] = useState<User | null>(null)
-  const [showSlides, setShowSlides] = useState(false)
-  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const supabase = createClient()
@@ -14,40 +12,14 @@ export default function SettingsPage() {
     async function load() {
       const { data: { user } } = await supabase.auth.getUser()
       setUser(user)
-
-      if (user) {
-        const { data } = await supabase
-          .from('user_settings')
-          .select('show_slides')
-          .eq('id', user.id)
-          .single()
-
-        const val = data?.show_slides ?? false
-        setShowSlides(val)
-        localStorage.setItem('mini-mba-slides', String(val))
-      }
-
-      setLoaded(true)
     }
 
     load()
   }, [])
 
-  async function toggle() {
-    const supabase = createClient()
-    const next = !showSlides
-    setShowSlides(next)
-    localStorage.setItem('mini-mba-slides', String(next))
-
-    await supabase
-      .from('user_settings')
-      .upsert({ id: user!.id, show_slides: next, updated_at: new Date().toISOString() })
-  }
-
   async function signOut() {
     const supabase = createClient()
     await supabase.auth.signOut()
-    localStorage.removeItem('mini-mba-slides')
     window.location.href = '/login'
   }
 
@@ -75,26 +47,11 @@ export default function SettingsPage() {
               Chapter slides
             </div>
             <div className="text-[13px] text-fg-subtle">
-              Show a "Present" button at the bottom of each chapter
+              The Present button is always available on chapters with slides.
             </div>
           </div>
 
-          {loaded ? (
-            <button
-              onClick={toggle}
-              role="switch"
-              aria-checked={showSlides}
-              className="shrink-0 w-11 h-6 rounded-xl border-none cursor-pointer relative p-0 transition-colors duration-150"
-              style={{ background: showSlides ? '#1a4d8a' : '#d0d0d0' }}
-            >
-              <span
-                className="absolute top-[2px] w-5 h-5 rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.2)] transition-[left] duration-150"
-                style={{ left: showSlides ? 22 : 2 }}
-              />
-            </button>
-          ) : (
-            <div className="w-11 h-6 rounded-xl bg-page-alt" />
-          )}
+          <span className="shrink-0 text-[13px] text-fg-subtle">Always on</span>
         </div>
       </div>
     </div>

@@ -5,14 +5,6 @@ export default function SlideShow({ children }: { children: React.ReactNode }) {
   const slides = React.Children.toArray(children)
   const [index, setIndex] = useState(0)
   const [open, setOpen] = useState(false)
-  const [enabled, setEnabled] = useState(false)
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    setEnabled(localStorage.getItem('mini-mba-slides') === 'true')
-    setLoaded(true)
-  }, [])
-
   const prev = useCallback(() => setIndex(i => Math.max(0, i - 1)), [])
   const next = useCallback(() => setIndex(i => Math.min(slides.length - 1, i + 1)), [slides.length])
   const close = useCallback(() => { setOpen(false); setIndex(0) }, [])
@@ -27,8 +19,6 @@ export default function SlideShow({ children }: { children: React.ReactNode }) {
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [open, next, prev, close])
-
-  if (!loaded || !enabled) return null
 
   if (!open) {
     return (
