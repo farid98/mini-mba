@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import { notFound } from 'next/navigation'
 import { SUBJECTS } from '@/lib/subjects'
 import { getAllChapters, getAllSubjectSlugs } from '@/lib/content'
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: meta.title,
     description: meta.description,
+    alternates: { canonical: `/${subject}` },
     openGraph: {
       title: meta.title,
       description: meta.description,
@@ -40,13 +42,13 @@ export default async function SubjectPage({ params }: Props) {
     '@type': 'Course',
     name: meta.title,
     description: meta.description,
-    url: `https://mini-mba-seven.vercel.app/${subject}`,
-    provider: { '@type': 'Organization', name: 'Mini MBA', url: 'https://mini-mba-seven.vercel.app' },
+    url: `${SITE_URL}/${subject}`,
+    provider: { '@type': 'Organization', name: 'Mini MBA', url: SITE_URL },
     hasCourseInstance: chapters.map(ch => ({
       '@type': 'CourseInstance',
       name: ch.title,
       description: ch.summary,
-      url: `https://mini-mba-seven.vercel.app/${subject}/${ch.slug}`,
+      url: `${SITE_URL}/${subject}/${ch.slug}`,
     })),
   }
 

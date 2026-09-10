@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import { notFound } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { SUBJECTS } from '@/lib/subjects'
@@ -26,14 +27,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { subject, chapter } = await params
   const ch = getChapter(subject, chapter)
   if (!ch) return {}
+  const image = ch.image
+    ? { url: ch.image.src, alt: ch.image.alt, width: ch.image.width, height: ch.image.height }
+    : { url: `/${subject}/${chapter}/social-image`, alt: ch.title, width: 1200, height: 630 }
   return {
     title: ch.title,
     description: ch.summary,
+    alternates: { canonical: `/${subject}/${chapter}` },
     openGraph: {
       title: ch.title,
       description: ch.summary,
       url: `/${subject}/${chapter}`,
       type: 'article',
+      images: [image],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: ch.title,
+      description: ch.summary,
+      images: [image],
     },
   }
 }
@@ -67,12 +79,13 @@ export default async function ChapterPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: chapter.title,
+    ...(chapter.image && { image: `${SITE_URL}${chapter.image.src}` }),
     description: chapter.summary,
-    url: `https://mini-mba-seven.vercel.app/${subject}/${chapterSlug}`,
+    url: `${SITE_URL}/${subject}/${chapterSlug}`,
     isPartOf: {
       '@type': 'Course',
       name: subjectMeta.title,
-      url: `https://mini-mba-seven.vercel.app/${subject}`,
+      url: `${SITE_URL}/${subject}`,
     },
     educationalLevel: chapter.difficulty,
     timeRequired: `PT${chapter.readTime}M`,

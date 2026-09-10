@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import type { ChapterFrontmatter } from '@/types/content'
 import ShareButton from './ShareButton'
 
@@ -32,6 +33,18 @@ export default function ChapterHeader({ chapter }: ChapterHeaderProps) {
         <p className="mt-3 text-base text-fg-muted leading-relaxed">
           {chapter.summary}
         </p>
+      )}
+      {chapter.image && (
+        <a href={chapter.image.src} className="block mt-6" aria-label="View article image at full size">
+          <Image
+            src={chapter.image.src}
+            alt={chapter.image.alt}
+            width={chapter.image.width}
+            height={chapter.image.height}
+            sizes="(max-width: 768px) calc(100vw - 48px), 720px"
+            className="w-full h-auto rounded-lg"
+          />
+        </a>
       )}
     </header>
   )

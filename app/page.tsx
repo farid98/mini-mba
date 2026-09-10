@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+import { SITE_URL } from '@/lib/site'
 import Link from 'next/link'
 import { SUBJECTS } from '@/lib/subjects'
 import { getAllChapters } from '@/lib/content'
@@ -5,6 +7,10 @@ import SubjectGrid from '@/components/home/SubjectGrid'
 import ContinueReading from '@/components/home/ContinueReading'
 import SearchTrigger from '@/components/search/SearchTrigger'
 import type { Subject } from '@/types/content'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default function HomePage() {
   const subjects: Subject[] = SUBJECTS.map(s => ({
@@ -24,12 +30,12 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Mini MBA',
-    url: 'https://mini-mba-seven.vercel.app',
+    url: SITE_URL,
     description: 'A concise MBA curriculum — strategy, finance, marketing, leadership, operations, economics, and entrepreneurship.',
     hasPart: subjects.map(s => ({
       '@type': 'Course',
       name: s.title,
-      url: `https://mini-mba-seven.vercel.app/${s.slug}`,
+      url: `${SITE_URL}/${s.slug}`,
       description: s.description,
     })),
   }

@@ -9,6 +9,12 @@ export interface ChapterFrontmatter {
   prerequisites?: string[]
   related?: string[]
   tags?: string[]
+  image?: {
+    src: string
+    alt: string
+    width: number
+    height: number
+  }
 }
 
 export interface Chapter extends ChapterFrontmatter {

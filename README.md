@@ -37,3 +37,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 
+
+## Article images
+
+Place an image in `public/images/articles/` and add this optional field to the
+chapter's MDX frontmatter (use the actual pixel dimensions):
+
+```yaml
+image:
+  src: /images/articles/porters-five-forces.png
+  alt: "Describe what the image communicates."
+  width: 1312
+  height: 1199
+```
+
+Use a local path starting with `/images/articles/`. The image appears below the
+chapter summary, links to the full-size image, and is used for Open Graph and
+Twitter sharing and Article structured data. Chapters without an image retain
+the generated title preview. Social platforms may crop previews or cache an older
+image until the page is re-scraped after deployment.

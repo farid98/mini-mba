@@ -2,8 +2,8 @@ import { ImageResponse } from 'next/og'
 import { SUBJECTS } from '@/lib/subjects'
 import { getChapter, getAllChapters, getAllSubjectSlugs } from '@/lib/content'
 
-export const size = { width: 1200, height: 630 }
-export const contentType = 'image/png'
+const size = { width: 1200, height: 630 }
+export const dynamic = 'force-static'
 
 export function generateStaticParams() {
   return getAllSubjectSlugs().flatMap(subject =>
@@ -11,7 +11,7 @@ export function generateStaticParams() {
   )
 }
 
-export default async function Image({ params }: { params: Promise<{ subject: string; chapter: string }> }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ subject: string; chapter: string }> }) {
   const { subject, chapter: chapterSlug } = await params
   const meta = SUBJECTS.find(s => s.slug === subject)
   const chapter = getChapter(subject, chapterSlug)
